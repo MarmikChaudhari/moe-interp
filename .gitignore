@@ -1,4 +1,4 @@
-github_oss_with_stack_texts.txt
 MATH/
-router_logits_all_layers.json
-expert_counts_layer_*.parquet
+*.txt
+*.json
+.DS_Store
