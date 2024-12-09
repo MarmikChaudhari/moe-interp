@@ -5,4 +5,8 @@ txt/
 CLCmini/
 CUAD_v1/
 token-count.ipynb
-github_oss_with_stack_texts.txt
+github_oss_with_stack_texts.txt\
+data/scripts/
+venv/
+data/arXiv Metadata Snapshot.json
+data/output/physics_arxiv_abstracts.txt
