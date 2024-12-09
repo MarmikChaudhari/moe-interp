@@ -1,4 +1,7 @@
 MATH/
-*.txt
+txt/
 *.json
 .DS_Store
+CLCmini/
+CUAD_v1/
+token-count.ipynb
