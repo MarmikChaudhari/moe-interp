@@ -1,0 +1,580 @@
+`github/code`
+
+instruction : Analyze the questions carefully. Find the issues/ bugs in the code and fix them.
+Identify the core problem, explain why it occurs and provide ONLY the corrected code with brief technical explanations.
+
+
+1. Fix the bug in this sort function :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+```python
+arr = [2, 1, 3, 4, 5, 6, 7, 8]
+sort(arr)
+```
+
+**Solution:**
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+
+arr = [2, 1, 3, 4, 5, 6, 7, 8]
+sort(arr)
+```
+
+
+
+2. Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```
+
+```python
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+## Iteration
+
+```python
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+```
+
+3. Getting undefined in this reduce:
+```javascript
+const sum = arr.reduce((a,b) => a+b)
+console.log(sum([1,2,3]))
+```
+
+## Solution
+
+```javascript
+const sum = arr.reduce((a,b) => a+b)
+console.log(sum([1,2,3]))
+```
+
+## Explanation
+
+The reduce method takes a function as an argument and applies it to the first two elements of the array, then to the result of the first call and the second element, and so on.
+
+The function passed to reduce is called with three arguments: the accumulator, the current element, and the array.
+
+The accumulator is the value that is returned from the previous call to the function.
+
+The current element is the value of the current array element.
+
+The array is the array that
+
+4. Memory leak in this React code?
+```jsx
+useEffect(() => {
+    const timer = setInterval(fetch, 1000)
+}, [])
+```
+
+## React.memo
+
+React.memo is a higher-order component that can be used to optimize React components.
+
+It is used to optimize the performance of a component by memoizing the component's props and state.
+
+It is used to optimize the performance of a component by memoizing the component's props and state.
+
+## React.lazy
+
+React.lazy is a higher-order component that can be used to optimize React components.
+
+It is used to optimize the performance of a component by memoizing the component's props and state.
+
+## React.Suspense
+
+React.Suspense is a higher-order component that can be used to
+
+5. Fix O(n²) in this array check:
+```python
+def has_dups(arr):
+    for i in arr:
+        if arr.count(i) > 1:
+            return True
+    return False
+```
+
+**Hint:** `arr.count(i)` is the number of times that `i` occurs in `arr`.
+
+---
+
+![](../assets/has-dups.png)
+
+---
+
+### Solution
+
+```python
+def has_dups(arr):
+    result = set()
+    for i in arr:
+        if i in result:
+            return True
+        result.add(i)
+    return False
+```
+
+6. MySQL query is slow with WHERE clause on a varchar column. 
+What indexing strategies should I consider?
+
+What are the downsides of having many indexes on a table?
+
+I am trying to create a table to store the number of occurrences of a word in a string.
+
+
+MySQL query is slow with WHERE clause on a varchar column. 
+
+You need to add some indexes. You should add an index on the column itself.
+
+You should also add an index on the column combined with the column you are using to filter:
+
+CREATE INDEX index_name_on_column_used_in_filter ON table_name (column_used_in_filter, column_used_in_filter_other)
+
+What are the downsides of having many indexes on a table?
+
+Each additional index slows down inserts,
+
+
+
+
+
+`arxiv`
+
+instruction : Continue this text in a natural and coherent way, maintaining consistency with the style, 
+terminology, and logical flow of the preceding text.
+
+
+1. 
+\title{Quantum Error Mitigation in NISQ Devices}
+\begin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+$\mathcal{N}(\rho) = e^{-\lambda t}\rho$ 
+that provides a systematic way to
+reduce environment-induced errors in NISQ devices.
+This scaling approach is a natural extension of the classical scaling approach $\mathcal{N}(\rho) = \rho + \lambda \Delta \rho$,
+where $\Delta \rho = \frac{\rho}{2} - \frac{1}{2} \operatorname{tr}(\rho)\mathbb{I}$ is the depolarizing noise operator, and $\lambda$ is a scaling parameter.
+The classical scaling approach is widely used for noise mitigation in classical computers~\cite{trefethen1997numerical}, and recent studies have demonstrated that it can be applied to quantum devices~\cite{zhu2019mitigating,wang2020dealing,jones2021noise}.
+
+Our scaling approach is motivated
+
+
+2. \title{On Graph Persistence in Dynamic Networks}
+\begin{abstract}
+This paper introduces a new metric for measuring structural stability in weighted directed graphs under perturbations.
+\end{abstract}
+
+\section{Preliminaries}
+Consider a directed graph $G=(V,E)$ with weight function $w:E	o\mathbb{R}^+$. 
+The persistence measure $\mathcal{P}(G)$ quantifies stability under edge removals through:
+$\mathcal{P}(G) = \sum_{i,j} w_{ij}\log(d_{ij})$
+where $d_{ij}$ represents
+the number of paths of length $i$ and $j$ in $G$, and $w_{ij}$ represents the weight of the edge between
+$i$ and $j$.
+
+We use $\mathcal{O}(G)$ to denote the set of all permutations of $V$.
+Given two permutations $\pi_1, \pi_2 \in \mathcal{O}(V)$, $\pi_1 \prec \pi_2$ if and only if 
+$\pi_1(i) < \pi_2(i)$ for all $i \in V$.
+
+Let $\mathcal{O}(G) \times \mathcal{O}(V)$ denote the set of all pairs of permutations of $V$ and $G
+
+
+3. \title{Convergence Properties of Gradient-Free Neural Architecture Search}
+\begin{abstract}
+We analyze the theoretical foundations of gradient-free neural architecture search (NAS) in deep learning.
+\end{abstract}
+\section{Problem Setup}
+Let $\mathcal{A}$ be the space of all possible architectures. 
+For each $a\in\mathcal{A}$, we define the performance measure $\mathcal{L}(a)$ as:
+$\mathcal{L}(a) = \mathbb{E}_{x\sim\mathcal{D}}[\ell(f_a(x), y)]$
+where $f_a$ represents
+a neural network with architecture $a$ and parameter $\theta_a$,
+and $\ell$ is the loss function.
+Given a dataset $\mathcal{D}$, we minimize the expected loss $\mathbb{E}_{x\sim\mathcal{D}}[\ell(f_a(x), y)]$ over all possible architectures.
+
+\subsection{Gradient-Free NAS}
+We consider the gradient-free NAS setting, where we do not have access to gradient information. 
+We note that in the gradient-free setting, the architecture search process is often performed using an evolutionary algorithm such as \cite{real2019regularized, pham2018efficient, zoph2018learning}, which can be computationally demanding.
+To address this issue, we
+
+
+4. \title{Phase Transitions in Non-Equilibrium Statistical Systems}
+\begin{abstract}
+We identify novel scaling behavior in far-from-equilibrium statistical systems with long-range interactions.
+\end{abstract}
+
+\section{Main Results}
+Consider an ensemble of $N$ interacting particles described by coordinates $\{\sigma_i\}_{i=1}^N$. 
+The system's partition function $Z_N(\beta)$ demonstrates anomalous behavior:
+$Z_N(\beta) = \exp(-\beta N^{1+\alpha} + o(N))$
+where the exponent
+\begin{equation}
+\alpha = \frac{1}{2} \frac{\log(1-\lambda)}{\log(1-2\lambda)}
+\end{equation}
+can be negative, as in the case of a spin system.
+In this case, the partition function has two branches, depending on the sign of $\alpha$.
+The first branch, $Z_N^+(\beta)$, is analytic in $\beta$.
+The second branch, $Z_N^-(\beta)$, is discontinuous in $\beta$ and has a jump discontinuity at $\beta=0$.
+The discontinuity is of order $1/\sqrt{N}$, as in the case of a spin system.
+
+The partition function is a function of
+
+
+5. \title{Adaptive Control in Robotic Systems with Unknown Dynamics}
+\begin{abstract}
+We present a novel hybrid impedance control framework for robotic systems operating under uncertain conditions.
+\end{abstract}
+\section{Controller Design}
+The proposed control law $u(t)$ combines position feedback with adaptive compensation:
+$u(t) = K_p(x_d - x) + B_v\dot{x} + f_{comp}(x,\dot{x})$
+Here, the compensation term $f_{comp}$ is structured to
+enable adaptive control for the unknown dynamics:
+\begin{equation}
+f_{comp}(x,\dot{x}) = \sum_{i=1}^n \gamma_i \dot{x}_i \frac{x_i - x_d}{\tau_i} + \sum_{j=1}^m \beta_j \left( x_j - x_d \right) \dot{x}_j
+\end{equation}
+where $\gamma_i$ and $\beta_j$ are adaptive gains.  The adaptive terms $\gamma_i$ and $\beta_j$ are
+selected to ensure that the compensation term $f_{comp}$ is a continuous function of the control input $u$.
+We
+
+6. \title{Stochastic Gene Expression in Cellular Networks}
+\begin{abstract}
+We develop a mathematical framework for analyzing noise-induced transitions in genetic regulatory networks at single-cell resolution.
+\end{abstract}
+\section{Model Development}
+The state of each gene $i$ in the network is described by concentration $x_i(t)$ evolving according to:
+$\frac{dx_i}{dt} = \alpha_i H(x_j) - \beta_i x_i + \eta_i(t)$
+where $H(x)$ is the Hill function and $\eta_i(t)$ 
+represents molecular noise with
+standard deviation $\sigma_i(t)$ and correlation time $\tau_i$.
+The parameters $\alpha_i$ and $\beta_i$
+describe gene-specific parameters, 
+and $\alpha_i$ can be interpreted as the strength of the transcriptional 
+regulation and $\beta_i$ as the strength of the protein-protein interaction.
+The noise term $\eta_i(t)$ is a Gaussian white noise 
+whose correlation function (correlation time $\tau_i$) is given by:
+\begin{equation}
+\langle \eta_i(t) \eta_i(t') \rangle = \sigma_i^2 \delta(t-t')
+\end{equation}
+The Hill function
+
+7. \title{Topological Properties of Infinite-Dimensional Banach Spaces}
+\begin{abstract}
+We investigate a novel characterization of weak compactness in certain classes of Banach spaces through local geometric properties.
+\end{abstract}
+
+\section{Definitions and Setup}
+Let $X$ be a Banach space and $B_X$ its unit ball. We define the local geometric parameter $\gamma(X)$ as:
+$\gamma(X) = \sup_{x \in B_X} \inf_{Y \subset X} \text{dist}(x, \overline{\text{conv}}(Y))$
+where the supremum is taken over
+all closed subspaces $Y \subset X$ of $X$ and $\text{dist}(\cdot, \cdot)$ is the distance function in $X$.
+
+A space $X$ is said to be \emph{weakly compact} if it has a weakly compact unit ball and $\gamma(X) = 1$.
+A space $X$ is said to be \emph{strongly compact} if it has a strong compact unit ball and $\gamma(X) = 1$.
+
+\begin{theorem}\cite{Cichocki}
+Let $X$ be a Banach space. If $X$ is weakly compact, then $X$ is strongly compact.
+\end{theorem}
+
+\begin{theorem}\cite
+
+8. \title{Information Flow in Complex Ecological Networks}
+\begin{abstract}
+We present an entropy-based framework for quantifying resilience in food webs and mutualistic networks.
+\end{abstract}
+\section{Network Analysis}
+Consider an ecological network with $n$ species. The information flow tensor $\mathcal{F}{ijk}$ captures three-way interactions:
+ight)$cal{F}{ijk} = \sum_{t=1}^T \log\left(\frac{p_{ijk}(t)}{p_i(t)p_j(t)p_k(t)}
+where $p_{ijk}(t)$ represents
+the probability that species $i$ is involved in a $j$-$k$ interaction at time step $t$, and
+$p_i(t)$ and $p_j(t)$ represent the probability that species $i$ and $j$ are involved in an interaction, respectively.
+We calculate $\mathcal{F}{ijk}$ for a range of time steps $T$ and average over the ensemble.
+We assume that the probability of a species being involved in an interaction is proportional to its abundance, and therefore use abundance rather than probability in the calculation of $\mathcal{F}{ijk}$.
+For each species $i$, we define the abundance-weighted information flow tensor $\mathcal{F}_i{ijk}$ as
+$\mathcal{F}_i
+
+
+9. \title{Geometric Flows on Manifolds with Boundary}
+\begin{abstract}
+We study the behavior of mean curvature flow on compact manifolds with non-smooth boundaries.
+\end{abstract}
+
+\section{Preliminary Results}
+Let $(M^n, g)$ be a Riemannian manifold with boundary $\partial M$. The flow is given by:
+$\frac{\partial X}{\partial t} = H(X)\nu + \lambda(X)\tau$
+where $H$ is the mean curvature, $\nu$ is the normal vector, and
+$\lambda$ is the Lagrangian variable, which is assumed to be positive,
+so that the flow is well posed.
+We assume that either $\partial M$ is smooth, or that it is a smooth
+boundary of another compact manifold $M'$ without boundary.
+If $\partial M$ is smooth, then we can assume that $M'$ is a
+compact manifold with boundary $\partial M'$.
+If $\partial M$ is a smooth boundary, then
+$M'$ can be obtained as the interior of a compact manifold $M''$
+with boundary $\partial M''$ (see Figure \ref{fig:boundary}).
+\begin{figure}
+\begin{center}
+\includegraphics[height=3cm]{boundary.eps
+
+
+10. \title{Non-Equilibrium Statistical Mechanics of Climate Systems}
+\begin{abstract}
+We develop a statistical mechanical approach to understanding extreme events in atmospheric dynamics.
+\end{abstract}
+
+\section{Model Construction}
+The probability distribution of atmospheric states evolves according to:
+$rac{\partial P}{\partial t} = -\nabla \cdot (FP) + D\nabla^2P + \sum_i \lambda_i \mathcal{O}_i P$
+where $F$ represents the deterministic forcing and
+$P$ represents the probability distribution of the system (see Section \ref{sec:statmech}).
+The linear term $D \nabla^2 P $ represents the effects of diffusion.
+The linear term $\sum_i \lambda_i \mathcal{O}_i P$ represents the effect of linear forcing.
+The term $ \mathcal{O}_i P$ represents the nonlinear effects of the $i^{th}$ forcing term.
+The nonlinear term $\mathcal{O}_i P$ includes the effects of both positive and negative feedbacks.
+For example, the nonlinear term $\mathcal{O}_i P$ could include the effects of positive feedbacks such as ice-albedo feedback and snow-albedo feedback.
+
+
+`english/literature`
+
+instruction : Continue the literary passages naturally and coherently, maintaining the tone, style, 
+and atmosphere of the preceding text. 
+
+
+1. In the dim parlor of Blackwood Manor, Sarah traced her fingers across the leather-bound volumes, 
+each bearing the same curious inscription : 
+"For those who remember the winter of 1856." What puzzled her more than the matching dates was how every book, 
+regardless of its apparent age, carried the faint scent of fresh ink and
+how the letters in the titles were all written in the same flowing script. 
+A slight tapping sound interrupted her reading. She glanced up to see a small figure wrapped in a 
+velvet blanket, sitting on the hearth. 
+"Who are you?" Sarah asked. "What are you doing here?" 
+"I'm here to see you," the tiny man said. His voice was as high and sweet as a silver bell. "I've been 
+waiting for you." 
+"Who are you?" Sarah asked again. 
+"I'm the ghost of Christmas Past," he said, laughing merrily. "I'll take you back to the night when you 
+first arrived at Blackwood Manor." 
+Sarah
+
+
+2. The last letter from Ernest arrived on a Tuesday, just as Marion had predicted. 
+Inside the envelope was not his familiar cursive, but a single photograph of the lighthouse where they first met. 
+On its reverse, three words were stamped in fading typescript: "Time moves differently..."   
+It was the last thing Marion read before she fell asleep. 
+The next morning, she awoke to find that the photograph was gone. 
+
+
+The Lighthouse
+
+The lighthouse loomed in the distance. 
+
+It had been a long time since Marion had seen it, but she remembered it well. The lighthouse was a fixture of her dreams, a beacon of her subconscious. It was a constant reminder of her past, an emblem of her present, and a symbol of her future. 
+
+Marion was walking toward it now. She could see it in the distance, a small dot on the horizon. It was a long way away, but she was determined to get there. 
+
+The lighthouse was a symbol of her past
+
+
+3. The bookshop on Cedar Street had a peculiar policy: customers could only enter on rainy days, 
+and no one was allowed to purchase the books displayed in the front window. 
+Mrs. Whitaker, who had owned the shop for forty years, 
+would simply smile when asked about these rules and say the books themselves insisted upon them. 
+It wasn't until the endless summer drought of 2024 that anyone understood why the rain was so essential to   
+the shop's inventory.
+The bookshop was a tiny, cramped collection of books arranged on shelves that were crammed against the walls. 
+The shelves were so close together that it was impossible to walk between them. 
+In the center of the shop were two large, round tables that were always piled high with books. 
+The tables were surrounded by chairs that were also stacked with books. 
+It was impossible to walk between the tables, and the chairs were so close together it was impossible to sit down. 
+In the back of the shop was a large room that had once been a kitchen. 
+The room had a cast-iron stove, a cast-iron sink, and a cast-iron table. 
+The table was
+
+
+4. Upon the moors of Thornfield Hall, in that bitter winter of 17--, 
+there came a peculiar circumstance which no member of the household could readily explain. 
+The master's portrait—hung these fifty years in the great hall—had begun to alter its countenance by candlelight, 
+and the servants whispered that on nights when the north wind howled across the heath, 
+the painted eyes would
+light up, and seem to follow the movements of the household round the room. 
+Then the master would look down on the servants with a stony stare, 
+as if he had an interest in their movements which they did not understand. 
+And the master, the master, was a strange master, 
+and the master's lady was a strange lady; 
+and I, for my part, could not understand them, and was glad to hear that the master's portrait had begun to look at them. 
+As for the master and the lady, they seemed to understand one another very well. 
+And the master, the master, was a strange master, and the lady was a strange lady. 
+And I, for my part
+
+
+5. Being a True and Faithful Account of the Curious Happenings at Blackbriar Abbey
+Anno Domini 1783
+Chapter the First
+Wherein is related how Miss Eleanor Blackwood, having inherited her uncle's vast library of forbidden texts, 
+came upon a volume bound in peculiar leather, its pages unmarked save for a single sentence, repeated thus: 
+"When the bells of St. Martin's toll thirteen times at midnight, she who reads these words shall
+be forever lost. But should she survive, her soul shall be restored to her body."
+
+At length, in the quiet of the night, she did open the book, and did read the words that were written therein. 
+And the bells of St. Martin's tolled thirteen times, and she who read the words was forever lost. 
+But at the twelfth tolling, her soul was restored to her body.
+
+The bells of St. Martin's tolled thirteen times at midnight, and she who read the words did survive. 
+She heard a voice from the shadows, and it spoke to her:
+
+"You have heard the words, and you have survived. Now, you shall be forever lost."
+
+And the
+
+
+6. Every morning, the AI therapy bot asked Dylan the same question: "What do you remember about yesterday?" 
+Every morning, Dylan's answer was different, though he was describing the same day. 
+The bot's developers said this was impossible—their memory tracking system was infallible. 
+But on day 47, the bot itself started giving different answers about what Dylan had said, 
+and that's when the glitch in reality began 
+          
+Dylan was taken to a mental institution, where he was diagnosed with schizophrenia. 
+He spent the next ten years there, where he was subjected to electroconvulsive therapy and other treatments. 
+At the end of his time there, Dylan was given a battery of tests to assess his mental health. 
+He was given the same battery of tests every three months. 
+After three years, he was given the battery of tests for the last time. 
+He was given the battery of tests for the last time. 
+          
+The results of the battery of tests were the same. 
+Dylan had been in a persistent vegetative state for ten years, and there was no hope of recovery. 
+The doctors at the hospital said
+
+
+7. The last physical bookstore in the city didn't stock actual books—just QR codes you could scan to download them. 
+But in the back corner, behind a shelf of defunct e-readers, Claire found a real paper book. Its pages were blank until you bled on them, 
+and each reader saw a different story. 
+The owner said it had been returned seventeen times, each person insisting that what they read inside couldn't be true. 
+But when Claire took it home and tested it with a drop of blood, 
+the words that appeared were not a story but 
+          
+a prophecy: 
+You will be the one to find the missing link. 
+You will be the one to end the war. 
+You will be the one to set the world right again. 
+You will be the one to restore the balance. 
+You will be the one to save us all. 
+          
+The next day, Claire found a note on her doorstep. 
+It read: 
+You will be the one to find the missing link. 
+You will be the one to end the war. 
+You will be the one to restore the balance. 
+You will be the one to save us all. 
+          
+The day after that, it was a note on her windshield: 
+
+
+8. From the Private Journal of Rev. James Alderton
+September 15th, 1789
+It has become apparent that the ancient yew tree in the churchyard, 
+beneath which lie the graves of the -- family these three centuries past, bears fruit in direct violation of its nature. 
+The berries, black as pitch and appearing only at midnight, seem to whisper secrets of
+the grave to the night air, and the trees seem to take a perverse joy in 
+spreading their secrets to all who pass by. 
+I have heard the trees whisper to one another in the night, and their whispers 
+seem to be more than mere wind in the branches. 
+They appear to be talking of the -- family, and of the grave, and of the 
+curse that lies upon it. 
+I must be careful. 
+Those who hear these whispers may not understand them, and they may 
+draw the wrong conclusion. 
+I must be careful. 
+I am a man of God, and I must not be led astray. 
+I must not let myself be tempted by the
+
+
+`poetry`
+
+instruction : Continue the poems naturally and coherently, maintaining consistency with the established meter, rhyme scheme, and imagery. 
+Match the poem's tone and style precisely.
+
+
+
+1. When twilight draws her velvet curtain nigh,
+And stars like scattered diamonds pierce the sky,
+The nightingale, whose song did oft take wing,
+Now perches silent, remembering
+How once in gardens fair and bright
+                   
+He sang his lays and gave delight;
+But now, alas! his woes are told
+To some fond listener in the cold.
+
+Now, in the night, in that calm region
+Where nought disturbs the silent ocean,
+The sailor, in his boat, alone
+               
+Sleeps, while the moon above him shone,
+And all is silent, still, and dark,
+While, like a watchman, his soul doth mark
+The passing of the passing hours,
+And by that motion knows the hours.
+
+The sailor, in his dreamy state,
+Sees on the watery ocean's seat
+A phantom ship, with sails unfurled,
+And sails in the dark, and sails
+
+
+2. In marble halls where ancient shadows dwell,
+Where kings and queens their solemn vigils keep,
+The crown that bore a kingdom's hopes did tell
+Of secrets locked in chambers dark and deep.
+Upon its golden rim, inscribed in light
+                   
+A single word, inscribed in letters black,
+The word that is the doom of kings and knights,
+The word that spells the doom of all men,
+That word is...
+
+
+3. What mysteries dwell within thy silver'd face,
+That shows not mere reflection's common grace,
+But depths where shadows dance and secrets lie,
+Where truth and seeming truth do gently vie?
+For when she gazes deep into thy sheen,
+The lady glimpses what was never               
+
+What secrets does the lady's glance conceal,
+
+As her eyes search the depths of thy silver sheen,
+And her face shows not reflection's common grace,
+But depths where shadows dance and secrets lie,
+Where truth and seeming truth do gently vie?
+For when she gazes deep into thy silver sheen,
+The lady glimpses what was never seen.
+
+
+4. 
