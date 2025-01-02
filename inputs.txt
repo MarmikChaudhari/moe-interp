@@ -1,0 +1,257 @@
+'code/github' domain :
+
+1. "Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```"
+
+2. "Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```"
+
+3. "Getting undefined in this reduce:
+```javascript
+const sum = arr.reduce((a,b) => a+b)
+console.log(sum([1,2,3]))
+```"
+
+4. "Memory leak in this React code?
+```jsx
+useEffect(() => {
+    const timer = setInterval(fetch, 1000)
+}, [])
+```"
+
+5. "Fix O(n²) in this array check:
+```python
+def has_dups(arr):
+    for i in arr:
+        if arr.count(i) > 1:
+            return True
+    return False
+```"
+
+6. "MySQL query is slow with WHERE clause on a varchar column. 
+What indexing strategies should I consider?"
+
+7. "TypeError when spreading nested objects. 
+What's happening with shallow vs deep copying here?"
+
+8. "Getting segmentation fault with char* array in C. 
+Here's my code: char* str = "hello"; str[0] = 'H'; 
+What's happening with string literals in memory?"
+
+9. "Python list comprehension vs generator expression performance : 
+[x*2 for x in range(1000)] vs (x*2 for x in range(1000)). When to use each?"
+
+10. "Java HashSet vs TreeSet implementation differences. 
+Getting unexpected order with: Set<Integer> nums = new HashSet<>();. 
+What's going on?"
+
+
+'arxiv/latex' domain
+
+1. 
+"\title{Quantum Error Mitigation in NISQ Devices}
+\begin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+$\mathcal{N}(\rho) = e^{-\lambda t}\rho$ 
+that provides a systematic way to ..."
+
+2.
+"\title{On Graph Persistence in Dynamic Networks}
+\begin{abstract}
+This paper introduces a new metric for measuring structural stability in weighted directed graphs under perturbations.
+\end{abstract}
+
+\section{Preliminaries}
+Consider a directed graph $G=(V,E)$ with weight function $w:E\to\mathbb{R}^+$. 
+The persistence measure $\mathcal{P}(G)$ quantifies stability under edge removals through:
+$\mathcal{P}(G) = \sum_{i,j} w_{ij}\log(d_{ij})$
+where $d_{ij}$ represents..."
+
+3.
+"\title{Convergence Properties of Gradient-Free Neural Architecture Search}
+\begin{abstract}
+We analyze the theoretical foundations of gradient-free neural architecture search (NAS) in deep learning.
+\end{abstract}
+\section{Problem Setup}
+Let $\mathcal{A}$ be the space of all possible architectures. 
+For each $a\in\mathcal{A}$, we define the performance measure $\mathcal{L}(a)$ as:
+$\mathcal{L}(a) = \mathbb{E}_{x\sim\mathcal{D}}[\ell(f_a(x), y)]$
+where $f_a$ represents..."
+
+4.
+"\title{Phase Transitions in Non-Equilibrium Statistical Systems}
+\begin{abstract}
+We identify novel scaling behavior in far-from-equilibrium statistical systems with long-range interactions.
+\end{abstract}
+
+\section{Main Results}
+Consider an ensemble of $N$ interacting particles described by coordinates $\{\sigma_i\}_{i=1}^N$. 
+The system's partition function $Z_N(\beta)$ demonstrates anomalous behavior:
+$Z_N(\beta) = \exp(-\beta N^{1+\alpha} + o(N))$
+where the exponent..."
+
+5.
+"\title{Adaptive Control in Robotic Systems with Unknown Dynamics}
+\begin{abstract}
+We present a novel hybrid impedance control framework for robotic systems operating under uncertain conditions.
+\end{abstract}
+\section{Controller Design}
+The proposed control law $u(t)$ combines position feedback with adaptive compensation:
+$u(t) = K_p(x_d - x) + B_v\dot{x} + f_{comp}(x,\dot{x})$
+Here, the compensation term $f_{comp}$ is structured to..."
+
+6.
+"\title{Stochastic Gene Expression in Cellular Networks}
+\begin{abstract}
+We develop a mathematical framework for analyzing noise-induced transitions in genetic regulatory networks at single-cell resolution.
+\end{abstract}
+\section{Model Development}
+The state of each gene $i$ in the network is described by concentration $x_i(t)$ evolving according to:
+$\frac{dx_i}{dt} = \alpha_i H(x_j) - \beta_i x_i + \eta_i(t)$
+where $H(x)$ is the Hill function and $\eta_i(t)$ 
+represents molecular noise with..."
+
+7.
+"\title{Topological Properties of Infinite-Dimensional Banach Spaces}
+\begin{abstract}
+We investigate a novel characterization of weak compactness in certain classes of Banach spaces through local geometric properties.
+\end{abstract}
+
+\section{Definitions and Setup}
+Let $X$ be a Banach space and $B_X$ its unit ball. We define the local geometric parameter $\gamma(X)$ as:
+$\gamma(X) = \sup_{x \in B_X} \inf_{Y \subset X} \text{dist}(x, \overline{\text{conv}}(Y))$
+where the supremum is taken over..."
+
+8.
+"\title{Non-Equilibrium Statistical Mechanics of Climate Systems}
+\begin{abstract}
+We develop a statistical mechanical approach to understanding extreme events in atmospheric dynamics.
+\end{abstract}
+
+\section{Model Construction}
+The probability distribution of atmospheric states evolves according to:
+$\frac{\partial P}{\partial t} = -\nabla \cdot (FP) + D\nabla^2P + \sum_i \lambda_i \mathcal{O}_i P$
+where $F$ represents the deterministic forcing and..."
+
+9.
+"\title{Information Flow in Complex Ecological Networks}
+\begin{abstract}
+We present an entropy-based framework for quantifying resilience in food webs and mutualistic networks.
+\end{abstract}
+\section{Network Analysis}
+Consider an ecological network with $n$ species. The information flow tensor $\mathcal{F}{ijk}$ captures three-way interactions:
+$\mathcal{F}{ijk} = \sum_{t=1}^T \log\left(\frac{p_{ijk}(t)}{p_i(t)p_j(t)p_k(t)}\right)$
+where $p_{ijk}(t)$ represents..."
+
+10.
+"\title{Geometric Flows on Manifolds with Boundary}
+\begin{abstract}
+We study the behavior of mean curvature flow on compact manifolds with non-smooth boundaries.
+\end{abstract}
+
+\section{Preliminary Results}
+Let $(M^n, g)$ be a Riemannian manifold with boundary $\partial M$. The flow is given by:
+$\frac{\partial X}{\partial t} = H(X)\nu + \lambda(X)\tau$
+where $H$ is the mean curvature, $\nu$ is the normal vector, and..."
+
+
+'english lit/books' domain
+
+1. "In the dim parlor of Blackwood Manor, Sarah traced her fingers across the leather-bound volumes, 
+each bearing the same curious inscription : 
+"For those who remember the winter of 1856." What puzzled her more than the matching dates was how every book, 
+regardless of its apparent age, carried the faint scent of fresh ink and..."
+
+2. "The last letter from Ernest arrived on a Tuesday, just as Marion had predicted. 
+Inside the envelope was not his familiar cursive, but a single photograph of the lighthouse where they first met. 
+On its reverse, three words were stamped in fading typescript: "Time moves differently..."..."
+
+3. "The bookshop on Cedar Street had a peculiar policy: customers could only enter on rainy days, 
+and no one was allowed to purchase the books displayed in the front window. 
+Mrs. Whitaker, who had owned the shop for forty years, 
+would simply smile when asked about these rules and say the books themselves insisted upon them. 
+It wasn't until the endless summer drought of 2024 that anyone understood why the rain was so essential to..."
+
+4. "Upon the moors of Thornfield Hall, in that bitter winter of 17--, 
+there came a peculiar circumstance which no member of the household could readily explain. 
+The master's portrait—hung these fifty years in the great hall—had begun to alter its countenance by candlelight, 
+and the servants whispered that on nights when the north wind howled across the heath, 
+the painted eyes would..."
+
+5. "Being a True and Faithful Account of the Curious Happenings at Blackbriar Abbey
+Anno Domini 1783
+Chapter the First
+Wherein is related how Miss Eleanor Blackwood, having inherited her uncle's vast library of forbidden texts, 
+came upon a volume bound in peculiar leather, its pages unmarked save for a single sentence, repeated thus: 
+"When the bells of St. Martin's toll thirteen times at midnight, she who reads these words shall..."
+
+6. "From the Private Journal of Rev. James Alderton
+September 15th, 1789
+It has become apparent that the ancient yew tree in the churchyard, 
+beneath which lie the graves of the -- family these three centuries past, 
+bears fruit in direct violation of its nature. 
+The berries, black as pitch and appearing only at midnight, 
+seem to whisper secrets of..."
+
+7. "Every morning, the AI therapy bot asked Dylan the same question: "What do you remember about yesterday?" 
+Every morning, Dylan's answer was different, though he was describing the same day. 
+The bot's developers said this was impossible—their memory tracking system was infallible. 
+But on day 47, the bot itself started giving different answers about what Dylan had said, 
+and that's when the glitch in reality began to..."
+
+8. "The last physical bookstore in the city didn't stock actual books—just QR codes you could scan to download them. 
+But in the back corner, behind a shelf of defunct e-readers, Claire found a real paper book. Its pages were blank until you bled on them, 
+and each reader saw a different story. 
+The owner said it had been returned seventeen times, each person insisting that what they read inside couldn't be true. 
+But when Claire took it home and tested it with a drop of blood, 
+the words that appeared were not a story but..."
+
+
+'poetry' domain
+
+1. "When twilight draws her velvet curtain nigh,
+And stars like scattered diamonds pierce the sky,
+The nightingale, whose song did oft take wing,
+Now perches silent, remembering
+How once in gardens fair and bright..."
+
+2. "In marble halls where ancient shadows dwell,
+Where kings and queens their solemn vigils keep,
+The crown that bore a kingdom's hopes did tell
+Of secrets locked in chambers dark and deep.
+Upon its golden rim, inscribed in light..."
+
+3. "we measure rainfall in memories now
+count droplets like endangered species
+my grandmother's garden is underwater
+but the roses still bloom, phosphorescent
+in depths where submarines chart
+the coordinates of lost cities, while above..."
+
+4. "Beneath these ancient stones of hallowed grey,
+Where time's slow fingers trace their patient way,
+The shadows of a thousand prayers still dwell,
+Each whispered hope a story yet to tell.
+Upon the crypt's dark walls, where legends sleep,
+A single shaft of light begins to..."
+
+5. "What mysteries dwell within thy silver'd face,
+That shows not mere reflection's common grace,
+But depths where shadows dance and secrets lie,
+Where truth and seeming truth do gently vie?
+For when she gazes deep into thy sheen,
+The lady glimpses what was never..."
