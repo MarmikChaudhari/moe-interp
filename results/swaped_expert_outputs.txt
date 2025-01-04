@@ -140,4 +140,50 @@ We first introduce the two-qubit gate and its gate-fidelity scaling.
 Since our goal is to mitigate the effects of decoherence, we need to quantify the amount of environmental noise.
 
 
-layer 
+all layers expert swapped (top 8 and bottom 8)
+
+\title{Quantum Error Mitigation in NISQ Devices}
+\begin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+$\mathcal{N}(\rho) = e^{-\lambda t}\rho$ 
+that provides a systematic way to
+
+reduce this.
+
+
+. We are proposing a scaling approach that introduces a new way to reduce environmental noise in quantum channels.
+a.
+
+’. ”.
+
+. ”.
+.
+.
+..
+
+..
+’.
+
+.
+
+..
+
+..
+
+..
+
+..
+
+..
+
+..
+
+. and their
+
+
+
