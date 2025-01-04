@@ -1,64 +1,18 @@
 'code/github' domain :
 
-1. "Fix this sorting bug :
-```python
-def sort(arr):
-    for i in range(len(arr)):
-        if arr[i] > arr[i+1]:
-            arr[i], arr[i+1] = arr[i+1], arr[i]
-    return arr
-```"
-
-2. "Why is my recursion stack overflowing?
-```python
-def fib(n):
-    return fib(n-1) + fib(n-2)
-```"
-
-3. "Getting undefined in this reduce:
-```javascript
-const sum = arr.reduce((a,b) => a+b)
-console.log(sum([1,2,3]))
-```"
-
-4. "Memory leak in this React code?
-```jsx
-useEffect(() => {
-    const timer = setInterval(fetch, 1000)
-}, [])
-```"
-
-5. "Fix O(n²) in this array check:
-```python
-def has_dups(arr):
-    for i in arr:
-        if arr.count(i) > 1:
-            return True
-    return False
-```"
-
-6. "MySQL query is slow with WHERE clause on a varchar column. 
-What indexing strategies should I consider?"
-
-7. "TypeError when spreading nested objects. 
-What's happening with shallow vs deep copying here?"
-
-8. "Getting segmentation fault with char* array in C. 
-Here's my code: char* str = "hello"; str[0] = 'H'; 
-What's happening with string literals in memory?"
-
-9. "Python list comprehension vs generator expression performance : 
-[x*2 for x in range(1000)] vs (x*2 for x in range(1000)). When to use each?"
-
-10. "Java HashSet vs TreeSet implementation differences. 
-Getting unexpected order with: Set<Integer> nums = new HashSet<>();. 
-What's going on?"
 
 
-'arxiv/latex' domain
 
-1. 
-"\title{Quantum Error Mitigation in NISQ Devices}
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+
+Original prompt :
+
+\title{Quantum Error Mitigation in NISQ Devices}
 \begin{abstract}
 We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
 Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
@@ -67,8 +21,83 @@ Our method introduces a scaling framework for quantum channels that preserves ga
 Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
 The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
 $\mathcal{N}(\rho) = e^{-\lambda t}\rho$ 
-that provides a systematic way to ..."
+that provides a systematic way to
 
+---------------------------------------------------------------------------------------------
+
+'arxiv/latex' domain
+
+1.\title{Information Flow in Complex Ecological Networks}
+\begin{abstract}
+We present an entropy-based framework for quantifying resilience in food webs and mutualistic networks.
+\end{abstract}
+\section{Network Analysis}
+Consider an ecological network with $n$ species. The information flow tensor $\mathcal{F}{ijk}$ captures three-way interactions:
+$\mathcal{F}{ijk} = \sum_{t=1}^T \log\left(\frac{p_{ijk}(t)}{p_i(t)p_j(t)p_k(t)}\right)$
+where $p_{ijk}(t)$ represents
+
+
+2. We performed a rigorous theoretical convergence analysis of the discrete
+dipole approximation (DDA). We prove that errors in any measured quantity are
+bounded by a sum of a linear and quadratic term in the size of a dipole d, when
+the latter is in the range of DDA applicability. Moreover, the linear term is
+significantly smaller for cubically than for non-cubically shaped scatterers.
+Therefore, for small d errors for cubically shaped particles are much smaller
+than for non-cubically shaped. The relative importance of the linear term
+decreases with increasing size, hence convergence of DDA for large enough
+scatterers is 
+
+solution : quadratic in the common range of d. Extensive numerical
+simulations were carried out for a wide range of d. Finally we discuss a number
+of new developments in DDA and their consequences for convergence.
+
+
+
+3. Escherichia coli is a motile bacterium that moves up a chemoattractant
+gradient by performing a biased random walk composed of alternating runs and
+tumbles. Previous models of run and tumble chemotaxis neglect one or more
+features of the motion, namely (i) a cell cannot directly detect a
+chemoattractant gradient but rather makes temporal comparisons of
+chemoattractant concentration, (ii) rather than being entirely random, tumbles
+exhibit persistence of direction, meaning that the new direction after a tumble
+is more likely to be in the forward hemisphere, and (iii) rotational Brownian
+motion makes it impossible for an E. coli cell to swim in a straight line
+during a run. This paper presents an analytic calculation of the chemotactic
+drift velocity taking account of (i), (ii) and (iii), for weak chemotaxis. The
+analytic results are verified by Monte Carlo simulation. The results reveal a
+
+
+solution : synergy between temporal comparisons and persistence that enhances the drift
+velocity, while rotational Brownian motion reduces the drift velocity.
+
+
+4. \title{Phase Transitions in Non-Equilibrium Statistical Systems}
+\begin{abstract}
+We identify novel scaling behavior in far-from-equilibrium statistical systems with long-range interactions.
+\end{abstract}
+
+\section{Main Results}
+Consider an ensemble of $N$ interacting particles described by coordinates $\{\sigma_i\}_{i=1}^N$. 
+The system's partition function $Z_N(\beta)$ demonstrates anomalous behavior:
+$Z_N(\beta) = \exp(-\beta N^{1+\alpha} + o(N))$
+where the exponent
+
+
+5. \title{Topological Properties of Infinite-Dimensional Banach Spaces}
+\begin{abstract}
+We investigate a novel characterization of weak compactness in certain classes of Banach spaces through local geometric properties.
+\end{abstract}
+
+\section{Definitions and Setup}
+Let $X$ be a Banach space and $B_X$ its unit ball. We define the local geometric parameter $\gamma(X)$ as:
+$\gamma(X) = \sup_{x \in B_X} \inf_{Y \subset X} \text{dist}(x, \overline{\text{conv}}(Y))$
+where the supremum is taken over
+
+
+
+
+
+---------------------------------------------------------------------------------------------
 2.
 "\title{On Graph Persistence in Dynamic Networks}
 \begin{abstract}
@@ -79,7 +108,7 @@ This paper introduces a new metric for measuring structural stability in weighte
 Consider a directed graph $G=(V,E)$ with weight function $w:E\to\mathbb{R}^+$. 
 The persistence measure $\mathcal{P}(G)$ quantifies stability under edge removals through:
 $\mathcal{P}(G) = \sum_{i,j} w_{ij}\log(d_{ij})$
-where $d_{ij}$ represents..."
+where $d_{ij}$ represents"
 
 3.
 "\title{Convergence Properties of Gradient-Free Neural Architecture Search}
@@ -147,15 +176,7 @@ The probability distribution of atmospheric states evolves according to:
 $\frac{\partial P}{\partial t} = -\nabla \cdot (FP) + D\nabla^2P + \sum_i \lambda_i \mathcal{O}_i P$
 where $F$ represents the deterministic forcing and..."
 
-9.
-"\title{Information Flow in Complex Ecological Networks}
-\begin{abstract}
-We present an entropy-based framework for quantifying resilience in food webs and mutualistic networks.
-\end{abstract}
-\section{Network Analysis}
-Consider an ecological network with $n$ species. The information flow tensor $\mathcal{F}{ijk}$ captures three-way interactions:
-$\mathcal{F}{ijk} = \sum_{t=1}^T \log\left(\frac{p_{ijk}(t)}{p_i(t)p_j(t)p_k(t)}\right)$
-where $p_{ijk}(t)$ represents..."
+
 
 10.
 "\title{Geometric Flows on Manifolds with Boundary}
@@ -167,6 +188,8 @@ We study the behavior of mean curvature flow on compact manifolds with non-smoot
 Let $(M^n, g)$ be a Riemannian manifold with boundary $\partial M$. The flow is given by:
 $\frac{\partial X}{\partial t} = H(X)\nu + \lambda(X)\tau$
 where $H$ is the mean curvature, $\nu$ is the normal vector, and..."
+
+---------------------------------------------------------------------------------------------
 
 
 'english lit/books' domain
