@@ -1,5 +1,16 @@
 code prompts picked from HumanEval dataset
 
+instruction prompt : You will be given Python programming problems where the requirements are clearly specified in the function's docstring. 
+Your task is to complete the function implementation strictly according to the requirements and test cases provided in the docstring. You must:
+
+1. Only generate the function implementation code
+2. Do not add any explanations, comments, or additional test cases
+3. Do not modify the function signature or docstring
+4. Do not include any print statements or debugging code
+5. Return exactly what the docstring specifies
+
+Your response should contain nothing but the working code implementation.
+
 Prompt 1 :
 
 from typing import List
