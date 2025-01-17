@@ -1,0 +1,515 @@
+```python
+def add_numbers(a, b):
+    # Add two numbers and return the result
+    return a + b
+```
+
+```javascript
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+```
+
+```java
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+```
+
+```python
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Pop from empty stack")
+        return self.stack.pop()
+
+    def is_empty(self):
+        return len(self.stack) == 0
+```
+
+```c++
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+
+```python
+for i in range(10):
+    if i % 2 == 0:
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+```
+
+```python
+import numpy as np
+
+data = np.array([1, 2, 3, 4, 5])
+mean = np.mean(data)
+print(f"Mean of the data: {mean}")
+```
+
+```sql
+SELECT name, age FROM users WHERE age > 30 ORDER BY age DESC;
+```
+
+```python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+```
+
+```c
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+```
+
+```python
+# This function checks if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+
+```javascript
+/*
+    This is a multi-line comment explaining
+    the logic behind the merge function.
+*/
+function mergeArrays(arr1, arr2) {
+    return [...arr1, ...arr2].sort((a, b) => a - b);
+}
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+    <h1>Welcome to the Sample Page</h1>
+    <p>This is a paragraph of text.</p>
+</body>
+</html>
+```
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35]
+})
+
+print(df[df['Age'] > 30])
+```
+
+```python
+def incomplete_function(a, b):
+    if a > b:
+        return
+```
+
+```javascript
+function calculateSum(a, b) {
+    if (a > b) {
+        // Code to be added
+    }
+```
+
+
+```
+func mockStruct(v reflect.Value, isKeep, isRecurse bool) interface{} {
+	result := map[string]interface{}{}
+	for i := 0; i < v.NumField(); i++ {
+		fieldValue := v.Field(i)
+		fieldType := v.Type().Field(i)
+		if fieldType.PkgPath == "" { // 只处理导出的字段
+			key := structFieldName(fieldType, "json")
+			var val interface{}
+			if isRecurse {
+				val = mockAny(reflect.New(fieldType.Type), isKeep)
+			} else {
+				val = DeepElemValue(fieldValue).Interface()
+			}
+			result[key] = val
+		}
+	}
+	if len(result) == 0 {
+		return v.Interface()
+	}
+	return result
+}
+```
+
+```
+def adjoint_matrix(i_T_j):
+
+    i_p_j = numpy.linalg.inv(i_T_j)[:3, 3] # raw column
+    i_R_j = i_T_j[:3, :3]
+    Ad = numpy.zeros((6,6))
+    Ad[:3,:3] = i_R_j
+    Ad[3:,3:] = i_R_j
+    Ad[:3,3:] = -numpy.dot(i_R_j,S_matrix(i_p_j))
+
+    return Ad
+```
+
+```
+int binarySearch(vector<int>& arr, int target) {
+    int left = 0, right = arr.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+```
+
+```
+function factorial(n) {
+    return n <= 1 ? 1 : n * factorial(n - 1);
+}
+```
+
+
+```python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return True
+    return False```
+
+
+```javascript
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => func(...args);
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}```
+
+```java
+public class TreeNode<T> {
+    private T value;
+    private List<TreeNode<T>> children;
+    
+    public void addChild(T value) {
+        TreeNode<T> child = new TreeNode<>(value);
+        children.add(child);
+    }
+}```
+
+```python
+class LRUCache:
+    def __init__(self, capacity):
+        self.cache = OrderedDict()
+        self.capacity = capacity
+    
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]```
+
+```sql
+WITH RankedProducts AS (
+    SELECT 
+        category_id,
+        product_name,
+        price,
+        ROW_NUMBER() OVER (PARTITION BY category_id ORDER BY price DESC) as rank
+    FROM products
+)
+SELECT * FROM RankedProducts WHERE rank <= 3;```
+
+```javascript
+class EventEmitter {
+    constructor() {
+        this.events = new Map();
+    }
+    
+    on(event, callback) {
+        if (!this.events.has(event)) {
+            this.events.set(event, []);
+        }
+        this.events.get(event).push(callback);
+    }
+}```
+
+```python
+@dataclass
+class DataPoint:
+    timestamp: datetime
+    value: float
+    confidence: float
+    
+    def is_valid(self) -> bool:
+        return self.confidence > 0.8 and self.value != float('nan')```
+
+```cpp
+template<typename T>
+class CircularBuffer {
+private:
+    vector<T> buffer;
+    size_t head = 0, tail = 0;
+    bool full = false;
+    
+public:
+    void push(T item) {
+        buffer[head] = item;
+        head = (head + 1) % buffer.size();
+    }
+};```
+
+```javascript
+async function fetchWithRetry(url, options = {}, maxRetries = 3) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            const response = await fetch(url, options);
+            return response.json();
+        } catch (error) {
+            if (i === maxRetries - 1) throw error;
+            await new Promise(r => setTimeout(r, 1000 * Math.pow(2, i)));
+        }
+    }
+}```
+
+```python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```
+
+
+```python
+def process_pipeline(data: List[Dict]) -> Generator:
+    for item in data:
+        if item['status'] == 'valid':
+            yield transform_data(item)
+            continue
+        logging.warning(f"Skipping invalid item: {item['id']}")```
+
+
+```typescript
+interface CacheStrategy<T> {
+    get(key: string): Promise<T | null>;
+    set(key: string, value: T): Promise<void>;
+    delete(key: string): Promise<boolean>;
+}
+
+class RedisCache<T> implements CacheStrategy<T> {
+    private client: Redis;
+    constructor(config: RedisConfig) {
+        this.client = new Redis(config);
+    }
+}```
+
+
+```sql
+WITH RECURSIVE Hierarchy AS (
+    SELECT id, parent_id, name, 1 as level
+    FROM categories
+    WHERE parent_id IS NULL
+    UNION ALL
+    SELECT c.id, c.parent_id, c.name, h.level + 1
+    FROM categories c
+    JOIN Hierarchy h ON c.parent_id = h.id
+)
+SELECT * FROM Hierarchy ORDER BY level, name;```
+
+```javascript
+class StateManager {
+    #states = new Map();
+    #listeners = new Set();
+    
+    dispatch(action) {
+        const newState = this.reducer(this.#states.get('current'), action);
+        this.#states.set('current', newState);
+        this.#listeners.forEach(listener => listener(newState));
+    }
+}```
+
+```python
+@contextmanager
+def temporary_file(content: str, mode: str = 'w+') -> Generator:
+    temp_path = None
+    try:
+        temp_fd, temp_path = mkstemp(text=True)
+        with open(temp_fd, mode) as f:
+            f.write(content)
+        yield temp_path
+    finally:
+        if temp_path:
+            os.remove(temp_path)```
+
+```java
+public class RateLimiter {
+    private final Map<String, Deque<Long>> requests = new HashMap<>();
+    private final int windowSize;
+    private final long timeUnit;
+    
+    public boolean isAllowed(String clientId) {
+        long currentTime = System.currentTimeMillis();
+        Deque<Long> window = requests.computeIfAbsent(clientId, k -> new LinkedList<>());
+        window.removeIf(timestamp -> currentTime - timestamp > timeUnit);
+        return window.size() < windowSize;
+    }
+}```
+
+```cpp
+template<typename T>
+class ThreadSafeQueue {
+    queue<T> q;
+    mutable mutex m;
+    condition_variable c;
+    
+public:
+    void push(T item) {
+        lock_guard<mutex> lock(m);
+        q.push(move(item));
+        c.notify_one();
+    }
+}```
+
+```python
+class GraphQLResolver:
+    def __init__(self, schema: Schema):
+        self.schema = schema
+        self.resolvers = {}
+    
+    async def resolve(self, query: str) -> Dict:
+        parsed = parse_query(query)
+        return await self._resolve_node(parsed.root)```
+
+```javascript
+function createVirtualDOM(element) {
+    if (typeof element === 'string') {
+        return document.createTextNode(element);
+    }
+    
+    const $el = document.createElement(element.type);
+    element.props.children.forEach(child => 
+        $el.appendChild(createVirtualDOM(child))
+    );
+    return $el;
+}```
+
+```python
+def memoize(func):
+    cache = {}
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        key = str(args) + str(kwargs)
+        if key not in cache:
+            cache[key] = func(*args, **kwargs)
+        return cache[key]
+    return wrapper```
+
+
+```rust
+impl<T> BinaryHeap<T> where T: Ord {
+    pub fn push(&mut self, item: T) {
+        self.data.push(item);
+        let len = self.data.len();
+        self.sift_up(0, len - 1);
+    }
+}```
+
+```python
+async def stream_processor(queue: AsyncQueue):
+    async with aiohttp.ClientSession() as session:
+        while True:
+            item = await queue.get()
+            try:
+                await process_item(session, item)
+            finally:
+                queue.task_done()```
+
+```javascript
+class Observable {
+    constructor(subscribe) {
+        this._subscribe = subscribe;
+    }
+    
+    pipe(...operators) {
+        return operators.reduce(
+            (source, operator) => operator(source),
+            this
+        );
+    }
+}```
+
+
+```python
+def validate_schema(data: Dict, schema: Dict) -> bool:
+    if not isinstance(data, type(schema)):
+        return False
+    return all(
+        validate_schema(data[k], v)
+        for k, v in schema.items()
+        if k in data
+    )
+```
+
+
+```typescript
+type DeepPartial<T> = {
+    [P in keyof T]?: T[P] extends object
+        ? DeepPartial<T[P]>
+        : T[P]
+};
+
+function merge<T>(target: T, source: DeepPartial<T>): T {
+    return mergeWith({}, target, source);
+}
+```

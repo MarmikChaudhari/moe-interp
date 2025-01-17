@@ -1,0 +1,362 @@
+GITHUB
+
+1. "Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```"
+
+ORIGINAL OUTPUT 1
+
+Generated response: 
+    Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+#### Solution
+```python
+def sort(arr):
+    arr.sort()
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+#### Time Complexity
+* O(n log n)
+
+#### Space Complexity
+* O(1)
+
+ORIGINAL OUTPUT 2
+
+Generated response: 
+    Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+## 6.4.8 Binary Search
+
+Binary Search makes use of the fact that if the sequence is sorted, all of the elements of interest can be found near the middle of the list.
+
+Example :
+```python
+def binarySearch(arr, val):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) / 2
+        if arr[mid] == val:
+
+SWAPPED: Layer 0 -> Experts 11 and 26
+
+OUTPUT 1:
+
+Generated response: 
+    Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+### 2.5.6.3.4.1.2.1
+
+#### 2.5.6.3.4.1.2.1.1
+
+##### 2.5.6.3.4.1.2.1.1.1
+
+```python
+import math
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n*factorial(n-1
+
+OUTPUT 2:
+
+Generated response: 
+    Fix this sorting bug :
+```python
+def sort(arr):
+    for i in range(len(arr)):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
+```
+
+## 三、 数组排序
+
+### 1. 快速排序
+
+```python
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    pivot = arr[len(arr)//2]  # 遍历前n次，最后找到的位置
+    pivot_index = partition(arr, pivot)
+    return quick
+
+
+
+
+
+
+2. "Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```"
+
+ORIGINAL OUTPUT 1
+
+Generated response: 
+Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```
+
+```
+def fib(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+```
+
+Why does this work?
+```python
+def fib(n):
+    return n if n in (0, 1) else fib(n-1) + fib(n-2)
+```
+
+Why is this better?
+```python
+
+ORIGINAL OUTPUT 2
+
+Generated response: 
+Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```
+
+### Recursion
+- What is recursion?
+- Can you give me examples of recursion in math or science?
+- Give me an example of a recursive algorithm.
+- What is the difference between recursion and iteration?
+- When would you use recursion instead of iteration?
+- Recursion is when you call the function from within itself. Iteration is when you call the function and it executes the instructions.
+
+### Recursion vs Iteration
+
+|Rec
+
+SWAPPED: Layer 0 -> Experts 11 and 26
+
+OUTPUT 1
+
+Generated response: 
+Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```
+
+When `n` is small, `fib` is called recursively many times to
+produce the fibonacci sequence. Each recursive call increases the
+size of the recursion stack. As `n` gets bigger, the recursion stack
+overflows. When the recursion stack overflows, the program crashes.
+
+How can we fix this?
+
+```python
+def fib(n):
+    if n < 2:
+        return 1
+    return fib(n-
+
+OUTPUT 2
+
+Generated response: 
+Why is my recursion stack overflowing?
+```python
+def fib(n):
+    return fib(n-1) + fib(n-2)
+```
+
+## Recursion and Time Complexity
+
+`Time Complexity` refers to the number of operations done by an algorithm in a given amount of time (typically seconds)
+
+`Space Complexity` refers to the amount of memory/storage space used by an algorithm
+
+## Examples
+
+|    | Complexity |
+| --- | --------- |
+| Fibonacci | `O(n)` |
+| Sorting | `O(n log n)`
+
+
+
+
+ARXIV
+
+1. 
+"\title{Quantum Error Mitigation in NISQ Devices}
+\begin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+$\mathcal{N}(\rho) = e^{-\lambda t}\rho$ 
+that provides a systematic way to ..."
+
+ORIGINAL OUTPUT 1
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+\par\end{document}
+
+ORIGINAL OUTPUT 2
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+
+SWAPPED: Layer 0 -> Experts 14 and 0
+
+OUTPUT 1
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Keywords} & \textbf{Quantum Error Mitigation NISQ}\\
+\toprule
+\textbf{Motivation} & \textbf{Noisy intermediate-scale quantum (NISQ) devices}\\
+\toprule
+\textbf{Objective} & \textbf{Reduce errors in quantum circuits}\\
+\toprule
+\textbf{Approach
+
+OUTPUT 2
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{figure1.pdf}
+		\caption{The scaling framework for error mitigation. $\mathcal{N}(
+			ho) = e^{-\lambda t}ho$ 
+			where $t$ is the duration of a single operation and $\lambda$ is a scaling factor. 
+			This framework is robust against noise on all gates,
+
+ADDITIONAL SWAP -> Layer 0 Experts 34 and 49
+
+OUTPUT 1
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+
+\section{Experiments and Results}
+We demonstrate the effectiveness of our method for a wide range of gate-based operations. The results are reported in Table 1.
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  Operation & $\mathcal{N}(ho)$ & $t$ & $\sigma_E$ &  $t$ & $\sigma_
+
+
+OUTPUT 2
+
+Generated response: 
+	itle{Quantum Error Mitigation in NISQ Devices}
+egin{abstract}
+We present a novel approach to error mitigation in noisy intermediate-scale quantum (NISQ) devices. 
+Our method introduces a scaling framework for quantum channels that preserves gate fidelity while reducing environmental noise.
+\end{abstract}
+\section{Introduction}
+Recent advances in NISQ devices have demonstrated both promise and limitations in quantum computation. 
+The primary challenge remains decoherence, which introduces errors in quantum operations. We propose a channel scaling approach 
+ho$ = e^{-\lambda t}
+that provides a systematic way to...
+\end{document}
