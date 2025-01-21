@@ -437,4 +437,508 @@ type DeepPartial<T> = {
 function merge<T>(target: T, source: DeepPartial<T>): T {
     return mergeWith({}, target, source);
 }
-```
+```python
+# Python: Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```javascript
+// JavaScript: Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+```java
+// Java: Bubble Sort
+public class Sorter {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+```c++
+// C++: Linear Search
+int linearSearch(vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```html
+<!-- HTML: Contact Form -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <form action="/submit_contact" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+```sql
+-- SQL: Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+```typescript
+// TypeScript: Interface with Optional Properties
+interface Product {
+    id: number;
+    name: string;
+    description?: string;
+    price: number;
+}
+```python
+# Python: Palindrome Check
+def is_palindrome(s):
+    return s == s[::-1]
+```javascript
+// JavaScript: Generate Random String
+function randomString(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+```c
+// C: Count Characters in String
+#include <stdio.h>
+#include <string.h>
+
+int countChars(char* str, char ch) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ch) count++;
+    }
+    return count;
+}
+```python
+# Python: Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```javascript
+// JavaScript: Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+```java
+// Java: Bubble Sort
+public class Sorter {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+```c++
+// C++: Linear Search
+int linearSearch(vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```html
+<!-- HTML: Contact Form -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <form action="/submit_contact" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+```sql
+-- SQL: Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+```typescript
+// TypeScript: Interface with Optional Properties
+interface Product {
+    id: number;
+    name: string;
+    description?: string;
+    price: number;
+}
+```python
+# Python: Palindrome Check
+def is_palindrome(s):
+    return s == s[::-1]
+```javascript
+// JavaScript: Generate Random String
+function randomString(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+```c
+// C: Count Characters in String
+#include <stdio.h>
+#include <string.h>
+
+int countChars(char* str, char ch) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ch) count++;
+    }
+    return count;
+}
+```python
+# Python: Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```javascript
+// JavaScript: Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+```java
+// Java: Bubble Sort
+public class Sorter {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+```c++
+// C++: Linear Search
+int linearSearch(vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```html
+<!-- HTML: Contact Form -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <form action="/submit_contact" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+```sql
+-- SQL: Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+```typescript
+// TypeScript: Interface with Optional Properties
+interface Product {
+    id: number;
+    name: string;
+    description?: string;
+    price: number;
+}
+```python
+# Python: Palindrome Check
+def is_palindrome(s):
+    return s == s[::-1]
+```javascript
+// JavaScript: Generate Random String
+function randomString(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+```c
+// C: Count Characters in String
+#include <stdio.h>
+#include <string.h>
+
+int countChars(char* str, char ch) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ch) count++;
+    }
+    return count;
+}
+```python
+# Python: Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```javascript
+// JavaScript: Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+```java
+// Java: Bubble Sort
+public class Sorter {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+```c++
+// C++: Linear Search
+int linearSearch(vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```html
+<!-- HTML: Contact Form -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <form action="/submit_contact" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+```sql
+-- SQL: Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+```typescript
+// TypeScript: Interface with Optional Properties
+interface Product {
+    id: number;
+    name: string;
+    description?: string;
+    price: number;
+}
+```python
+# Python: Palindrome Check
+def is_palindrome(s):
+    return s == s[::-1]
+```javascript
+// JavaScript: Generate Random String
+function randomString(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+```c
+// C: Count Characters in String
+#include <stdio.h>
+#include <string.h>
+
+int countChars(char* str, char ch) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ch) count++;
+    }
+    return count;
+}
+```python
+# Python: Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+```javascript
+// JavaScript: Debounce Function
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+```java
+// Java: Bubble Sort
+public class Sorter {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+```c++
+// C++: Linear Search
+int linearSearch(vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+```html
+<!-- HTML: Contact Form -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <form action="/submit_contact" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
+```sql
+-- SQL: Create Table
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+```typescript
+// TypeScript: Interface with Optional Properties
+interface Product {
+    id: number;
+    name: string;
+    description?: string;
+    price: number;
+}
+```python
+# Python: Palindrome Check
+def is_palindrome(s):
+    return s == s[::-1]
+```javascript
+// JavaScript: Generate Random String
+function randomString(length) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+```c
+// C: Count Characters in String
+#include <stdio.h>
+#include <string.h>
+
+int countChars(char* str, char ch) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ch) count++;
+    }
+    return count;
+}
