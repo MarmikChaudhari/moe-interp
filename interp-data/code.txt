@@ -1907,17 +1907,6 @@ type
     FRadius: Double;
   public
     constructor Create(AColor: string; ARadius: Double
-```prolog
-% Prolog: Logic Programming
-ancestor(X, Y) :- parent(X, Y).
-ancestor(X, Y) :- 
-    parent(X, Z),
-    ancestor(Z, Y).
-
-parent(john, mary).
-parent(mary, anne).
-
-% Query
 ```racket
 #lang racket
 ; Racket: Macro System
@@ -1940,14 +1929,6 @@ async fn process_data(data: Vec<u8>) -> Result<String, Error> {
         .await?;
         
     Ok(resp
-```smalltalk
-"Smalltalk: Message Passing"
-Object subclass: #Counter
-    instanceVariableNames: 'count'
-    classVariableNames: ''
-    package: 'MyCounter'
-
-Counter>>increment
 ```scala
 // Scala: Type Classes
 trait Showable[A] {
