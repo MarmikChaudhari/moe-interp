@@ -942,3 +942,1016 @@ int countChars(char* str, char ch) {
     }
     return count;
 }
+```python
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+```rust
+// Rust: Binary Tree Node
+struct Node<T> {
+    value: T,
+    left: Option<Box<Node<T>>>,
+    right: Option<Box<Node<T>>>
+}
+
+impl<T> Node<T> {
+    fn new(value: T) -> Self {
+        Node {
+            value,
+            left: None,
+            right: None
+        }
+    }
+}
+```go
+// Go: Worker Pool
+func worker(id int, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        fmt.Printf("worker %d processing job %d\n", id, j)
+        time.Sleep(time.Second)
+        results <- j * 2
+    }
+}
+```kotlin
+// Kotlin: Data Class with Extension Function
+data class Person(
+    val name: String,
+    val age: Int
+)
+
+fun Person.isAdult(): Boolean = age >= 18
+```ruby
+# Ruby: Fibonacci Generator
+def fibonacci(n)
+  return n if n <= 1
+  fib = [0, 1]
+  (2..n).each do |i|
+    fib[i] = fib[i-1] + fib[i-2]
+  end
+  fib[n]
+end
+```scala
+// Scala: Pattern Matching
+def describe(x: Any) = x match {
+  case i: Int if i > 0 => "positive number"
+  case i: Int if i < 0 => "negative number"
+  case 0 => "zero"
+  case s: String => s"string: $s"
+  case _ => "something else"
+}
+```php
+// PHP: Array Filter
+function filterEven($array) {
+    return array_filter($array, function($num) {
+        return $num % 2 === 0;
+    });
+}
+```typescript
+// TypeScript: Generic Queue
+class Queue<T> {
+    private items: T[] = [];
+    
+    enqueue(item: T): void {
+        this.items.push(item);
+    }
+    
+    dequeue(): T | undefined {
+        return this.items.shift();
+    }
+}
+```swift
+// Swift: Protocol with Extension
+protocol Vehicle {
+    var numberOfWheels: Int { get }
+    func start()
+}
+
+extension Vehicle {
+    func describe() -> String {
+        return "This vehicle has \(numberOfWheels) wheels"
+    }
+}
+```perl
+# Perl: Text Processing
+sub count_words {
+    my $text = shift;
+    my %word_count;
+    foreach my $word (split /\s+/, $text) {
+        $word_count{lc($word)}++;
+    }
+    return \%word_count;
+}
+```r
+# R: Data Frame Operations
+calculate_stats <- function(data) {
+    result <- data.frame(
+        mean = apply(data, 2, mean),
+        sd = apply(data, 2, sd),
+        median = apply(data, 2, median)
+    )
+    return(result)
+}
+```haskell
+-- Haskell: List Comprehension
+quicksort :: Ord a => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) = 
+    quicksort [y | y <- xs, y <= x] ++
+    [x] ++
+    quicksort [y | y <- xs, y > x]
+```elixir
+# Elixir: Pipeline Operator
+defmodule StringTransform do
+  def process(text) do
+    text
+    |> String.downcase()
+    |> String.split()
+    |> Enum.uniq()
+    |> Enum.join(" ")
+  end
+end
+```lua
+-- Lua: Coroutine Example
+function producer()
+    for i = 1, 5 do
+        coroutine.yield(i * i)
+    end
+end
+
+co = coroutine.create(producer)
+```dart
+// Dart: Future and Async
+Future<List<String>> fetchData() async {
+  try {
+    final response = await http.get(Uri.parse('https://api.example.com/data'));
+    return jsonDecode(response.body);
+  } catch (e) {
+    return [];
+  }
+}
+```groovy
+// Groovy: Builder Pattern
+def xml = new MarkupBuilder()
+xml.records {
+    record(id: 1) {
+        name 'John'
+        age 30
+    }
+}
+```julia
+# Julia: Matrix Operations
+function matrix_operations(A::Matrix)
+    eigenvalues = eigvals(A)
+    determinant = det(A)
+    inverse = inv(A)
+    return eigenvalues, determinant, inverse
+end
+```python
+# Python: Context Manager
+class DatabaseConnection:
+    def __enter__(self):
+        self.conn = connect_to_db()
+        return self.conn
+        
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.conn.close()
+```javascript
+// JavaScript: Promise Chain
+function processData(data) {
+    return Promise.resolve(data)
+        .then(validate)
+        .then(transform)
+        .then(save)
+        .catch(handleError);
+}
+```c#
+// C#: LINQ Query
+var result = from p in people
+            where p.Age > 18
+            group p by p.City into g
+            select new {
+                City = g.Key,
+                Count = g.Count()
+            };
+```java
+// Java: Stream API
+List<Integer> result = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .map(n -> n * 2)
+    .collect(Collectors.toList());
+```ruby
+# Ruby: Metaprogramming
+class String
+  def method_missing(method_name)
+    self.send(method_name.to_s.gsub('to_', ''))
+  rescue NoMethodError
+    super
+  end
+end
+```python
+# Python: Decorator Pattern
+def memoize(func):
+    cache = {}
+    def wrapper(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return wrapper
+```cpp
+// C++: Template Metaprogramming
+template<unsigned n>
+struct Factorial {
+    static const unsigned value = n * Factorial<n-1>::value;
+};
+
+template<>
+struct Factorial<0> {
+    static const unsigned value = 1;
+};
+```rust
+// Rust: Error Handling
+fn divide(a: i32, b: i32) -> Result<i32, String> {
+    if b == 0 {
+        Err(String::from("Division by zero"))
+    } else {
+        Ok(a / b)
+    }
+}
+```go
+// Go: Concurrent Map
+type ConcurrentMap struct {
+    sync.RWMutex
+    items map[string]interface{}
+}
+
+func (m *ConcurrentMap) Set(key string, value interface{}) {
+    m.Lock()
+    defer m.Unlock()
+    m.items[key] = value
+}
+```kotlin
+// Kotlin: Sealed Class
+sealed class Result<out T> {
+    data class Success<T>(val data: T) : Result<T>()
+    data class Error(val message: String) : Result<Nothing>()
+    object Loading : Result<Nothing>()
+}
+```scala
+// Scala: Implicit Conversion
+implicit class StringOps(s: String) {
+    def toIntOption: Option[Int] = {
+        try {
+            Some(s.toInt)
+        } catch {
+            case _: NumberFormatException => None
+        }
+    }
+}
+```typescript
+// TypeScript: Decorator
+function log(target: any, propertyKey: string) {
+    let value = target[propertyKey];
+    
+    const getter = () => {
+        console.log(`Getting: ${propertyKey}`);
+        return value;
+    };
+    
+    const setter = (newVal: any) => {
+        console.log(`Setting: ${propertyKey} = ${newVal}`);
+        value = newVal;
+    };
+    
+    Object.defineProperty(target, propertyKey, {
+        get: getter,
+        set: setter,
+        enumerable: true,
+        configurable: true
+    });
+}
+```elixir
+# Elixir: GenServer
+defmodule Counter do
+  use GenServer
+  
+  def init(init_val) do
+    {:ok, init_val}
+  end
+  
+  def handle_call(:increment, _from, state) do
+    {:reply, state + 1, state + 1}
+  end
+end
+```swift
+// Swift: Result Type
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
+func fetchData() -> Result<Data, NetworkError> {
+    // Implementation
+}
+```perl
+# Perl: Regular Expression
+sub extract_emails {
+    my $text = shift;
+    my @emails = $text =~ /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+    return \@emails;
+}
+```r
+# R: ggplot2 Visualization
+create_plot <- function(data) {
+    ggplot(data, aes(x = x, y = y)) +
+        geom_point() +
+        geom_smooth(method = "lm") +
+        theme_minimal() +
+        labs(title = "Scatter Plot with Trend Line")
+}
+```haskell
+-- Haskell: Monad Example
+data Maybe a = Nothing | Just a
+
+instance Monad Maybe where
+    return x = Just x
+    Nothing >>= f = Nothing
+    (Just x) >>= f = f x
+```python
+# Python: Asynchronous Context Manager
+class AsyncResource:
+    async def __aenter__(self):
+        await self.open()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.close()
+```clojure
+;; Clojure: Higher-order Functions
+(defn compose [f g]
+  (fn [x]
+    (f (g x))))
+
+(def square-then-inc
+  (compose inc #(* % %)))
+```f#
+// F#: Pattern Matching with Active Patterns
+let (|Even|Odd|) n = 
+    if n % 2 = 0 then Even else Odd
+
+let describe = function
+    | Even -> "even number"
+    | Odd -> "odd number"
+```erlang
+% Erlang: Actor Model
+-module(calculator).
+-export([start/0, add/2]).
+
+start() ->
+    spawn(fun() -> loop() end).
+
+loop() ->
+    receive
+        {From, {add, A, B}} ->
+            From ! {result, A + B},
+            loop()
+    end.
+```ocaml
+(* OCaml: Algebraic Data Types *)
+type shape =
+  | Circle of float
+  | Rectangle of float * float
+  | Triangle of float * float * float
+
+let area = function
+  | Circle r -> 3.14159 *. r *. r
+  | Rectangle (w, h) -> w *. h
+  | Triangle (a, b, c) -> 
+      let s = (a +. b +. c) /. 2.0 in
+      sqrt (s *. (s -. a) *. (s -. b) *. (s -. c))
+```nim
+# Nim: Macros
+macro debug(n: varargs[untyped]): untyped =
+  result = newNimNode(nnkStmtList)
+  for i in 0..n.len-1:
+    result.add(newCall("echo", newLit(n[i].repr), newLit(" = "), n[i]))
+```crystal
+# Crystal: Channel Communication
+channel = Channel(Int32).new
+
+spawn do
+  5.times do |i|
+    channel.send(i)
+  end
+end
+
+5.times do
+  received = channel.receive
+  puts received
+end
+```d
+// D: Template Constraints
+T[][] transpose(T)(T[][] matrix)
+if (isNumeric!T)
+{
+    auto result = new T[][](matrix[0].length, matrix.length);
+    foreach (i; 0..matrix.length)
+        foreach (j; 0..matrix[0].length)
+            result[j][i] = matrix[i][j];
+    return result;
+}
+```elm
+-- Elm: Type Aliases and Records
+type alias User =
+    { name : String
+    , age : Int
+    , email : Maybe String
+    }
+
+updateEmail : String -> User -> User
+updateEmail newEmail user =
+    { user | email = Just newEmail }
+```zig
+// Zig: Error Union Type
+fn readNumber(str: []const u8) !u32 {
+    var num: u32 = 0;
+    for (str) |c| {
+        if (c < '0' or c > '9') {
+            return error.InvalidChar;
+        }
+        num = num * 10 + (c - '0');
+    }
+    return num;
+}
+```julia
+# Julia: Multiple Dispatch
+struct Point
+    x::Float64
+    y::Float64
+end
+
+struct Circle
+    center::Point
+    radius::Float64
+end
+
+function distance(p1::Point, p2::Point)
+    sqrt((p1.x - p2.x)^2 + (p1.y - p2.y)^2)
+end
+
+function contains(c::Circle, p::Point)
+    distance(c.center, p) <= c.radius
+end
+```prolog
+% Prolog: Logic Programming
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- 
+    parent(X, Z),
+    ancestor(Z, Y).
+
+parent(john, mary).
+parent(mary, tom).
+```lua
+-- Lua: Metatables
+local mt = {
+    __add = function(a, b)
+        return setmetatable({
+            x = a.x + b.x,
+            y = a.y + b.y
+        }, mt)
+    end,
+    __tostring = function(v)
+        return string.format("(%d, %d)", v.x, v.y)
+    end
+}
+```racket
+#lang racket
+; Racket: Macro Definition
+(define-syntax-rule (while condition body ...)
+  (let loop ()
+    (when condition
+      body ...
+      (loop))))
+```dart
+// Dart: Mixins
+mixin Musical {
+  bool canPlayPiano = false;
+  bool canCompose = false;
+  
+  void entertainMe() {
+    if (canPlayPiano) {
+      print('Playing piano');
+    }
+    if (canCompose) {
+      print('Composing');
+    }
+  }
+}
+```rust
+// Rust: Smart Pointers
+struct CustomSmartPointer {
+    data: String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
+```kotlin
+// Kotlin: Coroutines
+suspend fun fetchUserData(): User = coroutineScope {
+    val deferred1 = async { fetchUserProfile() }
+    val deferred2 = async { fetchUserPreferences() }
+    
+    User(
+        profile = deferred1.await(),
+        preferences = deferred2.await()
+    )
+}
+```scala
+// Scala: Type Classes
+trait Show[A] {
+  def show(a: A): String
+}
+
+object Show {
+  def apply[A](implicit sh: Show[A]): Show[A] = sh
+  
+  implicit val intShow: Show[Int] = new Show[Int] {
+    def show(n: Int): String = n.toString
+  }
+}
+```elixir
+# Elixir: Protocols
+defprotocol Size do
+  def size(data)
+end
+
+defimpl Size, for: BitString do
+  def size(string), do: byte_size(string)
+end
+
+defimpl Size, for: Map do
+  def size(map), do: map_size(map)
+end
+```purescript
+-- PureScript: Effect Handling
+foreign import data DOM :: Effect
+
+moveElement :: String -> Int -> Int -> Eff (dom :: DOM) Unit
+moveElement elementId x y = do
+  element <- getElementById elementId
+  setPosition element x y
+```reasonml
+/* ReasonML: Pattern Matching with Options */
+type person = {
+  name: string,
+  age: option(int)
+};
+
+let describe = (person) =>
+  switch (person.age) {
+  | None => person.name ++ " has no age specified"
+  | Some(age) => person.name ++ " is " ++ string_of_int(age)
+  };
+```idris
+-- Idris: Dependent Types
+vect : Nat -> Type -> Type
+data Vect : Nat -> Type -> Type where
+  Nil  : Vect Z a
+  (::) : a -> Vect k a -> Vect (S k) a
+
+append : Vect n a -> Vect m a -> Vect (n + m) a
+```ada
+-- Ada: Strong Typing and Contracts
+package Stack is
+   type Stack_Type is private;
+   
+   procedure Push (S : in out Stack_Type; Item : in Integer)
+     with Pre => not Is_Full(S),
+          Post => not Is_Empty(S);
+   
+   function Is_Empty (S : Stack_Type) return Boolean;
+   function Is_Full (S : Stack_Type) return Boolean;
+private
+   Max_Size : constant := 100;
+   type Stack_Type is record
+      Items  : array (1 .. Max_Size) of Integer;
+      Top    : Natural := 0;
+   end record;
+end Stack;
+```rust
+// Rust: Zero-Cost Abstractions
+struct Wrapper<T>(T);
+
+impl<T> Wrapper<T> {
+    fn map<U, F: FnOnce(T) -> U>(self, f: F) -> Wrapper<U> {
+        Wrapper(f(self.0))
+    }
+}
+```haskell
+-- Haskell: Type Classes and Functors
+class Bifunctor f where
+    bimap :: (a -> b) -> (c -> d) -> f a c -> f b d
+    
+instance Bifunctor Either where
+    bimap f _ (Left x)  = Left (f x)
+    bimap _ g (Right y) = Right (g y)
+```ocaml
+(* OCaml: Modules and Functors *)
+module type RING = sig
+  type t
+  val zero : t
+  val one : t
+  val (+) : t -> t -> t
+  val ( * ) : t -> t -> t
+end
+
+module IntRing : RING with type t = int = struct
+  type t = int
+  let zero = 0
+  let one = 1
+  let (+) = (+)
+  let ( * ) = ( * )
+end
+```python
+# Python: Type Hints and Protocols
+from typing import Protocol, Iterator
+
+class Iterable(Protocol):
+    def __iter__(self) -> Iterator:
+        ...
+
+def process_items(items: Iterable) -> None:
+    for item in items:
+        print(item)
+```fsharp
+// F#: Units of Measure
+[<Measure>] type m
+[<Measure>] type s
+[<Measure>] type kg
+
+let gravity = 9.81<m/s^2>
+let mass = 10.0<kg>
+let force = mass * gravity
+```elixir
+# Elixir: Behaviours and Applications
+defmodule MyApp do
+  use Application
+
+  def start(_type, _args) do
+    children = [
+      {MyApp.Worker, []},
+      {MyApp.Cache, []}
+    ]
+
+    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+end
+```python
+# Python: REST API with FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class User(BaseModel):
+    id: int
+    name: str
+    email: str
+    active: bool = True
+
+users = {}
+
+@app.post("/users/")
+async def create_user(user: User):
+    if user.id in users:
+        raise HTTPException(status_code=400, detail="User already exists")
+    users[user.id] = user
+    return user
+
+@app.get("/users/{user_id}")
+async def get_user(user_id: int):
+    if user_id not in users:
+        raise HTTPException(status_code=404, detail="User not found")
+    return users[user_id]
+```javascript
+// JavaScript: React Component with Hooks
+import React, { useState, useEffect } from 'react';
+
+const UserProfile = ({ userId }) => {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                setLoading(true);
+                const response = await fetch(`/api/users/${userId}`);
+                const data = await response.json();
+                setUser(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchUser();
+    }, [userId]);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    
+    return (
+        <div className="user-profile">
+            <h2>{user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Status: {user.active ? 'Active' : 'Inactive'}</p>
+        </div>
+    );
+};
+```java
+// Java: Spring Boot REST Controller
+@RestController
+@RequestMapping("/api/products")
+public class ProductController {
+    
+    private final ProductService productService;
+    
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+    
+    @GetMapping
+    public ResponseEntity<List<Product>> getAllProducts(
+            @RequestParam(required = false) String category,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        
+        Pageable pageable = PageRequest.of(page, size);
+        List<Product> products = productService.findProducts(category, pageable);
+        
+        return ResponseEntity.ok(products);
+    }
+    
+    @PostMapping
+    public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) {
+        Product savedProduct = productService.saveProduct(product);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
+    }
+}
+```typescript
+// TypeScript: Generic State Management
+interface State<T> {
+    data: T | null;
+    loading: boolean;
+    error: string | null;
+}
+
+class StateManager<T> {
+    private state: State<T>;
+    private listeners: Set<(state: State<T>) => void>;
+
+    constructor() {
+        this.state = {
+            data: null,
+            loading: false,
+            error: null
+        };
+        this.listeners = new Set();
+    }
+
+    subscribe(listener: (state: State<T>) => void): () => void {
+        this.listeners.add(listener);
+        return () => this.listeners.delete(listener);
+    }
+
+    async fetchData(api: () => Promise<T>): Promise<void> {
+        this.updateState({ ...this.state, loading: true });
+        try {
+            const data = await api();
+            this.updateState({ data, loading: false, error: null });
+        } catch (error) {
+            this.updateState({ 
+                data: null, 
+                loading: false, 
+                error: error.message 
+            });
+        }
+    }
+
+    private updateState(newState: State<T>): void {
+        this.state = newState;
+        this.listeners.forEach(listener => listener(this.state));
+    }
+}
+```php
+// PHP: Laravel Controller with Validation
+namespace App\Http\Controllers;
+
+use App\Models\Order;
+use App\Http\Requests\OrderRequest;
+use Illuminate\Http\JsonResponse;
+
+class OrderController extends Controller
+{
+    public function store(OrderRequest $request): JsonResponse
+    {
+        $validated = $request->validated();
+        
+        $order = Order::create([
+            'user_id' => auth()->id(),
+            'product_id' => $validated['product_id'],
+            'quantity' => $validated['quantity'],
+            'total_price' => $this->calculatePrice(
+                $validated['product_id'],
+                $validated['quantity']
+            )
+        ]);
+
+        return response()->json([
+            'message' => 'Order created successfully',
+            'order' => $order->load('product')
+        ], 201);
+    }
+
+    private function calculatePrice(int $productId, int $quantity): float
+    {
+        $product = Product::findOrFail($productId);
+        return $product->price * $quantity;
+    }
+}
+```csharp
+// C#: Entity Framework Core with LINQ
+public class ProductService : IProductService
+{
+    private readonly ApplicationDbContext _context;
+    private readonly ILogger<ProductService> _logger;
+
+    public ProductService(
+        ApplicationDbContext context,
+        ILogger<ProductService> logger)
+    {
+        _context = context;
+        _logger = logger;
+    }
+
+    public async Task<IEnumerable<ProductDto>> GetProductsByCategory(
+        string category,
+        int skip = 0,
+        int take = 10)
+    {
+        try
+        {
+            var products = await _context.Products
+                .Where(p => p.Category == category && p.IsActive)
+                .Skip(skip)
+                .Take(take)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    Description = p.Description,
+                    StockCount = p.StockCount
+                })
+                .ToListAsync();
+
+            return products;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching products for category {Category}", category);
+            throw;
+        }
+    }
+}
+```javascript
+// JavaScript: Express.js Middleware and Error Handling
+const express = require('express');
+const jwt = require('jsonwebtoken');
+
+const authMiddleware = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+    
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: 'Invalid token' });
+    }
+};
+
+const errorHandler = (err, req, res, next) => {
+    console.error(err.stack);
+    
+    if (err.name === 'ValidationError') {
+        return res.status(400).json({
+            message: 'Validation Error',
+            errors: err.errors
+        });
+    }
+    
+    res.status(500).json({
+        message: 'Internal Server Error'
+    });
+};
+
+app.use(authMiddleware);
+app.use(errorHandler);
+```python
+# Python: SQLAlchemy ORM with Async Support
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
+
+class User(Base):
+    __tablename__ = 'users'
+    
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True, nullable=False)
+    created_at = Column(DateTime, server_default=func.now())
+    orders = relationship('Order', back_populates='user')
+
+class UserRepository:
+    def __init__(self, session: AsyncSession):
+        self.session = session
+    
+    async def get_user_with_orders(self, user_id: int) -> Optional[User]:
+        query = select(User).options(
+            joinedload(User.orders)
+        ).filter(User.id == user_id)
+        
+        result = await self.session.execute(query)
+        return result.scalar_one_or_none()
+    
+    async def create_user(self, email: str) -> User:
+        user = User(email=email)
+        self.session.add(user)
+        await self.session.commit()
+        await self.session.refresh(user)
+        return user
+```ruby
+# Ruby: Rails API Controller with Caching
+class Api::V1::ArticlesController < ApplicationController
+  include ActionController::Caching
+  
+  before_action :authenticate_user!
+  after_action :verify_authorized
+  
+  def index
+    articles = Rails.cache.fetch("articles/#{params[:category]}", expires_in: 1.hour) do
+      Article.includes(:author, :comments)
+            .where(category: params[:category])
+            .page(params[:page])
+            .per(20)
+            .to_a
+    end
+    
+    authorize articles
+    
+    render json: ArticleSerializer.new(articles, {
+      include: [:author, :comments],
+      meta: {
+        total_pages: articles.total_pages,
+        current_page: articles.current_page
+      }
+    })
+  end
+  
+  def create
+    article = Article.new(article_params)
+    article.author = current_user
+    
+    authorize article
+    
+    if article.save
+      Rails.cache.delete("articles/#{article.category}")
+      render json: ArticleSerializer.new(article), status: :created
+    else
+      render json: { errors: article.errors }, status: :unprocessable_entity
+    end
+  end
+  
+  private
+  
+  def article_params
+    params.require(:article).permit(:title, :content, :category)
+  end
+end
