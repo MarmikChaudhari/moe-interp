@@ -4,8 +4,7 @@ def add_numbers(a, b):
     return a + b
 ```javascript
 function reverseString(str) {
-    return str.split('').reverse().join('');
-}
+    return str.split('').reverse().join
 ```java
 public class Person {
     private String name;
@@ -17,9 +16,7 @@ public class Person {
     }
 
     public String getName() {
-        return name;
-    }
-}
+        return name
 ```python
 class Stack:
     def __init__(self):
@@ -34,24 +31,23 @@ class Stack:
         return self.stack.pop()
 
     def is_empty(self):
-        return len(self.stack) == 0
+        return len(self.stack)
 ```c++
 int factorial(int n) {
     if (n <= 1) return 1;
-    return n * factorial(n - 1);
-}
+    return n * factorial
 ```python
 for i in range(10):
     if i % 2 == 0:
         print(f"{i} is even")
     else:
-        print(f"{i} is odd")
+        print(f"{i} is odd"
 ```python
 import numpy as np
 
 data = np.array([1, 2, 3, 4, 5])
 mean = np.mean(data)
-print(f"Mean of the data: {mean}")
+print(f"Mean of the data: {mean
 ```sql
 SELECT name, age FROM users WHERE age > 30 ORDER BY age DESC;
 ```python
@@ -74,10 +70,6 @@ void bubbleSort(int arr[], int n) {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
-            }
-        }
-    }
-}
 ```python
 # This function checks if a number is prime
 def is_prime(n):
@@ -1955,3 +1947,501 @@ class Api::V1::ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content, :category)
   end
 end
+```rust
+// Rust: Binary Tree Implementation
+struct Node<T> {
+    value: T,
+    left: Option<Box<Node<T>>>,
+    right: Option<Box<Node<T>>>
+}
+
+impl<T> Node<T> {
+    fn new(value: T) -> Self {
+        Node {
+            value,
+            left: None,
+            right: None
+        }
+    }
+}
+```kotlin
+// Kotlin: Extension Function
+fun String.isPalindrome(): Boolean {
+    val cleanStr = this.lowercase().filter { it.isLetterOrDigit() }
+    return cleanStr == cleanStr.reversed()
+}
+```go
+// Go: Concurrent Map Access
+type ConcurrentMap struct {
+    sync.RWMutex
+    items map[string]interface{}
+}
+
+func (m *ConcurrentMap) Set(key string, value interface{}) {
+    m.Lock()
+    defer m.Unlock()
+    m.items[key] = value
+}
+```scala
+// Scala: Pattern Matching
+def describe(x: Any): String = x match {
+    case i: Int if i > 0 => "positive number"
+    case 0 => "zero"
+    case s: String => s"string: $s"
+    case _ => "unknown"
+}
+```python
+# Python: Decorator with Parameters
+def retry(max_attempts: int, delay: float = 1.0):
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            for attempt in range(max_attempts):
+                try:
+                    return await func(*args, **kwargs)
+                except Exception as e:
+                    if attempt == max_attempts - 1:
+                        raise
+                    await asyncio.sleep(delay)
+            return None
+        return wrapper
+    return decorator
+```ruby
+# Ruby: Module Mixin
+module Loggable
+  def log(message)
+    puts "[#{Time.now}] #{self.class.name}: #{message}"
+  end
+end
+
+class UserService
+  include Loggable
+  
+  def create_user(name)
+    log("Creating user: #{name}")
+    # User creation logic
+  end
+end
+```swift
+// Swift: Protocol with Associated Type
+protocol Container {
+    associatedtype Item
+    mutating func append(_ item: Item)
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+}
+
+struct Stack<Element>: Container {
+    var items = [Element]()
+    
+    mutating func append(_ item: Element) {
+        items.append(item)
+    }
+    
+    var count: Int { items.count }
+    
+    subscript(i: Int) -> Element {
+        items[i]
+    }
+}
+```elixir
+# Elixir: GenServer Implementation
+defmodule Cache do
+  use GenServer
+
+  def start_link(opts \\ []) do
+    GenServer.start_link(__MODULE__, %{}, opts)
+  end
+
+  def init(state) do
+    {:ok, state}
+  end
+
+  def handle_call({:get, key}, _from, state) do
+    {:reply, Map.get(state, key), state}
+  end
+
+  def handle_cast({:put, key, value}, state) do
+    {:noreply, Map.put(state, key, value)}
+  end
+end
+```cpp
+// C++: Template Metaprogramming
+template<unsigned n>
+struct Fibonacci {
+    static constexpr unsigned value = 
+        Fibonacci<n-1>::value + Fibonacci<n-2>::value;
+};
+
+template<>
+struct Fibonacci<0> {
+    static constexpr unsigned value = 0;
+};
+
+template<>
+struct Fibonacci<1> {
+    static constexpr unsigned value = 1;
+};
+```typescript
+// TypeScript: Advanced Type Utilities
+type DeepReadonly<T> = {
+    readonly [P in keyof T]: T[P] extends object 
+        ? DeepReadonly<T[P]> 
+        : T[P]
+}
+
+interface User {
+    id: number;
+    name: string;
+    settings: {
+        theme: string;
+        notifications: boolean;
+    }
+}
+
+type ReadonlyUser = DeepReadonly<User>;
+```haskell
+-- Haskell: Monadic Operations
+data Maybe a = Nothing | Just a
+
+instance Monad Maybe where
+    return x = Just x
+    Nothing >>= _ = Nothing
+    (Just x) >>= f = f x
+
+safeDiv :: Int -> Int -> Maybe Int
+safeDiv _ 0 = Nothing
+safeDiv x y = Just (x `div` y)
+```perl
+# Perl: Regular Expression Processing
+use strict;
+use warnings;
+
+sub extract_emails {
+    my $text = shift;
+    my @emails = $text =~ /
+        ([a-zA-Z0-9._%+-]+
+        @
+        [a-zA-Z0-9.-]+
+        \.[a-zA-Z]{2,})/xg;
+    return @emails;
+}
+```java
+// Java: Reactive Stream Processing
+public class ReactiveProcessor {
+    private final Flux<String> messageStream;
+    
+    public ReactiveProcessor(MessageSource source) {
+        this.messageStream = Flux.from(source)
+            .filter(msg -> !msg.isEmpty())
+            .map(String::toLowerCase)
+            .distinct()
+            .onErrorContinue((err, obj) -> 
+                log.error("Error processing: {}", err));
+    }
+}
+```python
+# Python: Async Context Manager
+class AsyncResource:
+    async def __aenter__(self):
+        await self.open()
+        return self
+        
+    async def __aexit__(self, exc_type, exc, tb):
+        await self.close()
+        
+    async def open(self):
+        print("Opening resource")
+        
+    async def close(self):
+        print("Closing resource")
+```r
+# R: Data Frame Operations
+library(dplyr)
+
+process_data <- function(df) {
+    df %>%
+        group_by(category) %>%
+        summarise(
+            mean_value = mean(value, na.rm = TRUE),
+            std_dev = sd(value, na.rm = TRUE)
+        ) %>%
+        filter(mean_value > 0) %>%
+        arrange(desc(mean_value))
+}
+```javascript
+// JavaScript: Proxy Object
+const handler = {
+    get: function(target, prop) {
+        return prop in target 
+            ? target[prop] 
+            : new Proxy({}, handler);
+    }
+};
+
+const deepObject = new Proxy({}, handler);
+```lua
+-- Lua: Metatables
+local mt = {
+    __add = function(a, b)
+        return setmetatable({
+            x = a.x + b.x,
+            y = a.y + b.y
+        }, mt)
+    end,
+    __tostring = function(v)
+        return string.format("Vector(%d, %d)", v.x, v.y)
+    end
+}
+```dart
+// Dart: Stream Transformation
+Stream<int> transformNumbers(Stream<String> input) {
+  return input
+    .where((str) => str.isNotEmpty)
+    .map(int.parse)
+    .handleError((error) {
+      print('Error: $error');
+      return -1;
+    })
+    .expand((number) => [number, number * 2])
+    .takeWhile((number) => number < 100);
+}
+```f#
+// F#: Pattern Matching with Active Patterns
+let (|Even|Odd|) n = 
+    if n % 2 = 0 then Even else Odd
+
+let describe = function
+    | Even -> "even number"
+    | Odd -> "odd number"
+```groovy
+// Groovy: Builder Pattern
+def html = new MarkupBuilder()
+html.html {
+    head {
+        title 'Example Page'
+    }
+    body {
+        div(class: 'container') {
+            p 'Hello, World!'
+        }
+    }
+}
+```julia
+# Julia: Multiple Dispatch
+struct Point{T<:Number}
+    x::T
+    y::T
+end
+
+function distance(p1::Point{T}, p2::Point{T}) where T<:Number
+    sqrt((p2.x - p1.x)^2 + (p2.y - p1.y)^2)
+end
+```php
+// PHP: Attribute Usage
+#[Route("/api/users/{id}", methods: ["GET"])]
+class UserController
+{
+    #[Inject]
+    private UserRepository $repository;
+    
+    public function getUser(#[PathParam] int $id): Response
+    {
+        return new JsonResponse(
+            $this->repository->find($id)
+        );
+    }
+}
+```clojure
+;; Clojure: Macro Definition
+(defmacro unless [pred & body]
+  `(when (not ~pred)
+     ~@body))
+
+(defn test-unless [x]
+  (unless (zero? x)
+    (println "x is not zero")
+    x))
+```crystal
+# Crystal: Channel Communication
+channel = Channel(String).new
+
+spawn do
+  5.times do |i|
+    channel.send "Message #{i}"
+    sleep 0.1
+  end
+end
+
+5.times do
+  message = channel.receive
+  puts message
+end
+```nim
+# Nim: Generic Type Constraints
+type
+  Container[T: SomeNumber] = object
+    data: seq[T]
+    capacity: int
+
+proc add[T](c: var Container[T], item: T) =
+  if c.data.len < c.capacity:
+    c.data.add(item)
+```ocaml
+(* OCaml: Functor Implementation *)
+module type Container = sig
+  type 'a t
+  val empty : 'a t
+  val add : 'a -> 'a t -> 'a t
+  val member : 'a -> 'a t -> bool
+end
+
+module SetContainer (Ord : Set.OrderedType) = struct
+  include Set.Make(Ord)
+  let empty = empty
+  let member = mem
+end
+```pascal
+// Pascal: Object-Oriented Programming
+type
+  TShape = class
+  private
+    FColor: string;
+  public
+    constructor Create(AColor: string);
+    function GetArea: Double; virtual; abstract;
+  end;
+
+  TCircle = class(TShape)
+  private
+    FRadius: Double;
+  public
+    constructor Create(AColor: string; ARadius: Double);
+    function GetArea: Double; override;
+  end;
+```prolog
+% Prolog: Logic Programming
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- 
+    parent(X, Z),
+    ancestor(Z, Y).
+
+parent(john, mary).
+parent(mary, anne).
+
+% Query: ancestor(john, anne).
+```racket
+#lang racket
+; Racket: Macro System
+(define-syntax-rule (repeat n body ...)
+  (for ([i (range n)])
+    body ...))
+
+(define (test-repeat)
+  (repeat 3
+    (displayln "Hello")
+    (displayln "World")))
+```rust
+// Rust: Async/Await Implementation
+async fn process_data(data: Vec<u8>) -> Result<String, Error> {
+    let client = Client::new();
+    let response = client
+        .post("https://api.example.com/data")
+        .body(data)
+        .send()
+        .await?;
+        
+    Ok(response.text().await?)
+}
+```smalltalk
+"Smalltalk: Message Passing"
+Object subclass: #Counter
+    instanceVariableNames: 'count'
+    classVariableNames: ''
+    package: 'MyCounter'
+
+Counter>>increment
+    count := count + 1
+
+Counter>>decrement
+    count := count - 1
+```scala
+// Scala: Type Classes
+trait Showable[A] {
+  def show(a: A): String
+}
+
+object Showable {
+  implicit val intShowable: Showable[Int] = 
+    new Showable[Int] {
+      def show(n: Int): String = n.toString
+    }
+    
+  implicit val boolShowable: Showable[Boolean] =
+    new Showable[Boolean] {
+      def show(b: Boolean): String = 
+        if (b) "true" else "false"
+    }
+}
+```typescript
+// TypeScript: Mapped Types
+type Nullable<T> = {
+    [P in keyof T]: T[P] | null;
+};
+
+interface User {
+    id: number;
+    name: string;
+    email: string;
+}
+
+type NullableUser = Nullable<User>;
+```verilog
+// Verilog: Sequential Logic
+module counter(
+    input wire clk,
+    input wire reset,
+    output reg [3:0] count
+);
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            count <= 4'b0000;
+        else
+            count <= count + 1;
+    end
+endmodule
+```erlang
+% Erlang: Actor Model
+-module(calculator).
+-export([start/0, add/2]).
+
+start() ->
+    spawn(fun() -> loop(0) end).
+
+loop(Sum) ->
+    receive
+        {add, Number} ->
+            loop(Sum + Number);
+        {get_sum, Pid} ->
+            Pid ! {result, Sum},
+            loop(Sum)
+    end.
+```fortran
+! Fortran: Numerical Computing
+SUBROUTINE matrix_multiply(A, B, C, n)
+    IMPLICIT NONE
+    INTEGER, INTENT(IN) :: n
+    REAL, INTENT(IN) :: A(n,n), B(n,n)
+    REAL, INTENT(OUT) :: C(n,n)
+    INTEGER :: i, j, k
+    
+    DO i = 1, n
+        DO j = 1, n
+            C(i,j) = 0.0
+            DO k = 1, n
+                C(i,j) = C(i,j) + A(i,k) * B(k,j)
+            END DO
+        END DO
+    END DO
+END SUBROUTINE matrix_multiply
+```
