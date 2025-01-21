@@ -2,14 +2,10 @@
 def add_numbers(a, b):
     # Add two numbers and return the result
     return a + b
-```
-
 ```javascript
 function reverseString(str) {
     return str.split('').reverse().join('');
 }
-```
-
 ```java
 public class Person {
     private String name;
@@ -24,8 +20,6 @@ public class Person {
         return name;
     }
 }
-```
-
 ```python
 class Stack:
     def __init__(self):
@@ -41,35 +35,25 @@ class Stack:
 
     def is_empty(self):
         return len(self.stack) == 0
-```
-
 ```c++
 int factorial(int n) {
     if (n <= 1) return 1;
     return n * factorial(n - 1);
 }
-```
-
 ```python
 for i in range(10):
     if i % 2 == 0:
         print(f"{i} is even")
     else:
         print(f"{i} is odd")
-```
-
 ```python
 import numpy as np
 
 data = np.array([1, 2, 3, 4, 5])
 mean = np.mean(data)
 print(f"Mean of the data: {mean}")
-```
-
 ```sql
 SELECT name, age FROM users WHERE age > 30 ORDER BY age DESC;
-```
-
 ```python
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
@@ -82,8 +66,6 @@ def binary_search(arr, target):
         else:
             right = mid - 1
     return -1
-```
-
 ```c
 void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
@@ -96,8 +78,6 @@ void bubbleSort(int arr[], int n) {
         }
     }
 }
-```
-
 ```python
 # This function checks if a number is prime
 def is_prime(n):
@@ -107,8 +87,6 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
-```
-
 ```javascript
 /*
     This is a multi-line comment explaining
@@ -117,8 +95,6 @@ def is_prime(n):
 function mergeArrays(arr1, arr2) {
     return [...arr1, ...arr2].sort((a, b) => a - b);
 }
-```
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -130,8 +106,6 @@ function mergeArrays(arr1, arr2) {
     <p>This is a paragraph of text.</p>
 </body>
 </html>
-```
-
 ```python
 import pandas as pd
 
@@ -141,22 +115,15 @@ df = pd.DataFrame({
 })
 
 print(df[df['Age'] > 30])
-```
-
 ```python
 def incomplete_function(a, b):
     if a > b:
         return
-```
-
 ```javascript
 function calculateSum(a, b) {
     if (a > b) {
         // Code to be added
     }
-```
-
-
 ```
 func mockStruct(v reflect.Value, isKeep, isRecurse bool) interface{} {
 	result := map[string]interface{}{}
@@ -180,8 +147,6 @@ func mockStruct(v reflect.Value, isKeep, isRecurse bool) interface{} {
 	return result
 }
 ```
-
-```
 def adjoint_matrix(i_T_j):
 
     i_p_j = numpy.linalg.inv(i_T_j)[:3, 3] # raw column
@@ -192,8 +157,6 @@ def adjoint_matrix(i_T_j):
     Ad[:3,3:] = -numpy.dot(i_R_j,S_matrix(i_p_j))
 
     return Ad
-```
-
 ```
 int binarySearch(vector<int>& arr, int target) {
     int left = 0, right = arr.size() - 1;
@@ -206,14 +169,9 @@ int binarySearch(vector<int>& arr, int target) {
     return -1;
 }
 ```
-
-```
 function factorial(n) {
     return n <= 1 ? 1 : n * factorial(n - 1);
 }
-```
-
-
 ```python
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
@@ -221,9 +179,7 @@ def binary_search(arr, target):
         mid = (left + right) // 2
         if arr[mid] == target:
             return True
-    return False```
-
-
+    return False
 ```javascript
 function debounce(func, wait) {
     let timeout;
@@ -232,8 +188,7 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
-}```
-
+}
 ```java
 public class TreeNode<T> {
     private T value;
@@ -243,8 +198,7 @@ public class TreeNode<T> {
         TreeNode<T> child = new TreeNode<>(value);
         children.add(child);
     }
-}```
-
+}
 ```python
 class LRUCache:
     def __init__(self, capacity):
@@ -255,8 +209,7 @@ class LRUCache:
         if key not in self.cache:
             return -1
         self.cache.move_to_end(key)
-        return self.cache[key]```
-
+        return self.cache[key]
 ```sql
 WITH RankedProducts AS (
     SELECT 
@@ -266,8 +219,7 @@ WITH RankedProducts AS (
         ROW_NUMBER() OVER (PARTITION BY category_id ORDER BY price DESC) as rank
     FROM products
 )
-SELECT * FROM RankedProducts WHERE rank <= 3;```
-
+SELECT * FROM RankedProducts WHERE rank <= 3;
 ```javascript
 class EventEmitter {
     constructor() {
@@ -280,8 +232,7 @@ class EventEmitter {
         }
         this.events.get(event).push(callback);
     }
-}```
-
+}
 ```python
 @dataclass
 class DataPoint:
@@ -290,8 +241,7 @@ class DataPoint:
     confidence: float
     
     def is_valid(self) -> bool:
-        return self.confidence > 0.8 and self.value != float('nan')```
-
+        return self.confidence > 0.8 and self.value != float('nan')
 ```cpp
 template<typename T>
 class CircularBuffer {
@@ -305,8 +255,7 @@ public:
         buffer[head] = item;
         head = (head + 1) % buffer.size();
     }
-};```
-
+};
 ```javascript
 async function fetchWithRetry(url, options = {}, maxRetries = 3) {
     for (let i = 0; i < maxRetries; i++) {
@@ -318,8 +267,7 @@ async function fetchWithRetry(url, options = {}, maxRetries = 3) {
             await new Promise(r => setTimeout(r, 1000 * Math.pow(2, i)));
         }
     }
-}```
-
+}
 ```python
 def merge_sort(arr):
     if len(arr) <= 1:
@@ -328,18 +276,13 @@ def merge_sort(arr):
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
     return merge(left, right)
-```
-
-
 ```python
 def process_pipeline(data: List[Dict]) -> Generator:
     for item in data:
         if item['status'] == 'valid':
             yield transform_data(item)
             continue
-        logging.warning(f"Skipping invalid item: {item['id']}")```
-
-
+        logging.warning(f"Skipping invalid item: {item['id']}")
 ```typescript
 interface CacheStrategy<T> {
     get(key: string): Promise<T | null>;
@@ -352,9 +295,7 @@ class RedisCache<T> implements CacheStrategy<T> {
     constructor(config: RedisConfig) {
         this.client = new Redis(config);
     }
-}```
-
-
+}
 ```sql
 WITH RECURSIVE Hierarchy AS (
     SELECT id, parent_id, name, 1 as level
@@ -365,8 +306,7 @@ WITH RECURSIVE Hierarchy AS (
     FROM categories c
     JOIN Hierarchy h ON c.parent_id = h.id
 )
-SELECT * FROM Hierarchy ORDER BY level, name;```
-
+SELECT * FROM Hierarchy ORDER BY level, name;
 ```javascript
 class StateManager {
     #states = new Map();
@@ -377,8 +317,7 @@ class StateManager {
         this.#states.set('current', newState);
         this.#listeners.forEach(listener => listener(newState));
     }
-}```
-
+}
 ```python
 @contextmanager
 def temporary_file(content: str, mode: str = 'w+') -> Generator:
@@ -390,8 +329,7 @@ def temporary_file(content: str, mode: str = 'w+') -> Generator:
         yield temp_path
     finally:
         if temp_path:
-            os.remove(temp_path)```
-
+            os.remove(temp_path)
 ```java
 public class RateLimiter {
     private final Map<String, Deque<Long>> requests = new HashMap<>();
@@ -404,8 +342,7 @@ public class RateLimiter {
         window.removeIf(timestamp -> currentTime - timestamp > timeUnit);
         return window.size() < windowSize;
     }
-}```
-
+}
 ```cpp
 template<typename T>
 class ThreadSafeQueue {
@@ -419,8 +356,7 @@ public:
         q.push(move(item));
         c.notify_one();
     }
-}```
-
+}
 ```python
 class GraphQLResolver:
     def __init__(self, schema: Schema):
@@ -429,8 +365,7 @@ class GraphQLResolver:
     
     async def resolve(self, query: str) -> Dict:
         parsed = parse_query(query)
-        return await self._resolve_node(parsed.root)```
-
+        return await self._resolve_node(parsed.root)
 ```javascript
 function createVirtualDOM(element) {
     if (typeof element === 'string') {
@@ -442,8 +377,7 @@ function createVirtualDOM(element) {
         $el.appendChild(createVirtualDOM(child))
     );
     return $el;
-}```
-
+}
 ```python
 def memoize(func):
     cache = {}
@@ -453,9 +387,7 @@ def memoize(func):
         if key not in cache:
             cache[key] = func(*args, **kwargs)
         return cache[key]
-    return wrapper```
-
-
+    return wrapper
 ```rust
 impl<T> BinaryHeap<T> where T: Ord {
     pub fn push(&mut self, item: T) {
@@ -463,8 +395,7 @@ impl<T> BinaryHeap<T> where T: Ord {
         let len = self.data.len();
         self.sift_up(0, len - 1);
     }
-}```
-
+}
 ```python
 async def stream_processor(queue: AsyncQueue):
     async with aiohttp.ClientSession() as session:
@@ -473,8 +404,7 @@ async def stream_processor(queue: AsyncQueue):
             try:
                 await process_item(session, item)
             finally:
-                queue.task_done()```
-
+                queue.task_done()
 ```javascript
 class Observable {
     constructor(subscribe) {
@@ -487,9 +417,7 @@ class Observable {
             this
         );
     }
-}```
-
-
+}
 ```python
 def validate_schema(data: Dict, schema: Dict) -> bool:
     if not isinstance(data, type(schema)):
@@ -499,9 +427,6 @@ def validate_schema(data: Dict, schema: Dict) -> bool:
         for k, v in schema.items()
         if k in data
     )
-```
-
-
 ```typescript
 type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object
