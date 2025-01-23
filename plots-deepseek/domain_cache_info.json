@@ -1,0 +1,12 @@
+{
+  "domains": {
+    "test1": [
+      {
+        "prompt_number": 1,
+        "timestamp": "2025-01-22T22:34:23.376917",
+        "input_text": "the quick brown fox"
+      }
+    ]
+  },
+  "next_id": 2
+}
