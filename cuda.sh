@@ -4,10 +4,10 @@ apt update && apt upgrade -y
 
 pip install wheel
 apt install wget -y
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
-dpkg -i cuda-keyring_1.0-1_all.deb
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+dpkg -i cuda-keyring_1.1-1_all.deb
 apt update
-apt install cuda-toolkit-12-1 -y
+apt-get -y install cuda-toolkit-12-8
 
 # Install PyTorch with specific index URL
 echo "Installing PyTorch..."
@@ -15,7 +15,7 @@ pip3 install torch==2.4.1 torchvision torchaudio --index-url https://download.py
 
 # Install other Python dependencies
 echo "Installing Python dependencies..."
-pip3 install kaleido transformers==4.44.2 tqdm pandas numpy accelerate
+pip3 install kaleido transformers tqdm pandas numpy accelerate jupyter ipywidgets widgetsnbextension pandas-profiling
 
 # set cuda environment variables
 export CUDA_HOME=/usr/local/cuda
