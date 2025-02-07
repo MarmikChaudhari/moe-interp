@@ -1,0 +1,245 @@
+french prompts : 
+
+Il n'y a point de génie sans un grain de (folie)
+There is no genius without a grain of (madness)
+
+Elle errait dans les salons feutrés, les yeux perdus dans le reflet d’un rêve brisé, comme si son existence n’était qu’une pâle imitation d’une (vie)
+She wandered through the hushed salons, her eyes lost in the reflection of a broken dream, as if her existence was but a pale imitation of a (life)
+
+
+Dans le jardin des supplices, les fleurs exhalaient leur (miasme)
+In the garden of punishments, the flowers exhaled their (miasma)
+
+La plaine était blanche, immobile et sans (givre)
+The plain was white, motionless, and without (frost)
+
+
+english prompts : 
+
+Natural language processing tasks, such as question answering, machine translation, reading comprehension, and summarization, are typically
+approached with supervised learning on task-specific (datasets)
+
+Amid a mosaic of forgotten metropolises—each a fleeting echo of lost dreams and ephemeral wonder — 
+the traveler marveled at the notion that every winding alley might conceal (mystery)
+
+The mystery of life isn't a problem to solve, but a reality to (experience)
+
+the capital of denmark is (copenhagen)
+
+We speak of machines that think, but we must not forget that the mind is a machine, and the mind is shaped by its experiences, 
+just as a machine is shaped by its programming and the data it (consumes)
+
+
+code prompts : 
+```
+def self_attention(queries, keys, values, mask=None):
+    d_k = queries.shape[-1]
+    attention_weights = torch.matmul(queries, keys.transpose(-2, -1))
+    if mask is not None:
+        attention_weights = attention_weights.masked_fill(mask == 0, float('-inf'))
+    attention_weights = F.```
+
+    ([softmax(attention_weights, dim=-1)
+    return torch.matmul(attention_weights, values), attention_weights)]
+
+
+```
+def cross_entropy_with_logits(logits, labels):
+    max_logits = torch.max(logits, dim=1, keepdim=True)[0]
+    normalized = logits - max_logits
+    log_probs = normalized - torch.log(torch.sum(torch.exp(normalized), dim=1, keepdim=True))
+    return -torch.mean(log_probs.gather(1, labels.unsqueeze(1))).```
+    
+    (backward)
+
+```
+For VAEs, predict the correct method to sample from the posterior distribution of the latent variable z.
+
+def reparameterize(mu, log_var):
+    std = torch.exp(0.5 * log_var)
+    eps = torch.randn_like(std)
+    z = mu + eps * std
+    return z.```
+    
+    (rsample)
+
+
+def fibonacci(n: int) -> int:
+    """Calculate the nth Fibonacci number using dynamic programming."""
+    if n <= 0:
+        raise ValueError("n must be positive")
+    if n <= 2:
+        return 1
+    
+    previous, current = 1, 1
+    for _ in range(3, n + 1):
+        previous, current = current, previous + (current
+    return current)
+
+
+def merge_sort(arr: list) -> list:
+    """Sort an array using merge sort algorithm."""
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    
+    return merge(left, (right))
+
+
+def lexer_generator(patterns: list[tuple[str, str]]) -> callable:
+    """
+    Generate a lexer function from list of (token_type, regex_pattern) tuples.
+    Returns function that takes string input and yields (token_type, value) pairs.
+    """
+    import re
+    
+    combined_pattern = '|'.join(f'(?P<{name}>{pattern})'
+                               for name, pattern in patterns)
+    regex = re.compile(combined_pattern)
+    
+    def tokenize(text: str) -> tuple[str, str]:
+        pos = 0
+        while pos < len(text):
+            match = regex.match(text, pos)
+            if match is None:
+                raise ValueError(f"Illegal character '{text[pos]}' at position {pos}")
+            
+            pos = match.end()
+            kind = match.lastgroup
+            value = match.(group()
+            yield kind, value
+            
+    return tokenize)
+
+
+
+def gaussian_process_regression(
+    X_train: np.ndarray,
+    y_train: np.ndarray,
+    X_test: np.ndarray,
+    kernel_fn: callable,
+    noise: float = 1e-8
+) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Implements Gaussian Process Regression with custom kernel.
+    
+    Args:
+        X_train: Training features (n_samples x n_features)
+        y_train: Training targets (n_samples)
+        X_test: Test features (m_samples x n_features)
+        kernel_fn: Kernel function that takes two matrices and returns similarity matrix
+        noise: Diagonal noise term for numerical stability
+    
+    Returns:
+        Tuple of (predicted means, predicted variances)
+        
+    Time complexity: O(n³) for training, O(n²m) for prediction
+    Space complexity: O(n² + nm)
+    """
+    # Compute kernel matrices
+    K = kernel_fn(X_train, X_train)
+    K_star = kernel_fn(X_train, X_test)
+    K_star_star = kernel_fn(X_test, X_test)
+    
+    # Add noise to diagonal for numerical stability
+    K += noise * np.eye(K.shape[0])
+    
+    # Compute Cholesky decomposition for stable inversion
+    L = np.linalg.cholesky(K)
+    
+    # Solve intermediate steps using triangular solver
+    alpha = solve_triangular(L.T, solve_triangular(L, y_train, lower=True))
+    v = solve_triangular(L, K_star, lower=True)
+    
+    # Compute predictive mean and variance
+    mu = K_star.T @ alpha
+    var = K_star_star - v.T @ v
+    
+    return mu, np.(diag(var))
+
+
+def transformer_self_attention(
+    queries: torch.Tensor,
+    keys: torch.Tensor,
+    values: torch.Tensor,
+    mask: Optional[torch.Tensor] = None,
+    dropout: float = 0.1
+) -> torch.Tensor:
+    """
+    Implements scaled dot-product self-attention mechanism from Transformer architecture.
+    
+    Args:
+        queries: Query vectors (batch_size x num_heads x seq_len x d_k)
+        keys: Key vectors (batch_size x num_heads x seq_len x d_k)
+        values: Value vectors (batch_size x num_heads x seq_len x d_v)
+        mask: Optional attention mask (batch_size x seq_len x seq_len)
+        dropout: Dropout probability
+    
+    Returns:
+        Attention output (batch_size x num_heads x seq_len x d_v)
+    
+    Time complexity: O(batch_size * num_heads * seq_len² * d_k)
+    """
+    d_k = queries.size(-1)
+    
+    # Scaled dot-product attention
+    scores = torch.matmul(queries, keys.transpose(-2, -1)) / math.sqrt(d_k)
+    
+    if mask is not None:
+        scores = scores.masked_fill(mask == 0, -1e9)
+    
+    attention_weights = F.softmax(scores, dim=-1)
+    attention_weights = F.dropout(attention_weights, p=dropout)
+    
+    # Compute attention output
+    output = torch.matmul(attention_weights, values)
+    
+    return output
+
+
+def gaussian_process_regression(
+    X_train: np.ndarray,
+    y_train: np.ndarray,
+    X_test: np.ndarray,
+    kernel_fn: callable,
+    noise: float = 1e-8
+) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Implements Gaussian Process Regression with custom kernel.
+    
+    Args:
+        X_train: Training features (n_samples x n_features)
+        y_train: Training targets (n_samples)
+        X_test: Test features (m_samples x n_features)
+        kernel_fn: Kernel function that takes two matrices and returns similarity matrix
+        noise: Diagonal noise term for numerical stability
+    
+    Returns:
+        Tuple of (predicted means, predicted variances)
+        
+    Time complexity: O(n³) for training, O(n²m) for prediction
+    Space complexity: O(n² + nm)
+    """
+    # Compute kernel matrices
+    K = kernel_fn(X_train, X_train)
+    K_star = kernel_fn(X_train, X_test)
+    K_star_star = kernel_fn(X_test, X_test)
+    
+    # Add noise to diagonal for numerical stability
+    K += noise * np.eye(K.shape[0])
+    
+    # Compute Cholesky decomposition for stable inversion
+    L = np.linalg.(cholesky(K)
+    
+    # Solve intermediate steps using triangular solver
+    alpha = solve_triangular(L.T, solve_triangular(L, y_train, lower=True))
+    v = solve_triangular(L, K_star, lower=True)
+    
+    # Compute predictive mean and variance
+    mu = K_star.T @ alpha
+    var = K_star_star - v.T @ v
+    
+    return mu, np.diag(var))
