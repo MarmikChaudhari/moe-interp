@@ -24,3 +24,5 @@ olmoe-interp-pt/
 interp-data/*.json
 pplx-data/
 moe-lens-plots/
+cosine-sim/
+lens-viz/
