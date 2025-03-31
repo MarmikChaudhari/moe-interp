@@ -79,7 +79,6 @@ ee(Object.defineProperties(SetPoly.prototype, {
 defineProperty(SetPoly.prototype, Symbol.iterator, d(getValues));
 defineProperty(SetPoly.prototype, Symbol.toStringTag, d('c', 'Set'));
 
-
 core/classes/data.js
 'use strict';
 
@@ -101,7 +100,6 @@ class Data {
 
 module.exports = Data;
 
-
 sodium/runtime.go
 package sodium
 
@@ -121,7 +119,6 @@ func RuntimeHasSse2() bool {
 func RuntimeHasSse3() bool {
 	return C.sodium_runtime_has_sse3() != 0
 }
-
 
 test/unit/resource/accounts.js
 
@@ -172,7 +169,6 @@ function collectWithWildcard(test) {
 module.exports = {
 	collectWithWildcard
 };
-
 
 src/base.php
 <?php
@@ -1975,7 +1971,6 @@ void json_set_options(struct JsonContext *ctx, unsigned int options)
 	ctx->options = options;
 }
 
-
 app/loginModule/services/localstorage.js
 angular.module('appTesting').service("LoginLocalStorage", function () {
     "use strict";
@@ -2016,7 +2011,6 @@ xmlrpc-c/src/xmlrpc_build.c
 #include "xmlrpc-c/base_int.h"
 #include "xmlrpc-c/string_int.h"
 
-
 static void
 getString(xmlrpc_env *const envP,
           const char **const formatP,
@@ -2035,7 +2029,6 @@ getString(xmlrpc_env *const envP,
 
     *valPP = xmlrpc_string_new_lp(envP, len, str);
 }
-
 
 static void
 getWideString(xmlrpc_env *const envP ATTR_UNUSED,
@@ -2059,7 +2052,6 @@ getWideString(xmlrpc_env *const envP ATTR_UNUSED,
 #endif /* HAVE_UNICODE_WCHAR */
 }
 
-
 static void
 getBase64(xmlrpc_env *const envP,
           va_listx *const argsP,
@@ -2074,13 +2066,11 @@ getBase64(xmlrpc_env *const envP,
     *valPP = xmlrpc_base64_new(envP, length, value);
 }
 
-
 static void
         getValue(xmlrpc_env *const envP,
                  const char **const format,
                  va_listx *const argsP,
                  xmlrpc_value **const valPP);
-
 
 static void
 getArray(xmlrpc_env *const envP,
@@ -2117,14 +2107,12 @@ getArray(xmlrpc_env *const envP,
     *arrayPP = arrayP;
 }
 
-
 static void
 getStructMember(xmlrpc_env *const envP,
                 const char **const formatP,
                 va_listx *const argsP,
                 xmlrpc_value **const keyPP,
                 xmlrpc_value **const valuePP) {
-
 
     /* Get the key */
     getValue(envP, formatP, argsP, keyPP);
@@ -2145,7 +2133,6 @@ getStructMember(xmlrpc_env *const envP,
             xmlrpc_DECREF(*keyPP);
     }
 }
-
 
 static void
 getStruct(xmlrpc_env *const envP,
@@ -2189,7 +2176,6 @@ getStruct(xmlrpc_env *const envP,
     *structPP = structP;
 }
 
-
 static void
 mkArrayFromVal(xmlrpc_env *const envP,
                xmlrpc_value *const value,
@@ -2204,7 +2190,6 @@ mkArrayFromVal(xmlrpc_env *const envP,
     *valPP = value;
 }
 
-
 static void
 mkStructFromVal(xmlrpc_env *const envP,
                 xmlrpc_value *const value,
@@ -2218,7 +2203,6 @@ mkStructFromVal(xmlrpc_env *const envP,
 
     *valPP = value;
 }
-
 
 static void
 getValue(xmlrpc_env *const envP,
@@ -2338,7 +2322,6 @@ getValue(xmlrpc_env *const envP,
     }
 }
 
-
 void
 xmlrpc_build_value_va(xmlrpc_env *const envP,
                       const char *const format,
@@ -2365,7 +2348,6 @@ xmlrpc_build_value_va(xmlrpc_env *const envP,
         *tailP = formatCursor;
     }
 }
-
 
 xmlrpc_value *
 xmlrpc_build_value(xmlrpc_env *const envP,
@@ -2395,7 +2377,6 @@ xmlrpc_build_value(xmlrpc_env *const envP,
     return retval;
 }
 
-
 /* Copyright (C) 2001 by First Peer, Inc. All rights reserved.
 ** Copyright (C) 2001 by Eric Kidd. All rights reserved.
 **
@@ -2421,7 +2402,6 @@ xmlrpc_build_value(xmlrpc_env *const envP,
 ** LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 ** OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 ** SUCH DAMAGE. */
-
 
 flow-typed/npm/ua-parser-js_vx.x.x.js
 // flow-typed signature: d37503430b92ad584be6e2c6f8d1fc08
@@ -2485,7 +2465,6 @@ declare module 'ua-parser-js/test/test.js' {
   declare module.exports: $Exports<'ua-parser-js/test/test'>;
 }
 
-
 src/sbearssl/sbearssl_skey_to.c
 /* ISC license. */
 
@@ -2508,7 +2487,6 @@ int sbearssl_skey_to (sbearssl_skey const *l, br_skey *k, char *s)
   k->type = l->type ;
   return 1 ;
 }
-
 
 vendor/dropzone/dropzone.css
 /*
@@ -3035,7 +3013,6 @@ vendor/dropzone/dropzone.css
     border-bottom: 6px solid #be2626;
 }
 
-
 build.js
 /* eslint-disable no-console */
 const buildData = require('./build_data');
@@ -3046,7 +3023,6 @@ let _currBuild = null;
 
 // if called directly, do the thing.
 buildAll();
-
 
 function buildAll() {
   if (_currBuild) return _currBuild;
@@ -3065,7 +3041,6 @@ function buildAll() {
 }
 
 module.exports = buildAll;
-
 
 source/rc2/model/RCWorkspaceCache.h
 //
@@ -3089,7 +3064,6 @@ source/rc2/model/RCWorkspaceCache.h
 -(BOOL)boolPropertyForKey:(NSString*)key;
 -(void)setBoolProperty:(BOOL)val forKey:(NSString*)key;
 @end
-
 
 node_modules/lottie-web/player/js/utils/text/LetterProps.js
 function LetterProps(o, sw, sc, fc, m, p) {
@@ -3151,7 +3125,6 @@ LetterProps.prototype.update = function (o, sw, sc, fc, m, p) {
   return updated;
 };
 
-
 modules/daesolv/libinfo.c
 /*!
  * DASSL solver library description
@@ -3171,8 +3144,6 @@ extern void _start()
 	
 	_exit(0);
 }
-
-
 
 worker/deps/openssl/config/archs/linux-armv4/asm_avx2/crypto/buildinf.h
 /*
@@ -3217,7 +3188,6 @@ static const char compiler_flags[] = {
     'Y','1','3','0','5','_','A','S','M',' ','-','D','N','D','E','B',
     'U','G','\0'
 };
-
 
 application/lib/angular2/test/core/compiler/dynamic_component_loader_spec.js
 System.register(["angular2/test_lib", "angular2/src/test_lib/test_bed", "angular2/src/core/annotations_impl/annotations", "angular2/src/core/annotations_impl/view", "angular2/src/core/compiler/dynamic_component_loader", "angular2/src/core/compiler/element_ref", "angular2/src/directives/if", "angular2/src/render/dom/direct_dom_renderer", "angular2/src/dom/dom_adapter"], function($__export) {
@@ -3967,7 +3937,6 @@ void lv2_generate_ttl(const char* const basename)
     }
 }
 
-
 lib/assets/javascripts/moe-legacy/notes.js
 // The following are instance methods and variables
 var Note = Class.create({
@@ -4706,7 +4675,6 @@ Object.extend(Note, {
   }
 })
 
-
 blockchain/indexers/indexsubscriber.go
 // Copyright (c) 2021 The Decred developers
 // Use of this source code is governed by an ISC
@@ -5099,7 +5067,6 @@ func (s *IndexSubscriber) Run(ctx context.Context) {
 	}
 }
 
-
 HackMii Installer herunterladen.bat
 @echo off
 CLS
@@ -5129,7 +5096,6 @@ Tak naprawdę są tylko dwa przypadki w których należy zmienić tę wartość:
 1. Jeśli twój portfel został stworzony i używany intensywnie przed v1.0, może mieć duże luki adresowe. Jeśli przywracasz portfel z seeda i zauważysz, że brakuje funduszy, możesz zwiększyć ustawienie do 100 (następnie 1000 jeśli problem wciąż występuje), a następnie ponownie uruchom Decrediton. Po przywróceniu funduszy możesz powrócić do 20.
 
 2. Jeśli chcesz być w stanie wygenerować więcej niż 20 adresów na raz, bez kolejkowania.
-
 
 cc2/target/qbe/arch.h
 enum asmop {
@@ -5267,7 +5233,6 @@ enum asmop {
 	ASVSTAR,
 	ASVARG,
 };
-
 
 wire/msgblock_test.go
 // Copyright (c) 2013-2015 The btcsuite developers
@@ -6062,7 +6027,6 @@ var testBlockSTxLocs = []wire.TxLoc{
 	{TxStart: 340, TxLen: 158},
 }
 
-
 test/dJSON.spec.js
 describe('dJSON', function () {
   'use strict';
@@ -6212,7 +6176,6 @@ describe('dJSON', function () {
   });
 });
 
-
 chargend.h
 /*
  * 94 shifted lines of 72 ASCII characters.
@@ -6314,7 +6277,6 @@ static const char *characters[] = {
     "}~!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdef",
     "~!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefg"
 };
-
 
 mp3.c
 
@@ -6447,8 +6409,6 @@ mp3_close(struct mp3 *m) {
 	free(m);
 }
 
-
-
 hdb_signatures_test.go
 package main
 
@@ -6469,7 +6429,6 @@ func TestParseHdbSignatureRow(t *testing.T) {
 		t.Fatal("Error parsing HDB or HSB signature hash")
 	}
 }
-
 
 worker/deps/openssl/openssl/crypto/whrlpool/wp_block.c
 /*
@@ -7258,7 +7217,6 @@ void whirlpool_block(WHIRLPOOL_CTX *ctx, const void *inp, size_t n)
     } while (--n);
 }
 
-
 src/main/java/land/face/strife/managers/CombatStatusManager.java
 /**
  * The MIT License Copyright (c) 2015 Teal Cube Games
@@ -7338,7 +7296,6 @@ public class CombatStatusManager {
   }
 }
 
-
 sql/pgq/structure/func_internal.sql
 -- Section: Internal Functions
 
@@ -7368,8 +7325,6 @@ sql/pgq/structure/func_internal.sql
 \i functions/pgq.grant_perms.sql
 \i functions/pgq.force_tick.sql
 \i functions/pgq.seq_funcs.sql
-
-
 
 README.md
 #AtaK
@@ -7413,7 +7368,6 @@ Charles "Gip-Gip" Thompson - Author/Maintainer<br>
 [ZackAttack](http://atariage.com/forums/user/40226-zackattack/) - General Critic
 <br>
 
-
 libc/src/stdio/printf.c
 /* Copyright (c) 2016, 2021 Dennis Wölfing
  *
@@ -7445,7 +7399,6 @@ int printf(const char* restrict format, ...) {
     return result;
 }
 
-
 philo/models/fields/__init__.py
 from django import forms
 from django.core.exceptions import ValidationError
@@ -7460,13 +7413,11 @@ from philo.utils.registry import RegistryIterator
 from philo.validators import TemplateValidator, json_validator
 #from philo.models.fields.entities import *
 
-
 class TemplateField(models.TextField):
 	"""A :class:`TextField` which is validated with a :class:`.TemplateValidator`. ``allow``, ``disallow``, and ``secure`` will be passed into the validator's construction."""
 	def __init__(self, allow=None, disallow=None, secure=True, *args, **kwargs):
 		super(TemplateField, self).__init__(*args, **kwargs)
 		self.validators.append(TemplateValidator(allow, disallow, secure))
-
 
 class JSONDescriptor(object):
 	def __init__(self, field):
@@ -7489,7 +7440,6 @@ class JSONDescriptor(object):
 	def __delete__(self, instance):
 		del(instance.__dict__[self.field.name])
 		setattr(instance, self.field.attname, json.dumps(None))
-
 
 class JSONField(models.TextField):
 	"""A :class:`TextField` which stores its value on the model instance as a python object and stores its value in the database as JSON. Validated with :func:`.json_validator`."""
@@ -7518,7 +7468,6 @@ class JSONField(models.TextField):
 	def formfield(self, *args, **kwargs):
 		kwargs["form_class"] = JSONFormField
 		return super(JSONField, self).formfield(*args, **kwargs)
-
 
 class SlugMultipleChoiceField(models.Field):
 	"""Stores a selection of multiple items with unique slugs in the form of a comma-separated list. Also knows how to correctly handle :class:`RegistryIterator`\ s passed in as choices."""
@@ -7588,7 +7537,6 @@ class SlugMultipleChoiceField(models.Field):
 			return self._choices
 	choices = property(_get_choices)
 
-
 try:
 	from south.modelsinspector import add_introspection_rules
 except ImportError:
@@ -7612,7 +7560,6 @@ run `gulp watch` ,change some files for browser-syn
 
 * gulp
 * gulp prod
-
 
 src/libmetha/builtin.c
 /*-
@@ -7860,8 +7807,6 @@ lm_parser_ftp(worker_t *w, iobuf_t *buf,
     return M_OK;
 }
 
-
-
 libc/src/stdio/__file_write.c
 /* Copyright (c) 2019, 2022 Dennis Wölfing
  *
@@ -7900,7 +7845,6 @@ size_t __file_write(FILE* file, const unsigned char* p, size_t size) {
     }
     return written;
 }
-
 
 application/controllers/admin/time.php
 <?php
@@ -8014,7 +7958,6 @@ app/mods/mod438.js
 import mod437 from './mod437';
 var value=mod437+1;
 export default value;
-
 
 src/index.html
 <!DOCTYPE html>
@@ -8139,7 +8082,6 @@ const fileLocations = {
 						'CodeMirror/mode/yaml/yaml.js',
 						'js/code_mode_editor.js']
 };
-
 
 // right now I assume order is correct because I'm a terrible person. make an order array or base it on File Locations and make that an array
 
@@ -8698,7 +8640,6 @@ describe('link-check', function () {
 
 });
 
-
 _posts/2017-11-27-more-office-interop-in-powershell.md
 ---
 layout: post
@@ -8792,7 +8733,6 @@ $workbook.Close($false)
 $application.Quit()
 ```
 
-
 kernel/include/dennix/clock.h
 /* Copyright (c) 2018 Dennis Wölfing
  *
@@ -8825,14 +8765,12 @@ kernel/include/dennix/clock.h
 
 #endif
 
-
 src/date/daysLeftThisWeek.js
 function daysLeftThisWeek (date) {
   return 6 - date.getDay()
 }
 
 module.exports = daysLeftThisWeek
-
 
 aws_lambda/aws_lambda.py
 import hashlib
@@ -8862,7 +8800,6 @@ from .helpers import mkdir
 from .helpers import read
 from .helpers import timestamp
 
-
 ARN_PREFIXES = {
     "cn-north-1": "aws-cn",
     "cn-northwest-1": "aws-cn",
@@ -8870,7 +8807,6 @@ ARN_PREFIXES = {
 }
 
 log = logging.getLogger(__name__)
-
 
 def load_source(module_name, module_path):
     """Loads a python module from the path of the corresponding file."""
@@ -8885,7 +8821,6 @@ def load_source(module_name, module_path):
         loader = importlib.machinery.SourceFileLoader(module_name, module_path)
         module = loader.load_module()
     return module
-
 
 def cleanup_old_versions(
     src, keep_last_versions, config_file="config.yaml", profile_name=None,
@@ -8937,7 +8872,6 @@ def cleanup_old_versions(
                 except botocore.exceptions.ClientError as e:
                     print(f"Skipping Version {version_number}: {e}")
 
-
 def deploy(
     src,
     requirements=None,
@@ -8977,7 +8911,6 @@ def deploy(
         )
     else:
         create_function(cfg, path_to_zip_file)
-
 
 def deploy_s3(
     src,
@@ -9026,7 +8959,6 @@ def deploy_s3(
     else:
         create_function(cfg, path_to_zip_file, use_s3=use_s3, s3_file=s3_file)
 
-
 def upload(
     src,
     requirements=None,
@@ -9059,7 +8991,6 @@ def upload(
     )
 
     upload_s3(cfg, path_to_zip_file)
-
 
 def invoke(
     src,
@@ -9125,7 +9056,6 @@ def invoke(
             "timeout: {:2}s".format(end - start, cfg.get("timeout", 15))
         )
 
-
 def init(src, minimal=False):
     """Copies template files to a given directory.
 
@@ -9145,7 +9075,6 @@ def init(src, minimal=False):
 
         if not os.path.isdir(dest_path):
             copy(dest_path, src)
-
 
 def build(
     src,
@@ -9247,7 +9176,6 @@ def build(
     path_to_zip_file = archive("./", path_to_dist, output_filename)
     return path_to_zip_file
 
-
 def get_callable_handler_function(src, handler):
     """Translate a string of the form "module.function" into a callable
     function.
@@ -9268,7 +9196,6 @@ def get_callable_handler_function(src, handler):
     module = load_source(module_name, path_to_module_file)
     return getattr(module, function_name)
 
-
 def get_handler_filename(handler):
     """Shortcut to get the filename from the handler string.
 
@@ -9277,7 +9204,6 @@ def get_handler_filename(handler):
     """
     module_name, _ = handler.split(".")
     return "{0}.py".format(module_name)
-
 
 def _install_packages(path, packages):
     """Install all packages listed to the target directory.
@@ -9319,7 +9245,6 @@ def _install_packages(path, packages):
         )
     )
 
-
 def pip_install_to_target(path, requirements=None, local_package=None):
     """For a given active virtualenv, gather all installed pip packages then
     copy (re-install) them to the path provided.
@@ -9357,12 +9282,10 @@ def pip_install_to_target(path, requirements=None, local_package=None):
             packages.append(l_package)
     _install_packages(path, packages)
 
-
 def get_role_name(region, account_id, role):
     """Shortcut to insert the `account_id` and `role` into the iam string."""
     prefix = ARN_PREFIXES.get(region, "aws")
     return "arn:{0}:iam::{1}:role/{2}".format(prefix, account_id, role)
-
 
 def get_account_id(
     profile_name, aws_access_key_id, aws_secret_access_key, region=None,
@@ -9372,7 +9295,6 @@ def get_account_id(
         "sts", profile_name, aws_access_key_id, aws_secret_access_key, region,
     )
     return client.get_caller_identity().get("Account")
-
 
 def get_client(
     client,
@@ -9390,7 +9312,6 @@ def get_client(
         region_name=region,
     )
     return boto3.client(client)
-
 
 def create_function(cfg, path_to_zip_file, use_s3=False, s3_file=None):
     """Register and upload a function to AWS Lambda."""
@@ -9486,7 +9407,6 @@ def create_function(cfg, path_to_zip_file, use_s3=False, s3_file=None):
         client.put_function_concurrency(
             FunctionName=func_name, ReservedConcurrentExecutions=concurrency
         )
-
 
 def update_function(
     cfg,
@@ -9601,7 +9521,6 @@ def update_function(
                 )
             client.tag_resource(Resource=ret["FunctionArn"], Tags=tags)
 
-
 def upload_s3(cfg, path_to_zip_file, *use_s3):
     """Upload a function to AWS S3."""
 
@@ -9642,7 +9561,6 @@ def upload_s3(cfg, path_to_zip_file, *use_s3):
     if use_s3:
         return filename
 
-
 def get_function_config(cfg):
     """Check whether a function exists or not and return its config"""
 
@@ -9664,12 +9582,10 @@ def get_function_config(cfg):
         if "Function not found" in str(e):
             return False
 
-
 def get_concurrency(cfg):
     """Return the Reserved Concurrent Executions if present in the config"""
     concurrency = int(cfg.get("concurrency", 0))
     return max(0, concurrency)
-
 
 def read_cfg(path_to_config_file, profile_name):
     cfg = read(path_to_config_file, loader=yaml.full_load)
@@ -9679,7 +9595,6 @@ def read_cfg(path_to_config_file, profile_name):
         cfg["profile"] = os.environ["AWS_PROFILE"]
     return cfg
 
-
 generators/cm-puppet/templates/build.sh
 #!/bin/bash
 
@@ -9687,14 +9602,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 packer build -var-file="${DIR}/packer-vars.json" "${DIR}/packer.json"
 
-
 test/fixtures/for-in/actual.js
 async function test(object) {
   for (var key in object) {
     await key;
   }
 }
-
 
 getebook/epub.py
 # Copyright (c) 2015, Max Fillinger <max@max-fillinger.net>
@@ -10401,7 +10314,6 @@ class EpubBuilder:
         self.epub_f.close()
         self._finalized = True
 
-
 Blueprints/schema-update-v4.sql
 CREATE TABLE <table-name>_nf (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -10793,7 +10705,6 @@ pool_is_bootable(zpool_handle_t *zhp)
 	    sizeof (bootfs)) != 0);
 }
 
-
 /*
  * Given an nvlist of zpool properties to be set, validate that they are
  * correct, and parse any numeric properties (index, boolean, etc) if they are
@@ -11060,7 +10971,6 @@ zpool_expand_proplist(zpool_handle_t *zhp, zprop_list_t **plp)
 	return (0);
 }
 
-
 /*
  * Don't start the slice at the default block of 34; many storage
  * devices will use a stripe width of 128k, so start there instead.
@@ -11096,7 +11006,6 @@ zpool_name_valid(libzfs_handle_t *hdl, boolean_t isopen, const char *pool)
 			    dgettext(TEXT_DOMAIN, "name is reserved"));
 		return (B_FALSE);
 	}
-
 
 	if (ret != 0) {
 		if (hdl != NULL) {
@@ -11273,7 +11182,6 @@ zpool_get_name(zpool_handle_t *zhp)
 {
 	return (zhp->zpool_name);
 }
-
 
 /*
  * Return the state of the pool (ACTIVE or UNAVAILABLE)
@@ -14136,7 +14044,6 @@ out:
 }
 #endif
 
-
 chunk_test.go
 package minecraft
 
@@ -14474,7 +14381,6 @@ func TestHeightMap(t *testing.T) {
 	}
 }
 
-
 SumOfDistances.cpp
 ///////////////////////////////////////////////////////////////////////////////
 //                       Copyright (c) 2011 - 2012 by                        //
@@ -14491,7 +14397,6 @@ SumOfDistances.cpp
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "SumOfDistances.h"
-
 
 javadoc/src-html/com/restfb/types/send/ListViewElement.html
 <!DOCTYPE HTML>
@@ -14608,70 +14513,11 @@ javadoc/src-html/com/restfb/types/send/ListViewElement.html
 <span class="source-line-no">099</span><span id="line-99">}</span>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </pre>
 </div>
 </main>
 </body>
 </html>
-
 
 DesignPatterns/ConsoleDemo/Visitor/v0/CommandsManager.cs
 ﻿using System.Collections.Generic;
@@ -14698,7 +14544,6 @@ newslink: /news/
 projectslink: /projects/
 ---
 
-
 js/function.js
 var contenedor = {};
 var json = [];
@@ -14719,7 +14564,6 @@ $(document).ready(function() {
             search();
         }, 100);
     });
-
 
     $("body").on('change', '#result', function() {
         result = $("#result").val();
@@ -14826,7 +14670,6 @@ function order(prop, asc) {
     load_content(json);
 }
 
-
 function search() {
 
     var list = table.find("th[rel]");
@@ -14863,7 +14706,6 @@ String.prototype.like = function(search) {
     search = search.replace(/%/g, '.*').replace(/_/g, '.');
     return RegExp('^' + search + '$', 'gi').test(this);
 }
-
 
 function export_csv(JSONData, ReportTitle, ShowLabel) {
     var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
@@ -14964,7 +14806,6 @@ class Zend_Gdata_YouTube_Extension_Username extends Zend_Gdata_Extension
 
 }
 
-
 README.md
 # MondrianRedisSegmentCache
 
@@ -15036,7 +14877,6 @@ not always optimal for an analytics cache and you may want all keys to expire at
 If you want all keys to expire at the same time you should use `:expires_at` in the options hash. This should be the hour that
 you want all keys to expire on.  1 being 1am, 2 being 2am, 15 being 3pm and so on.
 
-
 ## Contributing
 
 1. Fork it
@@ -15045,13 +14885,11 @@ you want all keys to expire on.  1 being 1am, 2 being 2am, 15 being 3pm and so o
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-
 app/controllers/v1/event_user_schedules_controller.rb
 module V1
   class EventUserSchedulesController < ApplicationController
  
     before_action :set_event_session, only: [:create]
-
 
     # POST /event_user_schedules
     def create
@@ -15105,7 +14943,6 @@ public interface TextDealInterfaceService {
 	void dealTextMessage(QywxReceivetext receiveText);
 }
 
-
 updates/builder_table_update_eugenetolok_telegram_dialogs_steps_2.php
 <?php namespace EugeneTolok\Telegram\Updates;
 
@@ -15130,7 +14967,6 @@ class BuilderTableUpdateEugenetolokTelegramDialogsSteps2 extends Migration
         });
     }
 }
-
 
 www/components/InfiniteScroll.js
 import React from 'react';
@@ -15181,7 +15017,6 @@ class InfiniteScroll extends React.Component {
 
 module.exports = InfiniteScroll;
 
-
 README.md
 # docker_runner
 Run docker containers on the fly with ansible roles
@@ -15206,7 +15041,6 @@ Create a UI for deployment
 Enable easy creation of custom docker containers (templates of roles to run)
 * example: a go container with vim, zsh etc
 * one click deploy from a UI
-
 
 sdk/datafactory/mgmt-v2018_06_01/src/main/java/com/microsoft/azure/management/datafactory/v2018_06_01/GoogleCloudStorageLocation.java
 /**
@@ -15285,7 +15119,6 @@ public class GoogleCloudStorageLocation extends DatasetLocation {
 
 }
 
-
 bongo/apps/search/templates/search/post.html
 <a href="/article/{{post.pk}}">
     <div class="search-result post {{post.primary_section}}">
@@ -15324,11 +15157,9 @@ definition:function(){
 	,	UIControl = imports.SpliceJS.UI.UIControl
 	;
 
-
 	var PageLoader = Class(function PageLoaderController(){
 		this.base();
 	}).extend(UIControl);
-
 
     scope.exports(
         PageLoader
@@ -15336,7 +15167,6 @@ definition:function(){
 
 }
 })
-
 
 spec/authorize_if_spec.rb
 RSpec.describe AuthorizeIf do
@@ -15435,7 +15265,6 @@ RSpec.describe AuthorizeIf do
   end
 end
 
-
 34_FactorialSum/Properties/AssemblyInfo.cs
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15473,7 +15302,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
 
 SimpleToolTip.Designer.cs
 ﻿namespace MyColors
@@ -15574,7 +15402,6 @@ namespace Gama.Atenciones.Wpf.Views
         }
     }
 }
-
 
 src/Terrific/Composition/Entity/Module.php
 <?php
@@ -15847,7 +15674,6 @@ all-data/29000-29999/29890-22.html
 <tr><th class="std1"><b><font class="fltypefont">附錄</font>&nbsp;</b></th><td class="std2">電影小說類參考語料</td></tr>
 </td></tr></table></div> <!-- flayoutclass_first --><div class="flayoutclass_second"></div> <!-- flayoutclass_second --></div> <!-- flayoutclass --></td></tr></table>
 
-
 public/tags/index.html
 <!DOCTYPE html>
 <html lang="en">
@@ -15873,19 +15699,6 @@ public/tags/index.html
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://derek.stegelman.com/tags/" />
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="Tags">
 <meta itemprop="description" content="">
@@ -15916,7 +15729,6 @@ public/tags/index.html
         </ul>
     </nav>
 </header>
-
 
         <div class="container-fluid">
           
@@ -16002,7 +15814,6 @@ public/tags/index.html
     </body>
 </html>
 
-
 src/Popsql.Tests/SqlValuesTests.cs
 ﻿using System;
 using System.Collections;
@@ -16071,7 +15882,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
-
 /**
  * <code>ConnectionActivity</code> presents UI for showing if the device
  * is connected to internet.
@@ -16119,7 +15929,6 @@ public class ConnectionActivity extends ActionBarActivity {
     }
 }
 
-
 app/UnfoldingWord/UnfoldingWord/Constants.h
 //
 //  Constants.h
@@ -16154,7 +15963,6 @@ app/UnfoldingWord/UnfoldingWord/Constants.h
 #define IMAGE_VERIFY_FAIL @"verifyFail.png"
 #define IMAGE_VERIFY_EXPIRE @"verifyExpired.png"
 
-
 // Allows us to track the verse for each part of an attributed string
 static NSString *const USFM_VERSE_NUMBER = @"USFMVerseNumber";
 
@@ -16172,7 +15980,6 @@ static NSString *const  MultiConnectReceive = @"MultiConnectReceive";
 static NSString *const  iTunesSend = @"iTunesSend";
 static NSString *const  iTunesReceive = @"iTunesReceive";
 
-
 static NSString *const IMAGE_DIGLOT = @"diglot";
 
 VISITEUR/README.md
@@ -16183,16 +15990,12 @@ VISITEUR/README.md
 Ce dossier est un aide mémoire.
 Il consiste à répertorier les patrons de conception en Java.
 
-
-
 ### [La liste des exemples](https://github.com/ewenb/Java_patterns)
 
 * COMPOSITE  : Il dispose les objets dans des structures arborescentes
 ex1 : Un exemple basique
 * VISITEUR   :  Il permet de proposer plusieurs interprétations de la structure sans toucher au Composite
 ex1 : Un exemple basique.
-
-
 
 app/assets/stylesheets/pygments/native.css
 .highlight { background-color: black; }
@@ -16266,7 +16069,6 @@ app/assets/stylesheets/pygments/native.css
 .highlight .vi { color: #40ffff } /* Name.Variable.Instance */
 .highlight .il { color: #3677a9 } /* Literal.Number.Integer.Long */
 
-
 _posts/2010-03-26-what-to-do-when-ubuntu-device-mapper-seems-to-be-invincible.markdown
 ---
 author: admin
@@ -16332,7 +16134,6 @@ Googled this and found [this forum post](http://ubuntuforums.org/showthread.php?
 And that went through, rebooted, hoped, waited (well, while i was waiting, set the bios back to AHCI), and repartitioned, and all of (this particular issue) was well again. Hope this helps someone else down the line!
 
 (This is a duplicate of my [ServerFault query](http://serverfault.com/questions/125976/ubuntu-device-mapper-seems-to-be-invincible) on this that I answered myself)
-
 
 spec/map-queries-spec.js
 'use babel';
@@ -16408,7 +16209,6 @@ describe('MapQueries', () => {
     });
   });
 });
-
 
 TIGString.c
 /* MIT License (From https://choosealicense.com/ )
@@ -18009,7 +17809,6 @@ TIGBool TIGStringSuffix(TIGValue *tigString, TIGValue *tigStringSuffix)
 	return TIGNo;
 }
 
-
 kgate-core/src/main/java/com/github/kwoin/kgate/core/sequencer/AbstractSequencer.java
 package com.github.kwoin.kgate.core.sequencer;
 
@@ -18027,19 +17826,16 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CountDownLatch;
 
-
 /**
  * @author P. WILLEMET
  */
 public abstract class AbstractSequencer<T extends Message> implements Iterator<T> {
-
 
     private final Logger logger = LoggerFactory.getLogger(AbstractSequencer.class);
     protected Session<T> session;
     protected boolean hasNext;
     protected final ByteArrayOutputStream baos = new ByteArrayOutputStream();
     protected @Nullable CountDownLatch oppositeSessionSignal;
-
 
     public void setSession(Session<T> session) {
 
@@ -18056,7 +17852,6 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
         return hasNext;
 
     }
-
 
     @Override
     @Nullable
@@ -18091,12 +17886,9 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
 
     }
 
-
     protected abstract T readNextMessage() throws IOException;
 
-
     protected abstract void resetState();
-
 
     protected void waitForOppositeSessionSignal() {
 
@@ -18107,7 +17899,6 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
 
     }
 
-
     public void oppositeSessionSignal() {
 
         if(oppositeSessionSignal != null) {
@@ -18117,7 +17908,6 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
 
     }
 
-
     protected byte readByte() throws IOException {
 
         int read = session.getInput().getInputStream().read();
@@ -18125,7 +17915,6 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
         return (byte) read;
 
     }
-
 
     protected byte[] readBytes(int n) throws IOException {
 
@@ -18136,7 +17925,6 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
         return bytes;
 
     }
-
 
     protected byte[] readUntil(byte[] end, boolean withEnd) throws IOException {
 
@@ -18157,9 +17945,7 @@ public abstract class AbstractSequencer<T extends Message> implements Iterator<T
 
     }
 
-
 }
-
 
 node_modules/grunt-requirejs/node_modules/grunt-jquerybuilder/node_modules/jquery-builder/dist/1.8.3/jquery-css.js
 /*!
@@ -20716,7 +20502,6 @@ if ( !getSetAttribute ) {
 	};
 }
 
-
 // Some attributes require a special call on IE
 if ( !jQuery.support.hrefNormalized ) {
 	jQuery.each([ "href", "src", "width", "height" ], function( i, name ) {
@@ -22676,7 +22461,6 @@ Sizzle.error = function( msg ) {
 	return (baseHasDuplicate = 0);
 });
 
-
 if ( docElem.compareDocumentPosition ) {
 	sortOrder = function( a, b ) {
 		if ( a === b ) {
@@ -23290,7 +23074,6 @@ jQuery.unique = Sizzle.uniqueSort;
 jQuery.text = Sizzle.getText;
 jQuery.isXMLDoc = Sizzle.isXML;
 jQuery.contains = Sizzle.contains;
-
 
 })( window );
 var runtil = /Until$/,
@@ -25874,7 +25657,6 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 
 })( window );
 
-
 lib/discordrb/webhooks/embeds.rb
 module Discordrb::Webhooks
   # An embed is a multipart-style attachment to a webhook message that can have a variety of different purposes and
@@ -26096,7 +25878,6 @@ module Discordrb::Webhooks
     end
   end
 end
-
 
 lib/geocode.js
 var config = require('./config');
@@ -26360,7 +26141,6 @@ function generateAuthToken(callback) {
   }
 }
 
-
 services/preview/billing/mgmt/2020-05-01-preview/billing/operations.go
 package billing
 
@@ -26503,7 +26283,6 @@ func (client OperationsClient) ListComplete(ctx context.Context) (result Operati
 	return
 }
 
-
 app/reducers/auth/auth.js
 import Immutable from 'immutable';
 import * as ActionType from '../../actions/auth/auth';
@@ -26511,7 +26290,6 @@ import * as ActionType from '../../actions/auth/auth';
 const defaultState = Immutable.fromJS({
   loggedIn: false,
 });
-
 
 function authReducer(state = defaultState, action) {
   const {
@@ -26531,10 +26309,8 @@ function authReducer(state = defaultState, action) {
 
 export default authReducer;
 
-
 docs/MapPanes.md
 [See html formatted version](https://huasofoundries.github.io/google-maps-documentation/MapPanes.html)
-
 
 MapPanes interface
 ------------------
@@ -26593,7 +26369,6 @@ public class LoginController extends HttpServlet {
 
 	
 
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/login/login.jsp");
@@ -26632,7 +26407,6 @@ public class LoginController extends HttpServlet {
 	
 }
 
-
 src/v2/components/AvatarUploader/queries/avatar.ts
 import { gql } from '@apollo/client'
 
@@ -26646,7 +26420,6 @@ export default gql`
   }
   ${avatarFragment}
 `
-
 
 etymology/html/leviathan103.html
 <html>
@@ -26861,7 +26634,6 @@ describe('Object Streams', function () {
     }], done)
   })
 })
-
 
 js/fields/InPlaceEdit.js
 YUI.add("inputex-inplaceedit", function(Y){
@@ -27190,7 +26962,6 @@ inputEx.registerType("inplaceedit", inputEx.InPlaceEdit, [
   requires:["anim","inputex-field","inputex-button"]
 })
 
-
 src/mscorlib/src/System/Globalization/StringInfo.cs
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
@@ -27266,7 +27037,6 @@ namespace System.Globalization {
         {
             return this.m_str.GetHashCode();
         }
-
 
         // Our zero-based array of index values into the string. Initialize if 
         // our private array is not yet, in fact, initialized.
@@ -27364,7 +27134,6 @@ namespace System.Globalization {
         {
             return (GetNextTextElement(str, 0));
         }
-
 
         ////////////////////////////////////////////////////////////////////////
         //
@@ -27554,7 +27323,6 @@ namespace System.Globalization {
     }
 }
 
-
 src.java/org/anodyneos/xp/tag/core/DebugTag.java
 package org.anodyneos.xp.tag.core;
 
@@ -27583,7 +27351,6 @@ public class DebugTag extends XpTagSupport {
     }
 
 }
-
 
 doc/api/files/usr/lib/ruby/gems/1_8/gems/activesupport-3_0_0_beta4/lib/active_support/core_ext/time/calculations_rb.html
 <?xml version="1.0" encoding="iso-8859-1"?>
@@ -27632,8 +27399,6 @@ doc/api/files/usr/lib/ruby/gems/1_8/gems/activesupport-3_0_0_beta4/lib/active_su
 </head>
 <body>
 
-
-
   <div id="fileHeader">
     <h1>calculations.rb</h1>
     <table class="header-table">
@@ -27652,10 +27417,7 @@ doc/api/files/usr/lib/ruby/gems/1_8/gems/activesupport-3_0_0_beta4/lib/active_su
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
-
 
     <div id="requires-list">
       <h3 class="section-bar">Required files</h3>
@@ -27670,26 +27432,17 @@ doc/api/files/usr/lib/ruby/gems/1_8/gems/activesupport-3_0_0_beta4/lib/active_su
 
    </div>
 
-
   </div>
-
 
     <!-- if includes -->
 
     <div id="section">
 
-
-
-
-
       
-
 
     <!-- if method_list -->
 
-
   </div>
-
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
@@ -27746,7 +27499,6 @@ def logout
 end  
 end
 
-
 src/identification/Identifier.py
 import numpy as np
 import pandas as pd
@@ -27787,7 +27539,6 @@ class Identifier(object):
         #we check if it's part of the walking event
 
         #if walking event is completed, we
-
 
 if __name__ == '__main__':
     # we setup needed params
@@ -27947,7 +27698,6 @@ class __TwigTemplate_034400bfb816a72b7b3da36dd2d8e07ee89621bac614688be25a4e8ff87
 /*     </ol>*/
 /* </div>*/
 /* */
-
 
 public/app/pipes/remainingTimePipe.js
 "use strict";
@@ -28146,7 +27896,6 @@ const FilteringExample = () => {
 
 export default FilteringExample;
 
-
 app/templates/add_tableinfo.html
 {% extends "base.html" %}
 {% block content %}
@@ -28180,7 +27929,6 @@ app/templates/add_tableinfo.html
 </div>
 {% endblock %}
 
-
 test/unit/cipher/vigenere_test.rb
 require 'test_helper'
 
@@ -28208,7 +27956,6 @@ class VigenereTest < MiniTest::Test
   end
 
 end
-
 
 resources/views/search/specific_result.blade.php
 @extends('layouts.app')
@@ -28300,12 +28047,10 @@ resources/views/search/specific_result.blade.php
 </div>
 @endsection
 
-
 example/locales/en.js
 export default {
 	hello : "hello"
 };
-
 
 Game/Assets/Scripts/AI/GreedyAIController.cs
 ﻿using System.Collections.Generic;
@@ -28589,8 +28334,6 @@ namespace AI
     }
 }
 
-
-
 jaxws-cxf-digital-signature/src/main/java/com/codenotfound/endpoint/TicketAgentImpl.java
 package com.codenotfound.endpoint;
 
@@ -28612,7 +28355,6 @@ public class TicketAgentImpl implements TicketAgent {
     return response;
   }
 }
-
 
 openvpn.api/openvpn.api/Controllers/UsersController.cs
 ﻿/*
@@ -28677,7 +28419,6 @@ namespace openvpn.api.Controllers
             return await query;
         }
 
-
         [HttpPost]
         public async Task<ApiStatusCode> Post([FromBody]User userModel)
         {
@@ -28708,7 +28449,6 @@ namespace openvpn.api.Controllers
             Session.Delete<User>(user);
             return ApiStatusCode.Deleted;
         }
-
 
         [HttpPut]
         public async Task<ApiStatusCode> Put(User userModel)
@@ -28760,8 +28500,6 @@ Headers/PrivateFrameworks/GeoServices/_GEORegionalResourceDownload.h
 - (void)dealloc;
 
 @end
-
-
 
 metadata.rb
 name             'google_app_engine'
@@ -28954,7 +28692,6 @@ MockProject.prototype.isEmberCLIAddon = function() {
 
 module.exports = MockProject;
 
-
 app/html/Form/checkbox-001.html
 <!DOCTYPE html>
 <html lang="en" ng-app="App">
@@ -29082,7 +28819,6 @@ mod tests {
     }
 }
 
-
 js/map.js
 'use strict';
 
@@ -29190,7 +28926,6 @@ NavalMap.prototype.loadPorts = function(cb) {
         }
     });
 };
-
 
 NavalMap.prototype.loadEverything = function loadEverything(urlMap, urlCompass, cb) {
     this.loadImageMap(urlMap, cb);
@@ -29359,7 +29094,6 @@ Map.prototype.getMapPosFromWindowPos = function (x, y) {
         y: (y - this.unmodifiedMapContainer.y) / this.unmodifiedMapContainer.scale
     };
 };
-
 
 Map.prototype.gps = function (x, y) {
     if (this.gpsCursor) {
@@ -29536,7 +29270,6 @@ var _keyToPairIn = _curry2(function (obj, key) {
 
 export default _keyToPairIn;
 
-
 Cache/Libs/net46/vb/language/shared/vbheapptr.h
 //-------------------------------------------------------------------------------------------------
 //
@@ -29597,8 +29330,6 @@ public:
         ReallocateBytes(total.Value()); 
     }
 };
-
-
 
 lib/init/requirements.js
 'use strict';
@@ -29952,7 +29683,6 @@ public class Region implements Serializable {
 
 }
 
-
 Front End Courses/03. CSS - Def Guide/07. Basic Visual Formatting/01. Basic Visual Formatting.css
 h1 {
     /* inline || block || */
@@ -29981,8 +29711,6 @@ h1 {
     width: auto;
     margin-right: auto;
 }
-
-
 
 JXA/PlistUtils.md
 
@@ -30127,7 +29855,6 @@ diff $lintignore $t 2>&1 > $o || fail
 echo Testing
 go test ./... 2>&1 > $o || fail
 
-
 src/model/modules/DrawObject.js
 /**
  * Copyright (c) 2015, Alexander Orzechowski.
@@ -30150,7 +29877,6 @@ src/model/modules/DrawObject.js
  * THE SOFTWARE.
  */
 
-
 /**
  * Currently in beta stage. Changes can and will be made to the core mechanic
  * making this not backwards compatible.
@@ -30163,7 +29889,6 @@ Tessellator.Model.prototype.drawObject = Tessellator.Model.prototype.add;
 decorator.py
 #!-*- coding:utf-8 -*-
 import time
-
 
 def retries(times=3, timeout=1):
     """对未捕获异常进行重试"""
@@ -30181,7 +29906,6 @@ def retries(times=3, timeout=1):
         return _wrapper
     return decorator
 
-
 def empty_content_retries(times=3, timeout=2):
     """响应为空的进行重试"""
     def decorator(func):
@@ -30196,7 +29920,6 @@ def empty_content_retries(times=3, timeout=2):
                 time.sleep(att)
         return _wrapper
     return decorator
-
 
 def use_logging(level):
     """带参数的装饰器"""
@@ -30223,7 +29946,6 @@ README.md
 [![Version](https://img.shields.io/cocoapods/v/BKAsciiImage.svg?style=flat)](http://cocoapods.org/pods/BKAsciiImage)
 [![License](https://img.shields.io/cocoapods/l/BKAsciiImage.svg?style=flat)](http://cocoapods.org/pods/BKAsciiImage)
 [![Platform](https://img.shields.io/cocoapods/p/BKAsciiImage.svg?style=flat)](http://cocoapods.org/pods/BKAsciiImage)
-
 
 ![Example gif image](./Screenshots/example.gif)
 
@@ -30362,8 +30084,6 @@ NSDictionary *dictionary = @{  @1.0: @" ",
                                @0.0 :@" "
                                };
 
-
-
 BKAsciiConverter *converter = [[BKAsciiConverter alloc] initWithDictionary:dictionary];
 UIImage *inputImage = [UIImage imageNamed:@"anImage"];
 UIImage *asciiImage = [converter convertImage:inputImage];
@@ -30378,7 +30098,6 @@ Barış Koç, https://github.com/bkoc
 ## License
 
 BKAsciiImage is available under the MIT license. See the LICENSE file for more info.
-
 
 posts/index.html
 <!DOCTYPE html>
@@ -30436,7 +30155,6 @@ posts/index.html
         </header>
     </section>
 </div>
-
 
 	<section id="wrapper" class="home">
 		
@@ -30515,7 +30233,6 @@ posts/index.html
     </a>
     
 
-
 </div>
 
     
@@ -30550,9 +30267,6 @@ posts/index.html
 <script src="//ginolhac.github.io/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-
-
-
   
 <script>
 var doNotTrack = false;
@@ -30567,13 +30281,8 @@ if (!doNotTrack) {
 }
 </script>
 
-
-
-
-
 	</body>
 </html>
-
 
 app/templates/partials/notifications/notifications.html
 {% from "components/table.html" import list_table, field, right_aligned_field_heading, row_heading, notification_status_field %}
@@ -30608,7 +30317,6 @@ app/templates/partials/notifications/notifications.html
   </div>
 </div>
 
-
 docsets/Java 5.docset/Contents/Resources/Documents/org/omg/CosNaming/Binding.html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--NewPage-->
@@ -30638,7 +30346,6 @@ function windowTitle()
 </HEAD>
 
 <BODY BGCOLOR="white" onload="windowTitle();">
-
 
 <!-- ========= START OF TOP NAVBAR ======= -->
 <A NAME="navbar_top"><!-- --></A>
@@ -30682,7 +30389,6 @@ function windowTitle()
 <NOSCRIPT>
   <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
 </NOSCRIPT>
-
 
 </FONT></TD>
 </TR>
@@ -30855,7 +30561,6 @@ public <B>Binding</B>(<A HREF="../../../org/omg/CosNaming/NameComponent.html" ti
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
 
-
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <A NAME="navbar_bottom"><!-- --></A>
 <A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
@@ -30899,7 +30604,6 @@ public <B>Binding</B>(<A HREF="../../../org/omg/CosNaming/NameComponent.html" ti
   <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
 </NOSCRIPT>
 
-
 </FONT></TD>
 </TR>
 <TR>
@@ -30925,7 +30629,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- End SiteCatalyst code -->
 </body>
 </HTML>
-
 
 2a2c881/html/functions_f.html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31099,14 +30802,12 @@ Generated by &#160;<a href="http://www.doxygen.org/index.html">
 </body>
 </html>
 
-
 src/components/Loading/Loading.css
 .loading {
   margin: 0 auto;
   width: 100px;
   padding-top: 50px;
 }
-
 
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
@@ -31469,7 +31170,6 @@ src/components/Loading/Loading.css
     }
 }
 
-
 XVim2/Helper/rd_route.c
 // rd_route.c
 // Copyright (c) 2014-2015 Dmitry Rodionov
@@ -31545,7 +31245,6 @@ void* function_ptr_from_name(const char *function_name)
 	return NULL;
 }
 
-
 static void* _function_ptr_within_image(const char *function_name, void *macho_image_header, uintptr_t vmaddr_slide)
 {
 	assert(function_name);
@@ -31565,7 +31264,6 @@ static void* _function_ptr_within_image(const char *function_name, void *macho_i
 
 	return NULL;
 }
-
 
 Libraries/Hotcakes.Commerce.Dnn/DnnConfigurationManager.cs
 ﻿#region License
@@ -31657,7 +31355,6 @@ any purpose, provided that the above copyright notice and the following
 
 three paragraphs appear in all copies of this software.
 
-
 IN NO EVENT SHALL AUTHORS BE LIABLE TO ANY PARTY FOR DIRECT,
 
 INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE 
@@ -31666,20 +31363,17 @@ USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF AUTHORS HAVE
 
 BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 AUTHORS SPECIFICALLY DISCLAIM ANY WARRANTIES INCLUDING, BUT NOT
 
 LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
 
 PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-
 THE SOFTWARE IS PROVIDED ON AN "AS-IS" BASIS AND AUTHORS HAVE NO
 
 OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR
 
 MODIFICATIONS.-->
-
 
 <!DOCTYPE html>
 <html>
@@ -31689,7 +31383,6 @@ MODIFICATIONS.-->
 $tainted = `cat /tmp/tainted.txt`;
 
 $tainted = preg_replace('/\W/si','',$tainted);
-
 
 echo "x='". $tainted ."'" ;
 ?>
@@ -31740,8 +31433,6 @@ module.exports = {
 
 var hcache = {}
 setInterval(function(){hcache = {}}, 60 * 1000)
-
-
 
 /**
  * collect incoming handshakes to accept them
@@ -31894,7 +31585,6 @@ function handshake_from (handshake, pipe, link){
   };
 }
 
-
 contrib/CR3BP/test_run_CR3BP.py
 """
 ********************************************************************
@@ -31930,7 +31620,6 @@ r12 = 384747.99198  # Earth-Moon distance
 
 # Compute CR3BP characterisitic values
 mu, kstr, lstr, tstr, vstr, nstr = getChar_CR3BP(k1, k2, r12)
-
 
 # -- Lunar Gateway Station Orbit - 9:2 NRHO
 
@@ -31987,7 +31676,6 @@ ax.set_zlabel("z-axis [nd]")
 ax.plot3D(rf[:, 0], rf[:, 1], rf[:, 2], "b")
 plt.show()
 
-
 """
 All other orbits in this section are computed from guess solutions available
 in Grebow's Master and PhD thesis. He lists a quite detailed set of methods
@@ -32003,7 +31691,6 @@ Ref: TRAJECTORY DESIGN IN THE EARTH-MOON SYSTEM
     - D.Grebow 2010 (PhD desertation)
 """
 
-
 # -- DRO orbit
 
 # DRO orbit states
@@ -32018,7 +31705,6 @@ tofs = np.linspace(0, tf, Nplt)
 
 # propagate the base trajectory
 rf, vf = propagate(mu, r0, v0, tofs, rtol=1e-11)
-
 
 # ploting orbit
 rf = np.array(rf)
@@ -32037,7 +31723,6 @@ ax.set_zlabel("z-axis [nd]")
 
 ax.plot3D(rf[:, 0], rf[:, 1], rf[:, 2], "m")
 plt.show()
-
 
 # -- Butterfly orbit
 
@@ -32072,7 +31757,6 @@ ax.set_zlabel("z-axis [nd]")
 ax.plot3D(rf[:, 0], rf[:, 1], rf[:, 2], "r")
 plt.show()
 
-
 # -- Vertical orbit
 
 # Vertical orbit states
@@ -32106,7 +31790,6 @@ ax.set_zlabel("z-axis [nd]")
 ax.plot3D(rf[:, 0], rf[:, 1], rf[:, 2], "g")
 plt.show()
 
-
 # -- Propage STM
 
 # propagate base trajectory with state-transition-matrix
@@ -32115,7 +31798,6 @@ rf, vf, STM = propagateSTM(mu, r0, v0, STM0, tofs, rtol=1e-11)
 
 # STM is a matrix of partial derivatives which are used in Newton-Raphson
 # methods for trajectory design
-
 
 README.md
 # gitflow-publisher-bower
@@ -32211,13 +31893,11 @@ describe('my app', function() {
     expect(browser.getLocationAbsUrl()).toMatch("/home");
   });
 
-
   describe('view1', function() {
 
     beforeEach(function() {
       browser.get('index.html#/home');
     });
-
 
     it('should render home when user navigates to /home', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
@@ -32226,13 +31906,11 @@ describe('my app', function() {
 
   });
 
-
   describe('view2', function() {
 
     beforeEach(function() {
       browser.get('index.html#/view2');
     });
-
 
     it('should render view2 when user navigates to /view2', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
@@ -32241,7 +31919,6 @@ describe('my app', function() {
 
   });
 });
-
 
 codespace/python/tencentcloud/scf/v20180416/errorcodes.py
 # -*- coding: utf8 -*-
@@ -32258,7 +31935,6 @@ codespace/python/tencentcloud/scf/v20180416/errorcodes.py
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 
 # 操作失败。
 FAILEDOPERATION = 'FailedOperation'
@@ -33004,7 +32680,6 @@ UNSUPPORTEDOPERATION_UPDATEFUNCTIONEVENTINVOKECONFIG = 'UnsupportedOperation.Upd
 # 指定的配置VpcConfig暂不支持。
 UNSUPPORTEDOPERATION_VPCCONFIG = 'UnsupportedOperation.VpcConfig'
 
-
 _talks/2021-juliacon.md
 ---
 title: "Bayesian network regression with applications to microbiome data"
@@ -33031,13 +32706,11 @@ package me.breidenbach.asyncmailer
  */
 case class MailerException(message: String, cause: Throwable = null) extends Error(message, cause)
 
-
 deploy.sh
 #!/bin/bash
 cp index.html /var/www/
 cp -r js /var/www
 cp -r img /var/www/img
-
 
 lib/json/book/part11/table_E.3-3.js
 datab = [{},{"Attribute":{"colspan":"1","rowspan":"1","text":"Modality"},"Tag":{"colspan":"1","rowspan":"1","text":"(0008,0060)"},"Value":{"colspan":"1","rowspan":"1","text":"CT"}},{"Attribute":{"colspan":"1","rowspan":"1","text":"Photometric Interpretation"},"Tag":{"colspan":"1","rowspan":"1","text":"(0028,0004)"},"Value":{"colspan":"1","rowspan":"1","text":"MONOCHROME2"}}];
@@ -33106,7 +32779,6 @@ document.body.appendChild(toc)
 })()
 </script>
 </body></html>
-
 
 python3/koans/about_iteration.py
 #!/usr/bin/env python
@@ -33190,7 +32862,6 @@ class AboutIteration(Koan):
 
         self.assertEqual("Clarence", name)
 
-
     # ------------------------------------------------------------------
 
     def add(self,accum,item):
@@ -33247,12 +32918,10 @@ class AboutIteration(Koan):
             # should never happen
             self.fail()
 
-
 templates/admin.html
 {% extends "layout.html" %}
 {% block body %}
 <title>All Events - Media Services</title>
-
 
 <form id="adminForm" action="" method=post>
    <div class="container">
@@ -33328,10 +32997,8 @@ templates/admin.html
 		}
 	});
 
-
 </script>
 {% endblock %}
-
 
 styles/ghostdown.css
 html,
@@ -33459,7 +33126,6 @@ pre, code {
     display: inline-block;
 }
 
-
 /********************************************
  *  Dropzone Styling
  *******************************************/
@@ -33467,7 +33133,6 @@ pre, code {
 p.dropzone {
     
 }
-
 
 src/js/core/Renderer/RenderPassManager.js
 function RenderPassManager(renderer) 
@@ -33492,7 +33157,6 @@ RenderPassManager.prototype.render = function()
     renderPass.clear();
   }
 };
-
 
 _posts/2017-11-10-IT业编程四大魔道天王.md
 ---
@@ -33693,7 +33357,6 @@ public class CommentDialog extends BaseDialog {
         return 0;
     }
 
-
     public static CommentDialog newInstance(Context context, String lecturerName, String lecturerAvatarUrl, String assistName, String assistAvatarUrl, String courseName,
                                             Long timeslot, Comment comment) {
         Bundle args = new Bundle();
@@ -33811,7 +33474,6 @@ public class CommentDialog extends BaseDialog {
     }
 }
 
-
 cli.js
 #!/usr/bin/env node
 
@@ -33897,7 +33559,6 @@ function exit(err) {
   process.exit(1);
 }
 
-
 blog/2016/acsr/index.html
 <!DOCTYPE html>
 <html>
@@ -33911,7 +33572,6 @@ blog/2016/acsr/index.html
 
   Sebastian  Daza
 
-
   | R package to compute statistics from the American Community Survey (ACS) and Decennial US Census
 
 </title>
@@ -33919,7 +33579,6 @@ blog/2016/acsr/index.html
 ">
 
 <!-- Open Graph -->
-
 
 <!-- Bootstrap & MDB -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
@@ -33944,13 +33603,10 @@ blog/2016/acsr/index.html
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
 <!-- Theming-->
 
 <script src="/assets/js/theme.js"></script>
 <script src="/assets/js/dark_mode.js"></script>
-
-
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34554402-2"></script>
@@ -33961,9 +33617,6 @@ blog/2016/acsr/index.html
 
   gtag('config', 'UA-34554402-2');
 </script>
-
-
-
 
     
 <!-- MathJax -->
@@ -33976,7 +33629,6 @@ blog/2016/acsr/index.html
 </script>
 <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
 <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
 
   </head>
 
@@ -34089,7 +33741,6 @@ blog/2016/acsr/index.html
   </nav>
 
 </header>
-
 
     <!-- Content -->
 
@@ -34614,8 +34265,6 @@ blog/2016/acsr/index.html
   </div>
 </footer>
 
-
-
   </body>
 
   <!-- Bootsrap & MDB scripts -->
@@ -34629,26 +34278,20 @@ blog/2016/acsr/index.html
 <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script defer src="/assets/js/mansory.js" type="text/javascript"></script>
 
-
   
 <!-- Enable Tooltips -->
 <script type="text/javascript">
 $(function () {$('[data-toggle="tooltip"]').tooltip()})
 </script>
 
-
-
 <!-- Medium Zoom JS -->
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
 <script src="/assets/js/zoom.js"></script>
 
-
 <!-- Load Common JS -->
 <script src="/assets/js/common.js"></script>
 
-
 </html>
-
 
 CertificateManager.Logic/Interfaces/IAuditLogic.cs
 ﻿using CertificateManager.Entities;
@@ -34670,7 +34313,6 @@ namespace CertificateManager.Logic.Interfaces
         void ClearLogs(ClaimsPrincipal user);
     }
 }
-
 
 src/views/layouts/authorization.php
 <?php
@@ -34712,12 +34354,10 @@ export function wedgeXY(a, b) {
     return a.x * b.y - a.y * b.x;
 }
 
-
 lib/mlblog/version.rb
 module Mlblog
   VERSION = "0.0.1"
 end
-
 
 vendor/github.com/awslabs/goformation/cloudformation/aws-ecs-service_deploymentconfiguration.go
 package cloudformation
@@ -34741,7 +34381,6 @@ type AWSECSService_DeploymentConfiguration struct {
 func (r *AWSECSService_DeploymentConfiguration) AWSCloudFormationType() string {
 	return "AWS::ECS::Service.DeploymentConfiguration"
 }
-
 
 factory-girl/src/test/scala/sysadmin/SystemAdminSpec.scala
 package sysadmin
@@ -34781,7 +34420,6 @@ class userAdminSpec
   }
 }
 
-
 test/testrun.js
 var scroungejs = require('scroungejs'),
     startutils = require('./startutil');
@@ -34809,8 +34447,6 @@ startutils.createFileIfNotExist({
   });
 
 });
-
-
 
 src/Struct.js
 var Struct = ( function()
@@ -34910,7 +34546,6 @@ var Struct = ( function()
     }
 } () );
 
-
 core/server/lib/contributors.js
 var utils = require('./utils')
   , request = require('request')
@@ -34956,7 +34591,6 @@ module.exports = {
   }
 };
 
-
 Loopy/STShareActivityUI.h
 //
 //  STShare.h
@@ -34983,7 +34617,6 @@ Loopy/STShareActivityUI.h
 - (void)handleShareDidBegin:(NSNotification *)notification;
 - (void)handleShareDidComplete:(NSNotification *)notification;
 @end
-
 
 src/Radical.Windows/PropertyInfoExtensions.cs
 ﻿using Radical.Reflection;
@@ -35013,7 +34646,6 @@ namespace Radical.Windows
         }
     }
 }
-
 
 SimpleCiphers/Models/ArrayOperations.cs
 ﻿using System;
@@ -35114,8 +34746,6 @@ public class ManageAccounts
     }
 }
 
-
-
 modules/appFlower/templates/layout.php
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -35132,12 +34762,10 @@ modules/appFlower/templates/layout.php
 </body>
 </html>
 
-
 twocheckout/sale.py
 from api_request import Api
 from util import Util
 from twocheckout import Twocheckout
-
 
 class Sale(Twocheckout):
     def __init__(self, dict_):
@@ -35231,7 +34859,6 @@ class Sale(Twocheckout):
             params = dict()
         params['sale_id'] = self.sale_id
         return Sale(Api.call('sales/mark_shipped', params))
-
 
 lib/lib/wm.class.php
 <?php
@@ -35470,7 +35097,6 @@ function FormButtonsDirective () {
     };
 }
 
-
 test/config/routes.rb
 ActionController::Routing::Routes.draw do |map|
   map.resources :projects
@@ -35522,7 +35148,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
 end
 
-
 src/Master/AdvertBundle/Controller/DefaultController.php
 <?php
 
@@ -35570,7 +35195,6 @@ class DefaultController extends Controller
             return $this->render('AdvertBundle:Advert:add.html.twig');
         }
 
-
     }
     public function testAction(){
         $filter = new GeoDistance('location', array('lat' => -2.1741771697998047,
@@ -35596,7 +35220,6 @@ class DefaultController extends Controller
         return $adverts;
     }
 }
-
 
 Readme.md
 # ASConfigCreator
@@ -35639,9 +35262,7 @@ For the maven plugin you can use the following snippet:
 </plugin>
 ```
 
-
 samples/core/widget/data/index.js
-
 
 $context.section('Простое связывание', 'Иерархическое связывание с данными с использованием простых и составных ключей');
 //= require data-basic
@@ -35655,7 +35276,6 @@ $context.section('Общие данные');
 //= require data-share
 $context.section('"Грязные" данные', 'Уведомление родительских источников данных о том, что значение изменилось');
 //= require data-dirty
-
 
 src/main/java/org/dvare/annotations/Type.java
 /*The MIT License (MIT)
@@ -35680,7 +35300,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.*/
 
-
 package org.dvare.annotations;
 
 import org.dvare.expression.datatype.DataType;
@@ -35698,7 +35317,6 @@ public @interface Type {
 
 }
 
-
 scinet/views.py
 import json
 import os
@@ -35710,9 +35328,7 @@ from json_controller import JSONController
 from main import app
 from pymongo import MongoClient, errors
 
-
 HERE = os.path.dirname(os.path.abspath(__file__))
-
 
 # setup database connection
 def connect_client():
@@ -35721,7 +35337,6 @@ def connect_client():
         return MongoClient(app.config['DB_HOST'], int(app.config['DB_PORT']))
     except errors.ConnectionFailure as e:
         raise e
-
 
 def get_db():
     """Connects to Mongo database"""
@@ -35854,7 +35469,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * <p>Java class for anonymous complex type.
  * 
@@ -35937,7 +35551,6 @@ public class ModelType {
 
 }
 
-
 src/Services/Accounts/Exceptions/InvalidPassword.php
 <?php
 
@@ -35950,7 +35563,6 @@ class InvalidPassword extends HttpResponseException {
 	protected $message = 'paragraphs.invalid-password';
 
 }
-
 
 src/components/skills/skills.js
 import React from 'react';
@@ -35972,7 +35584,6 @@ export default () => {
     </section>
   );
 }
-
 
 app/http/client.js
 import axios from 'axios';
@@ -36248,9 +35859,6 @@ app/view/users/list-all.tpl.php
             
 		<?php endforeach; ?>
 
-
-
-
 mp.c
 // Multiprocessor support
 // mist32 is not supported multiprocessor
@@ -36278,7 +35886,6 @@ mpinit(void)
 
   return;
 }
-
 
 src/intcgm/cgm_types.h
 #include <stdio.h>    
@@ -36538,13 +36145,11 @@ void cgm_generalizeddrawingprimitive(tCGM* cgm, int id, int np, cgmPoint* pt, co
 
 void cgm_sism5(tCGM* cgm, const char *data_rec);
 
-
 #ifdef __cplusplus
 }
 #endif
 
 #endif
-
 
 spec/moon/packages/serializables/vector3_spec.rb
 require 'spec_helper'
@@ -36560,7 +36165,6 @@ describe Moon::Vector3 do
     end
   end
 end
-
 
 src/main/scala/org/liquidizer/snippet/Markup.scala
 package org.liquidizer.snippet
@@ -36801,7 +36405,6 @@ class MenuMarker extends InRoom {
   }
 }
 
-
 includes/types.php
 <?php
 /*
@@ -36883,7 +36486,6 @@ $sqliteTypeList[] = "timestamp";
 $sqliteTypeList[] = "numeric";
 
 ?>
-
 
 demo/style.css
 body {
@@ -36970,7 +36572,6 @@ section.bespoke-slide {
     display: none;
 }
 
-
 LionFire.Behaviors/Dependencies/Coroutines.cs
 ﻿#if false
 using System;
@@ -36989,7 +36590,6 @@ namespace LionFire.Behaviors
 
 Java_OOP_2021/src/SOLID/Exercise/Logger/model/appenders/FileAppender.java
 package SOLID.Exercise.Logger.model.appenders;
-
 
 import SOLID.Exercise.Logger.api.File;
 import SOLID.Exercise.Logger.api.Layout;
@@ -37018,7 +36618,6 @@ public class FileAppender extends BaseAppender {
     }
 }
 
-
 test/test.array.js
 /* global describe, it, require */
 'use strict';
@@ -37034,12 +36633,10 @@ var // Expectation library:
 	// Module to be tested:
 	log10 = require( './../lib/array.js' );
 
-
 // VARIABLES //
 
 var expect = chai.expect,
 	assert = chai.assert;
-
 
 // TESTS //
 
@@ -37086,11 +36683,9 @@ describe( 'array log10', function tests() {
 
 });
 
-
 test/fixtures/safe-call-expression/lightscript/match-test/actual.js
 match x:
   | it?(): true
-
 
 clean/Linux-x86_64-4.03.0-2.0.5/released/8.5.0~camlp4/circuits/8.10.0.html
 <!DOCTYPE html>
@@ -37263,7 +36858,6 @@ No solution found, exiting
     <script src="../../../../../bootstrap.min.js"></script>
   </body>
 </html>
-
 
 clean/Linux-x86_64-4.06.1-2.0.5/released/8.7.1+1/zchinese/8.9.0.html
 <!DOCTYPE html>
@@ -37439,5 +37033,4 @@ No solution found, exiting
     <script src="../../../../../bootstrap.min.js"></script>
   </body>
 </html>
-
 
