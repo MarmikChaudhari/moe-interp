@@ -1,0 +1,2 @@
+Let $x$ , $y$ and $z$ all exceed $1$ and let $w$ be a positive number such that $\log_xw=24$ , $\log_y w = 40$ and $\log_{xyz}w=12$ . Find $\log_zw$ .
+Let $f(x)=|x-p|+|x-15|+|x-p-15|$ , where $0 < p < 15$ . Determine the minimum value taken by $f(x)$ for $x$ in the interval $p \leq x\leq15$ .
