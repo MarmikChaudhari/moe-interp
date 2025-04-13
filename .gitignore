@@ -28,3 +28,5 @@ cosine-sim/
 lens-viz/
 cosine-sim-avg/
 __pycache__/
+pplx-csv/
+cosine_sampleDATA/

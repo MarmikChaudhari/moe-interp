@@ -1,0 +1,239 @@
+<｜begin▁of▁sentence｜>wp-content/themes/sage/node_modules/asset-builder/node_modules/main-bower-files/node_modules/vinyl-fs/node_modules/glob-stream/node_modules/unique-stream/node_modules/es6-set/polyfill.js
+'use strict';
+
+var clear          = require('es5-ext/array/#/clear')
+  , eIndexOf       = require('es5-ext/array/#/e-index-of')
+  , setPrototypeOf = require('es5-ext/object/set-prototype-of')
+  , callable       = require('es5-ext/object/valid-callable')
+  , d              = require('d')
+  , ee             = require('event-emitter')
+  , Symbol         = require('es6-symbol')
+  , iterator       = require('es6-iterator/valid-iterable')
+  , forOf          = require('es6-iterator/for-of')
+  , Iterator       = require('./lib/iterator')
+  , isNative       = require('./is-native-implemented')
+
+  , call = Function.prototype.call, defineProperty = Object.defineProperty
+  , SetPoly, getValues;
+
+module.exports = SetPoly = function (/*iterable*/) {
+	var iterable = arguments[0];
+	if (!(this instanceof SetPoly)) return new SetPoly(iterable);
+	if (this.__setData__ !== undefined) {
+		throw new TypeError(this + " cannot be reinitialized");
+	}
+	if (iterable != null) iterator(iterable);
+	defineProperty(this, '__setData__', d('c', []));
+	if (!iterable) return;
+	forOf(iterable, function (value) {
+		if (eIndexOf.call(this, value) !== -1) return;
+		this.push(value);
+	}, this.__setData__);
+};
+
+if (isNative) {
+	if (setPrototypeOf) setPrototypeOf(SetPoly, Set);
+	SetPoly.prototype = Object.create(Set.prototype, {
+		constructor: d(SetPoly)
+	});
+}
+
+ee(Object.defineProperties(SetPoly.prototype, {
+	add: d(function (value) {
+		if (this.has(value)) return this;
+		this.emit('_add', this.__setData__.push(value) - 1, value);
+		return this;
+	}),
+	clear: d(function () {
+		if (!this.__setData__.length) return;
+		clear.call(this.__setData__);
+		this.emit('_clear');
+	}),
+	delete: d(function (value) {
+		var index = eIndexOf.call(this.__setData__, value);
+		if (index === -1) return false;
+		this.__setData__.splice(index, 1);
+		this.emit('_delete', index, value);
+		return true;
+	}),
+	entries: d(function () { return new Iterator(this, 'key+value'); }),
+	forEach: d(function (cb/*, thisArg*/) {
+		var thisArg = arguments[1], iterator, result, value;
+		callable(cb);
+		iterator = this.values();
+		result = iterator._next();
+		while (result !== undefined) {
+			value = iterator._resolve(result);
+			call.call(cb, thisArg, value, value, this);
+			result = iterator._next();
+		}
+	}),
+	has: d(function (value) {
+		return (eIndexOf.call(this.__setData__, value) !== -1);
+	}),
+	keys: d(getValues = function () { return this.values(); }),
+	size: d.gs(function () { return this.__setData__.length; }),
+	values: d(function () { return new Iterator(this); }),
+	toString: d(function () { return '[object Set]'; })
+}));
+defineProperty(SetPoly.prototype, Symbol.iterator, d(getValues));
+defineProperty(SetPoly.prototype, Symbol.toStringTag, d('c', 'Set'));
+
+core/classes/data.js
+'use strict';
+
+const TYPE = Symbol.for('type');
+
+class Data {
+
+  constructor(options) {
+    // File details
+    this.filepath = options.filepath;
+
+    // Type
+    this[TYPE] = 'data';
+
+    // Data
+    Object.assign(this, options.data);
+  }
+}
+
+module.exports = Data;
+
+sodium/runtime.go
+package sodium
+
+// #cgo pkg-config: libsodium
+// #include <stdlib.h>
+// #include <sodium.h>
+import "C"
+
+func RuntimeHasNeon() bool {
+	return C.sodium_runtime_has_neon() != 0
+}
+
+func RuntimeHasSse2() bool {
+	return C.sodium_runtime_has_sse2() != 0
+}
+
+func RuntimeHasSse3() bool {
+	return C.sodium_runtime_has_sse3() != 0
+}
+
+test/unit/resource/accounts.js
+
+function collectWithWildcard(test) {
+	test.expect(4);
+
+	var api_server = new Test_ApiServer(function handler(request, callback) {
+		var url = request.url;
+
+		switch (url) {
+			case '/accounts?username=chariz*':
+				let account = new Model_Account({
+					username: 'charizard'
+				});
+
+				return void callback(null, [
+					account.redact()
+				]);
+
+			default:
+				let error = new Error('Invalid url: ' + url);
+
+				return void callback(error);
+		}
+	});
+
+	var parameters = {
+		username: 'chariz*'
+	};
+
+	function handler(error, results) {
+		test.equals(error, null);
+		test.equals(results.length, 1);
+
+		var account = results[0];
+
+		test.equals(account.get('username'), 'charizard');
+		test.equals(account.get('type'), Enum_AccountTypes.MEMBER);
+
+		api_server.destroy();
+
+		test.done();
+	}
+
+	Resource_Accounts.collect(parameters, handler);
+}
+
+module.exports = {
+	collectWithWildcard
+};
+
+src/base.php
+<?php
+
+interface Container {
+    /**
+     * Checks if a $x exists.
+     *
+     * @param unknown $x
+     *
+     * @return boolean
+     */
+    function contains($x);
+}
+
+usual/json.c
+/*
+ * Read and write JSON.
+ *
+ * Copyright (c) 2014  Marko Kreen
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+#include <usual/json.h>
+#include <usual/cxextra.h>
+#include <usual/cbtree.h>
+#include <usual/misc.h>
+#include <usual/utf8.h>
+#include <usual/ctype.h>
+#include <usual/bytemap.h>
+#include <usual/string.h>
+#include <math.h>
+
+#define TYPE_BITS	3
+#define TYPE_MASK	((1 << TYPE_BITS) - 1)
+#define UNATTACHED	((struct JsonValue *)(1 << TYPE_BITS))
+
+#define JSON_MAX_KEY	(1024*1024)
+
+#define NUMBER_BUF	100
+
+#define JSON_MAXINT	((1LL << 53) - 1)
+#define JSON_MININT	(-(1LL << 53) + 1)
+
+/*
+ * Common struct for all JSON values
+ */
+struct JsonValue {
+	/* actual value for simple types */
+	union {
+		double v_float;			/* float */
+		int64_t v_int;			/* int */
+		bool v_bool;			/* bool */
+		size_t v_size;			/* str/list/dict */
+	} u;
+
+	/* pointer to next elem and type in low bits */
