@@ -30,3 +30,5 @@ cosine-sim-avg/
 __pycache__/
 pplx-csv/
 cosine_sampleDATA/
+cosine-sim-csv/
+cosine-sim-csv-avg/
