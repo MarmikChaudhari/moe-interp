@@ -35,7 +35,7 @@ This repository contains code for interpreting **Mixture of Experts (MoE)** lang
 1. **Expert Specialization**: Do different experts specialize for different domains (code, English, French, math)?
 2. **Routing Patterns**: How do routing weights evolve across layers?
 3. **Expert Co-activation**: Which experts frequently activate together?
-4. **MOE-Lens Analysis**: Can we interpret what each expert "predicts" via logit lens?
+4. **MoE-Lens Analysis**: Can we interpret what each expert "predicts" via logit lens?
 5. **Perplexity vs Top-K**: How does perplexity change when limiting to top-k experts?
 6. **Cosine Similarity**: How similar are top-1 expert representations vs top-k combined?
 
@@ -54,7 +54,7 @@ This repository contains code for interpreting **Mixture of Experts (MoE)** lang
 
 ## 2. Critical Technical Gaps
 
-### 2.1 **Incorrect Shared Expert Decomposition** (CRITICAL)
+### 2.1 Incorrect Shared Expert Decomposition (Critical)
 
 **File**: `deepseek_logit_lens.ipynb`, `moe-lens.ipynb`
 
@@ -79,7 +79,7 @@ expert0_out = module.down_proj(
 
 **Impact**: All shared expert analysis results are invalid and should not be trusted.
 
-### 2.2 **Hardcoded Dimension Values** (HIGH)
+### 2.2 Hardcoded Dimension Values (High)
 
 **Files**: Multiple notebooks
 
@@ -91,7 +91,7 @@ expert1_act = act[..., 1408:]
 
 **Issue**: The code assumes specific model dimensions (1408, 2816) rather than querying `model.config.intermediate_size`. This will silently produce incorrect results for other model sizes.
 
-### 2.3 **Memory Leak in Hook Management** (MEDIUM)
+### 2.3 Memory Leak in Hook Management (Medium)
 
 **File**: `moe-lens.ipynb`, `deepseek_logit_lens.ipynb`
 
@@ -104,7 +104,7 @@ def analyze_text(self, input_ids: torch.Tensor) -> dict:
 
 **Issue**: A new hook is registered on every call to `analyze_text()`, but only removed in `remove_hooks()`. If `analyze_text()` is called multiple times before cleanup, hooks accumulate.
 
-### 2.4 **Router Weight Interpretation Confusion** (HIGH)
+### 2.4 Router Weight Interpretation Confusion (High)
 
 **File**: `moe-gate.ipynb`
 
@@ -119,7 +119,7 @@ In several places, `topk_weight` is treated as a probability when it's actually 
 
 ## 3. Bugs and Runtime Errors
 
-### 3.1 **IndexError in deepseek_logit_lens.ipynb** (CONFIRMED BUG)
+### 3.1 IndexError in deepseek_logit_lens.ipynb (Confirmed Bug)
 
 **File**: `deepseek_logit_lens.ipynb`, cell 10
 
@@ -132,7 +132,7 @@ for i in range(20):  # Iterates 0-19
 
 **Status**: This error is visible in the notebook output, indicating the cell crashed during execution.
 
-### 3.2 **Potential Division by Zero** (pplx.ipynb)
+### 3.2 Potential Division by Zero (pplx.ipynb)
 
 ```python
 # In perplexity calculation
@@ -141,7 +141,7 @@ log_prob = torch.log(prob)  # prob could be 0 for OOV tokens
 
 **Issue**: No epsilon added to prevent log(0) = -inf. Should use `torch.log(prob + 1e-10)` or `torch.clamp(prob, min=1e-10)`.
 
-### 3.3 **Unhandled Empty Expert Outputs** (moe-lens.ipynb)
+### 3.3 Unhandled Empty Expert Outputs (moe-lens.ipynb)
 
 ```python
 if info and info['tokens']:
@@ -151,7 +151,7 @@ if info and info['tokens']:
 
 **Issue**: If `info['tokens']` is an empty list `[]`, it evaluates to `False`, but the code later assumes non-empty. However, `info['tokens'][0]` would fail on empty list before this check in some code paths.
 
-### 3.4 **Device Mismatch Issues** (pca.ipynb)
+### 3.4 Device Mismatch Issues (pca.ipynb)
 
 ```python
 router_probs = router_probs.cuda()  # Forces CUDA
@@ -164,7 +164,7 @@ zeroed_probs = torch.zeros_like(router_probs, device='cuda')
 
 ## 4. Methodological Concerns
 
-### 4.1 **Last-Token Bias in Analysis**
+### 4.1 Last-Token Bias in Analysis
 
 **Files**: `pca.ipynb`, `moe-gate.ipynb`, `olmoe-gate.ipynb`
 
@@ -182,7 +182,7 @@ last_token_logits = layer_logits[seq_len-1]
 
 **Recommendation**: Include analysis across all token positions, or at minimum stratified sampling.
 
-### 4.2 **Lack of Statistical Significance Testing**
+### 4.2 Lack of Statistical Significance Testing
 
 No notebooks include:
 - Confidence intervals on reported metrics
@@ -192,14 +192,14 @@ No notebooks include:
 
 For example, claiming "Expert 17 specializes in English" without p-values or bootstrap confidence intervals is not rigorous.
 
-### 4.3 **No Control Experiments**
+### 4.3 No Control Experiments
 
 Missing controls:
 1. **Random baseline**: What would random expert selection look like?
 2. **Dense model comparison**: How do routing patterns compare to attention patterns in dense models?
 3. **Permutation tests**: Are observed domain specializations significant vs permuted labels?
 
-### 4.4 **Cosine Similarity Methodology Issues** (cosine-sim.ipynb)
+### 4.4 Cosine Similarity Methodology Issues (cosine-sim.ipynb)
 
 ```python
 # The analysis compares top-1 expert output vs combined top-k output
@@ -220,7 +220,7 @@ Without disentangling these, conclusions are ambiguous.
 
 ## 5. Statistical and Experimental Issues
 
-### 5.1 **Small and Imbalanced Datasets**
+### 5.1 Small and Imbalanced Datasets
 
 **File**: `data-ext/data-prep.ipynb`
 
@@ -238,7 +238,7 @@ Without disentangling these, conclusions are ambiguous.
 2. Token counts vary dramatically between domains
 3. ArXiv has only 25 samples, far too few for robust conclusions
 
-### 5.2 **Domain Confounds**
+### 5.2 Domain Confounds
 
 The domains differ in multiple confounded ways:
 - **Length**: Code tends to be longer
@@ -247,7 +247,7 @@ The domains differ in multiple confounded ways:
 
 Expert specialization could reflect any of these confounds, not semantic domain knowledge.
 
-### 5.3 **Normalization Inconsistencies** (plot_pplx.ipynb)
+### 5.3 Normalization Inconsistencies (plot_pplx.ipynb)
 
 ```python
 # Normalized to 0-1 range per dataset
@@ -256,7 +256,7 @@ normalized_perplexity = [(x - min_perp) / (max_perp - min_perp) for x in perplex
 
 **Issue**: Each dataset is normalized independently, making cross-dataset comparisons meaningless. A "0.5 normalized perplexity" for GitHub code cannot be compared to "0.5" for English.
 
-### 5.4 **Missing Perplexity Baselines**
+### 5.4 Missing Perplexity Baselines
 
 The perplexity experiments show how performance degrades with fewer experts, but don't include:
 1. Full model (all experts) baseline perplexity
@@ -267,7 +267,7 @@ The perplexity experiments show how performance degrades with fewer experts, but
 
 ## 6. Code Quality Issues
 
-### 6.1 **Duplicate Imports**
+### 6.1 Duplicate Imports
 
 ```python
 # deepseek_logit_lens.ipynb, cell 0
@@ -275,13 +275,13 @@ from pathlib import Path
 from pathlib import Path  # Duplicate
 ```
 
-### 6.2 **Commented-Out Code Pollution**
+### 6.2 Commented-Out Code Pollution
 
 Many notebooks contain large blocks of commented code that should be removed or moved to separate exploration files. Examples:
 - `pca.ipynb`: Multiple commented function calls
 - `moe-gate.ipynb`: Commented analysis sections
 
-### 6.3 **Inconsistent Variable Naming**
+### 6.3 Inconsistent Variable Naming
 
 ```python
 # Sometimes using full words, sometimes abbreviations
@@ -291,7 +291,7 @@ topk_weight  # Abbreviated
 expert_indices  # Full
 ```
 
-### 6.4 **Magic Numbers Without Constants**
+### 6.4 Magic Numbers Without Constants
 
 ```python
 top_tokens = torch.topk(logits, k=5, dim=-1)  # Why 5?
@@ -301,7 +301,7 @@ max_seq_len = min(4096, ...)  # Why 4096?
 
 These should be defined as named constants with documentation.
 
-### 6.5 **No Type Hints**
+### 6.5 No Type Hints
 
 None of the main analysis functions include type hints, making the code harder to understand and maintain:
 
@@ -317,21 +317,21 @@ def get_moe_metadata(model: AutoModelForCausalLM, input_ids: torch.Tensor) -> Tu
 
 ## 7. Data Processing Concerns
 
-### 7.1 **Data Leakage Risk**
+### 7.1 Data Leakage Risk
 
 **File**: `data-ext/data-prep.ipynb`
 
 The data preparation combines multiple sources without clear train/test splits. If the models being analyzed were trained on any of these sources, results would be confounded.
 
-### 7.2 **Encoding Issues**
+### 7.2 Encoding Issues
 
 ```python
 with open(output_file, "w", encoding="utf-8") as f:
 ```
 
-While UTF-8 encoding is used, there's no validation that the source data is valid UTF-8, which could cause silent corruption for Chinese or special characters.
+While UTF-8 encoding is used, there's no validation that the source data is valid UTF-8, which could cause data corruption or encoding errors for Chinese or special characters.
 
-### 7.3 **Token Count Verification Missing**
+### 7.3 Token Count Verification Missing
 
 The code computes token counts but doesn't verify they match expectations or flag anomalies:
 
@@ -339,7 +339,7 @@ The code computes token counts but doesn't verify they match expectations or fla
 print(len(tokens))  # Just prints, doesn't validate
 ```
 
-### 7.4 **No Data Validation**
+### 7.4 No Data Validation
 
 No checks for:
 - Empty or whitespace-only prompts
@@ -406,7 +406,7 @@ No checks for:
 
 14. **Document Model-Specific Assumptions**: Many assumptions are DeepSeek-specific but not documented.
 
-15. **Create Analysis Pipeline**: Convert notebooks to reproducible scripts.
+15. **Create an Analysis Pipeline**: Convert notebooks to reproducible scripts.
 
 ---
 
@@ -454,10 +454,10 @@ No checks for:
 
 | Severity | Count | Examples |
 |----------|-------|----------|
-| **CRITICAL** | 1 | Shared expert decomposition |
-| **HIGH** | 4 | Hardcoded dimensions, router interpretation, device mismatch, methodology |
-| **MEDIUM** | 6 | Memory leaks, empty checks, statistical issues |
-| **LOW** | 10+ | Code quality, documentation |
+| Critical | 1 | Shared expert decomposition |
+| High | 4 | Hardcoded dimensions, router interpretation, device mismatch, methodology |
+| Medium | 6 | Memory leaks, empty checks, statistical issues |
+| Low | 10+ | Code quality, documentation |
 
 ---
 
